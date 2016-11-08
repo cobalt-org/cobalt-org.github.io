@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
     {% if is_post %}
       <title>{{ title }}</title>
     {% else %}
@@ -18,12 +19,12 @@
         <div class="secondary">
           <h2>A static site generator written in Rust</h2>
           <nav>
-            <a href="#" class="button docs">Docs</a>
-            <a href="#getting-started" class="button install">Install</a>
-            <a href="#" class="button contrib">Contribute</a>
+            <a href="#getting-started" class="button install"><span>Install</span></a>
+            <a href="#" class="button docs"><span>Docs</span></a>
+            <a href="#" class="button contrib"><span>Contribute</span></a>
             <a href="https://github.com/cobalt-org/cobalt.rs"
               class="button github">
-              GitHub
+              <span>GitHub</span>
             </a>
           </nav>
         </div>
@@ -34,7 +35,7 @@
     </main>
     <footer>
       <div class="inner">
-        <p>&copy; Cobalt Org. 2016</p>
+        <p>Made with ❤️  by the Cobalt contributors</p>
       </div>
     </footer>
   </body>
