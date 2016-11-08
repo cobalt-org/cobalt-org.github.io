@@ -1,0 +1,17 @@
+sudo: false
+language: rust
+
+before_script:
+  - cargo install cobalt-bin
+  - export PATH="$PATH:/home/travis/.cargo/bin"
+
+script:
+  - cobalt build
+
+after_success: |
+  [ $TRAVIS_BRANCH = master ] &&  
+  [ $TRAVIS_PULL_REQUEST = false ] &&  
+  cobalt import &&
+  git config user.name "Cobalt Site Deployer" &&
+  git config user.email "name@example.com" &&
+  git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages

@@ -1,0 +1,45 @@
+extends: default.liquid
+---
+<section class="introduction">
+  <div class="inner">
+    <div class="columns three">
+      <article>
+        <h3>Fast</h3>
+        <p>Rust is f-a-s-t, fast! So is Cobalt. Turn your text files
+          into a website almost instantly.</p>
+      </article>
+      <article>
+        <h3>Easy</h3>
+        <p>Because static sites are just plain ole text files, you&rsquo;re
+          able to deploy virtually anywhere with fewer resources.</p>
+      </article>
+      <article>
+        <h3>Safe</h3>
+        <p>Besides Rust&rsquo;s guaranteed thread safety, static sites
+          require no databases or authentication which leaves you less
+          vulnerable to security risks.</p>
+      </article>
+    </div>
+
+    <h2 id="getting-started">Get Started Now</h2>
+    <pre><code>$ cargo install cobalt-bin</code></pre>
+
+    <h3>Basic Usage</h3>
+    <pre><code>
+$ cobalt new blog
+[info]   Using config file ./.cobalt.yml
+[info]   Created new project at blog
+
+$ cd blog
+
+$ cobalt build
+[info]   Using config file ./.cobalt.yml
+[info]   Building from . into build
+[info]   Created build/index.html
+[info]   Created build/posts/post-1.html
+[info]   Copying remaining assets
+[info]   Build successful
+
+</code></pre>
+  </div>
+</section>
