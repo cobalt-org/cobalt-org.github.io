@@ -1,17 +1,19 @@
 sudo: false
 language: rust
-
+cache: cargo
 before_script:
-  - cargo install cobalt-bin
-  - export PATH="$PATH:/home/travis/.cargo/bin"
-
+- cargo install cobalt-bin
+- export PATH="$PATH:/home/travis/.cargo/bin"
 script:
-  - cobalt build
-
+- cobalt build
 after_success: |
-  [ $TRAVIS_BRANCH = master ] &&  
-  [ $TRAVIS_PULL_REQUEST = false ] &&  
-  cobalt import &&
+  [ $TRAVIS_BRANCH = source ] &&
+  [ $TRAVIS_PULL_REQUEST = false ] &&
+  cobalt import --branch master &&
   git config user.name "Cobalt Site Deployer" &&
-  git config user.email "name@example.com" &&
-  git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
+  git config user.email "deploy@cobalt-org.github.io" &&
+  git push -fq https://${GH_TOKEN}@github.com/cobalt-org/cobalt.rs.git gh-pages &&
+  git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git master
+env:
+  global:
+    secure: yCykuMV+OGXgpE646LFvgBiu+SqRCEba7SMSEZmW6TsuwruweWqdhYCOqWKeYQa/KYWcLe8Oph2O+ApxPPFsuoDWUG7SRq/+aXN9n6R88DX0fgxj7HVH60Am34Br/4ikshph14UVv2uLGA9ddb4tDfu84YKJ0ki1H/w1ZS9xWBBdAJdw92zWHQoHfKV4rg0Kj9B+nQqvdEoJOKYpUqMmzzcZEDTfXLKyt33g7in3Wege9A3vWb52iWtytjKWts66Rdhwhvc7BykyBc06mWMPCGL3KQVTSRf3JllWFBwvp8gcqeC69A5eDoagFSHChOMpXmcAgCo0wZopCAM5HRuyFtF8hWWhFMRmc2slgamMdGHJOxbAhVneR1RGgS6erGnNmXD0qy9fXQRPDKPkqTZ+p3UVxIC9K7dc3fufRgMK1cKrSmW2nL5e6WfzrROgri4KhvPPMsLSTwfETKj9QtrEcnhXENgecBUfsUN1u2CyRNue6CvQoRo9/oV7dEXBO3XUZx/5U/QopKAPzJFnZOnF/H7+sbV9LBL9gu2NO9BsnGfmDPZXnd/751g06ChPLaV1Lajydt9faRAyI4CctngoKj4P3mwwTUrbRqOwNptSRX6qjtJImT5rpJJJT9M7AWR2z0xJUUK17ESQKtDl5LpcHZXY+9VB+SB5On9cHFMbhY4=
