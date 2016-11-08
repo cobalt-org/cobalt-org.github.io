@@ -12,7 +12,6 @@ after_success: |
   cobalt import --branch master &&
   git config user.name "Cobalt Site Deployer" &&
   git config user.email "deploy@cobalt-org.github.io" &&
-  git push -fq https://${GH_TOKEN}@github.com/cobalt-org/cobalt.rs.git gh-pages &&
   git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git master
 env:
   global:
