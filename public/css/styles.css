@@ -56,6 +56,21 @@ header {
   padding-top: 1em;
 }
 
+header .primary h1 {
+  text-align: center;
+}
+
+header .primary h1 a {
+  color: var(--dark-grey);
+  font-size: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header .primary h1 span {
+  display: block;
+}
+
 header .secondary h2 {
   font-size: 2em;
   line-height: 1;
@@ -102,6 +117,10 @@ header nav .button > span {
     flex: 1 0 50%;
     flex-direction: column;
     justify-content: center;
+  }
+
+  header .primary h1 a {
+    font-size: 1.5em;
   }
 
   header .secondary {
