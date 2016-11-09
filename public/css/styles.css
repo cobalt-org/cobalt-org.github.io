@@ -53,29 +53,41 @@ body {
 
 header {
   text-align: center;
-  margin-bottom: 1em;
   padding-top: 1em;
 }
 
 header .secondary h2 {
   font-size: 2em;
-  flex: 0 1 auto;
   line-height: 1;
   margin-top: 0;
 }
 
 header nav {
-  flex: 0 1 auto;
   display: flex;
   justify-content: center;
 }
 
-header nav .button {
-  margin-right: 0.5em;
+@media (max-width: 41em) {
+  header nav {
+    max-width: 100%;
+    overflow: hidden;
+  }
 }
 
-header nav .button:last-child {
-  margin-right: 0;
+header .inner {
+  padding: 0;
+}
+
+header nav .button {
+  margin: 0 1px;
+  transform: skewX(-25deg) translateY(1px);
+  padding: 0.5em 1em;
+  border-radius: 0;
+}
+
+header nav .button > span {
+  transform: skewX(25deg);
+  display: inline-block;
 }
 
 @media (min-width: 41em) {
@@ -96,25 +108,29 @@ header nav .button:last-child {
     display: flex;
     flex: 1 0 50%;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   header h1 {
-    margin: 0;
+    margin: 0.5em 0;
   }
 }
 
 .inner {
-  padding: 0 1em 1em 1em;
+  padding: 0 1em 0 1em;
 }
 
 @media (min-width: 41em) {
   .inner {
     margin: 0 auto;
     max-width: var(--breakpoint);
-    padding: 0 0 1em 0;
+    padding: 0 0 0 0;
   }
+}
+
+section {
+  padding: 1em 0;
+  position: relative;
 }
 
 section.introduction {
@@ -184,7 +200,6 @@ pre code {
 
 .button {
   background: var(--med-grey);
-  border: 1px solid var(--dark-grey);
   border-radius: 3px;
   color: var(--white);
   text-decoration: none;
@@ -200,7 +215,6 @@ pre code {
 
 .button.docs {
   background: var(--blue);
-  border: 1px solid var(--dark-blue);
 }
 
 .button.docs:hover,
@@ -210,14 +224,13 @@ pre code {
 }
 
 .button.install {
-  background: var(--green);
-  border: 1px solid var(--dark-green);
+  background: var(--light-blue);
 }
 
 .button.install:hover,
 .button.install:active,
 .button.install:focus {
-  background: var(--med-light-green);
+  background: var(--med-light-blue);
 }
 
 .button.contrib:hover,
@@ -228,14 +241,10 @@ pre code {
 
 .button.contrib {
   background: var(--yellow);
-  border: 1px solid var(--dark-yellow);
 }
-
-
 
 .button.github {
   background: var(--dark-grey);
-  border: 1px solid var(--black);
 }
 
 .button.github:hover,
@@ -261,8 +270,8 @@ pre code {
 
 footer {
   background: var(--dark-grey);
-  border-top: 1px solid var(--black);
   color: var(--light-grey);
+  text-align: center;
 }
 
 footer .inner {
