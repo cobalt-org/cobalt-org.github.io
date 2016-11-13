@@ -1,0 +1,48 @@
+extends: default.liquid
+---
+
+<section class="docs">
+  <div class="inner">
+    <aside>
+      <ul>
+        <li><a href="/docs/">Getting Started</a></li>
+        <li><a class="active" href="/docs/usage.html">Usage</a></li>
+        <li><a href="/docs/layouts.html">Layouts</a></li>
+        <li><a href="/docs/posts.html">Posts</a></li>
+        <li><a href="/docs/pages.html">Pages</a></li>
+        <li><a href="/docs/rss.html">RSS</a></li>
+        <li><a href="/docs/deployment.html">Deployment</a></li>
+      </ul>
+    </aside>
+    <main>
+      <h2>Usage</h2>
+      <pre><code>
+cobalt -h
+
+  new -- create a new cobalt project
+  build -- build the cobalt project at the source dir
+  serve -- build and serve the cobalt project at the source dir
+  watch -- build, serve, and watch the project at the source dir
+  import -- moves the contents of the dest folder to the gh-pages branch
+
+Options:
+    -s, --source        Source folder, Default: ./
+    -d, --destination   Destination folder, Default: ./
+    -c, --config        Config file to use, Default: .cobalt.yml
+    -l, --layouts       Layout templates folder, Default: _layouts/
+    -p, --posts         Posts folder, Default: posts/
+    -P, --port          Port to serve from, Default: 3000
+    -b, --branch        Branch that will be used to import the site to,
+                        Default: gh-pages
+    -m, --message       Commit message that will be used on import, Default:
+                        cobalt site import
+        --debug         Log verbose (debug level) information
+        --trace         Log ultra-verbose (trace level) information
+        --silent        Suppress all output
+    -i, --import        Import after build to gh-pages branch
+    -h, --help          Print this help menu
+    -v, --version       Display version
+      </code></pre>
+    </main>
+  </div>
+</section>
