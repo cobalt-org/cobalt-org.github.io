@@ -152,12 +152,6 @@ section {
   position: relative;
 }
 
-section.introduction {
-  background: var(--light-blue);
-  color: var(--white);
-  text-shadow: 0 1px 1px var(--dark-grey);
-}
-
 section.introduction h2,
 section.introduction h3 {
   font-size: 2em;
