@@ -1,0 +1,81 @@
+extends: default.liquid
+title: "Cobalt::Docs::Pages"
+---
+
+<section class="docs">
+  <div class="inner">
+    <aside>
+      <ul>
+        <li><a href="/docs/">Getting Started</a></li>
+        <li><a href="/docs/usage.html">Usage</a></li>
+        <li><a href="/docs/layouts.html">Layouts</a></li>
+        <li><a href="/docs/posts.html">Posts</a></li>
+        <li><a class="active" href="/docs/pages.html">Pages</a></li>
+        <li><a href="/docs/rss.html">RSS</a></li>
+        <li><a href="/docs/deployment.html">Deployment</a></li>
+      </ul>
+    </aside>
+    <main>
+      <h2>Pages</h2>
+      <p>Any file with the .md or .liquid file extension is considered a liquid
+      template and will be parsed for metadata and compiled using liquid, like a
+      post.</p>
+      <p>Unlike posts, files outside the <code>_posts</code> directory will not
+      be indexed as blog posts and not passed to the index file in the list of
+      contents.</p>
+      <p>All other files and directories in the source folder will be
+      recursively added to your destination folder.</p>
+      <p>You can specify different template extensions by setting the
+      <code>template_extensions</code> field in your config file:</p>
+
+      <pre><code>template_extensions: ['txt', 'lqd']</code></pre>
+      <h3>Custom Paths</h3>
+      <p>Custom paths are much like permalinks in Jekyll, but with a bit more
+      flexibility. You can specify a <code>path</code> attribute in the front
+      matter of any document to give it a custom path. The path is always
+      relative to the document root, independent of where the file is
+      located.</p>
+      <p>Example:</p>
+      <pre><code>extends: posts.liquid
+
+title:   My first Blogpost
+path: /some/other/path/
+</code></pre>
+      <p>would result in a file with the url
+      <pre><code>your-website.com/some/other/path/index.html</code></pre></p>
+      <p>You can also set a global attribute <code>post_path</code> in your
+      .cobalt.yml that will be used for all posts.</p>
+      <p>Any attribute in the front matter can be interpolated into the path. If
+      you set a <code>date</code> attribute you have access to several other
+      custom attributes. See the Jekyll documentation.</p>
+      <p>More examples:</p>
+      <pre><code>date: 01 Jan 2016 21:00:00 +0100
+path: /:year/:month/:day/thing.html
+</code></pre>
+      <p>-> <code>/2016/01/01/thing.html</code></p>
+      <pre><code>date: 01 Jan 2016 21:00:00 +0100
+author: johann
+path: /:author/:year/:month/:day/title
+</code></pre>
+      <p>-> <code>/johann/2016/01/01/title/index.html</code></p>
+      <h3>Attributes</h3>
+      <p>All template files have access to a set of attributes.</p>
+      <p>In example above title is accessible via <code>{{ title }}</code> and
+      date via <code>{{ date }}</code>, for the layout template as well as the
+      post template.</p>
+      <h4>Special Atributes</h4>
+      <h5>content</h5>
+      <p><code>{{ content }}</code> is accessible only to layouts and contains
+      the compiled text below the --- block of the post.</p>
+      <h5>posts</h5>
+      <p><code>{{ posts }}</code> is a list of the attributes of all templates
+      in the <code>_posts</code> directory. Example usage on a page listing all
+      blog posts:</p>
+      <pre><code>
+{% for post in posts %}
+  <a href="{{post.path}}">{{ post.title }}</a>
+{% endfor %}
+</code></pre>
+    </main>
+  </div>
+</section>

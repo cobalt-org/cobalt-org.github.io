@@ -51,6 +51,10 @@ body {
   margin: 0;
 }
 
+a {
+  color: var(--orange);
+}
+
 header {
   text-align: center;
   padding-top: 1em;
@@ -171,11 +175,45 @@ section.introduction p {
   margin-top: 0;
 }
 
-section.grey {
-  background: var(--med-grey);
-  color: var(--white);
-  text-shadow: 0 1px 1px var(--dark-grey);
+section.docs aside ul li a {
+  display: inline-block;
+  margin-bottom: 0.25em;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
 }
+
+section.docs aside ul li a.active,
+section.docs aside ul li a:hover,
+section.docs aside ul li a:active,
+section.docs aside ul li a:focus {
+  font-weight: bold;
+  background: var(--orange);
+  color: var(--white);
+  padding: 0.25em 0.5em;
+  border-radius: 3px;
+}
+
+@media (min-width: 61em) {
+
+  section.docs .inner {
+    display: flex;
+  }
+
+  section.docs aside {
+    flex: 0 1 30%;
+  }
+
+  section.docs main {
+    flex: 0 1 70%;
+  }
+}
+
+section.docs ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
 
 pre {
   display: block;
