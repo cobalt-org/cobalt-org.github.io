@@ -27,8 +27,8 @@ title: "Cobalt::Docs::Pages"
       recursively added to your destination folder.</p>
       <p>You can specify different template extensions by setting the
       <code>template_extensions</code> field in your config file:</p>
-
       <pre><code>template_extensions: ['txt', 'lqd']</code></pre>
+
       <h3>Custom Paths</h3>
       <p>Custom paths are much like permalinks in Jekyll, but with a bit more
       flexibility. You can specify a <code>path</code> attribute in the front
@@ -52,12 +52,13 @@ path: /some/other/path/
       <pre><code>date: 01 Jan 2016 21:00:00 +0100
 path: /:year/:month/:day/thing.html
 </code></pre>
-      <p>-> <code>/2016/01/01/thing.html</code></p>
+      <p>-&gt; <code>/2016/01/01/thing.html</code></p>
       <pre><code>date: 01 Jan 2016 21:00:00 +0100
 author: johann
 path: /:author/:year/:month/:day/title
 </code></pre>
-      <p>-> <code>/johann/2016/01/01/title/index.html</code></p>
+      <p>-&gt; <code>/johann/2016/01/01/title/index.html</code></p>
+
       <h3>Attributes</h3>
       <p>All template files have access to a set of attributes.</p>
       <p>In example above title is accessible via <code>{{ title }}</code> and
