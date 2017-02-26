@@ -9,68 +9,21 @@ title: "Cobalt::Docs:Layouts"
         <li><a href="/docs/">Getting Started</a></li>
         <li><a href="/docs/usage.html">Usage</a></li>
         <li><a class="active" href="/docs/layouts.html">Layouts</a></li>
-        <li><a href="/docs/posts.html">Posts</a></li>
         <li><a href="/docs/pages.html">Pages</a></li>
+        <li><a href="/docs/posts.html">Posts</a></li>
         <li><a href="/docs/rss.html">RSS</a></li>
         <li><a href="/docs/deployment.html">Deployment</a></li>
       </ul>
     </aside>
     <main>
       <h2>Layouts</h2>
-      <p>You can have custom layouts in the <code>_layouts</code> directory.</p>
-      <p>Layouts will be compiled as liquid templates.</p>
-      <h3>Usage</h3>
-      <p>To include liquid in your project add the following to your
-        Cargo.toml:</p>
-<pre><code>toml
-[dependencies]
-liquid = "0.9"
-</code></pre>
+      <p>Layouts are templates in the <code>_layouts</code> directory that
+      contain the common formatting for your pages.  They are compiled as <a
+      href="https://shopify.github.io/liquid/">liquid templates</a> using <a
+      href="https://github.com/cobalt-org/liquid-rust">liquid-rust</a>.</p>
 
-      <p>Now you can use the crate in your code</p>
-
-      <pre><code>extern crate liquid;</code></pre> 
-
-      <p>Example:</p>
-
-      <p>You can find a reference on Liquid syntax
-      [here](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers).</p>
-
-      <h3>Plugins</h3>
-      <p>Cache block ( File and Redis ) :
-        <a href="https://github.com/FerarDuanSednan/liquid-rust-cache">
-          https://github.com/FerarDuanSednan/liquid-rust-cache
-        </a>
-      </p>
-
-      <h3>Extending Liquid</h3>
-
-      <h4>Create your own filters</h4>
-
-      <p>Creating your own filters is very easy. Filters are simply functions or
-      closures that take an input `Value` and a `Vec<Value>` of optional
-      arguments and return a `Value` to be rendered or consumed by chained
-      filters.</p>
-
-      <h4>Create your own tags</h4>
-
-      <p>Tags are made up of two parts, the initialization and the
-      rendering.</p>
-
-      <p>Initialization happens when the parser hits a Liquid tag that has your
-      designated name. You will have to specify a function or closure that will
-      then return a `Renderable` object to do the rendering.</p>
-
-      <h3>Create your own tag blocks</h3>
-
-      <p>Blocks work very similar to Tags. The only difference is that blocks
-      contain other markup, which is why block initialization functions take
-      another argument, a list of `Element`s that are inside the specified
-      block.</p>
-
-      <p>For an implementation of a `Shout` block, see 
-      [this example](https://github.com/johannhof/liquid-plugin-example/blob/master/src/lib.rs).
-      </p>
+      <p>See <a href="/docs/pages.html">pages</a> for more information on what
+      variables are available</p>
     </main>
   </div>
 </section>

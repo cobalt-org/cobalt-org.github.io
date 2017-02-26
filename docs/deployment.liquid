@@ -9,8 +9,8 @@ title: "Cobalt::Docs::Deployment"
         <li><a href="/docs/">Getting Started</a></li>
         <li><a href="/docs/usage.html">Usage</a></li>
         <li><a href="/docs/layouts.html">Layouts</a></li>
-        <li><a href="/docs/posts.html">Posts</a></li>
         <li><a href="/docs/pages.html">Pages</a></li>
+        <li><a href="/docs/posts.html">Posts</a></li>
         <li><a href="/docs/rss.html">RSS</a></li>
         <li><a class="active" href="/docs/deployment.html">Deployment</a></li>
       </ul>
@@ -23,7 +23,9 @@ title: "Cobalt::Docs::Deployment"
       you have build the site with <code>build</code> you can run
       <code>import</code>. There are also some flags that can be found via
       <code>import --help</code>.</p>
+
       <h3>TravisCI</h3>
+      <h4>Project Site</h4>
       <p>You can easily deploy a cobalt site to <code>gh-pages</code>! To do
       this with travis is also very easy. You will need to have rust available
       on travis. In your <code>travis.yml</code> you will need to have something
@@ -39,8 +41,8 @@ script:
   - cobalt build
 
 after_success: |
-  [ $TRAVIS_BRANCH = master ] &&  
-  [ $TRAVIS_PULL_REQUEST = false ] &&  
+  [ $TRAVIS_BRANCH = master ] &&
+  [ $TRAVIS_PULL_REQUEST = false ] &&
   cobalt import &&
   git config user.name "Cobalt Site Deployer" &&
   git config user.email "name@example.com" &&
@@ -54,6 +56,12 @@ after_success: |
         cli tool</a> to
       encrypt your personal access token. You can do this like so <code>travis
         encrypt GH_TOKEN=... --add env.global</code></p>
+      <h4>Personal or Organization Site</h4>
+      <p>The main difference with a personal site is that github only allows
+      the <code>master</code> branch to serve the pages.  Instead, you could
+      keep your source in another branch, like <code>source</code> and have
+      cobalt import your site into the <code>master</code> branch.</p>
+
       <h3>GitLab CI</h3>
       <p>You can also deploy a cobalt site to <a
         href="http://pages.gitlab.io/">GitLab Pages</a> using GitLab CI.  GitLab
