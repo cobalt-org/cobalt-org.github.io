@@ -1,0 +1,41 @@
+extends: default.liquid
+title: "Cobalt::Docs::Config"
+---
+<section class="docs">
+  <div class="inner">
+    <aside>
+      <ul>
+        <li><a href="/docs/">Getting Started</a></li>
+        <li><a href="/docs/usage.html">Usage</a></li>
+        <li><a class="active" href="/docs/config.html">Config</a></li>
+        <li><a href="/docs/layouts.html">Layouts</a></li>
+        <li><a href="/docs/pages.html">Pages</a></li>
+        <li><a href="/docs/posts.html">Posts</a></li>
+        <li><a href="/docs/rss.html">RSS</a></li>
+        <li><a href="/docs/deployment.html">Deployment</a></li>
+      </ul>
+    </aside>
+    <main>
+    <h2>Config File</h2>
+    <p>In addition to change the defaults through cli options cobalt allows to
+    specify a config file (.cobalt.yml per default) where you can write these
+    configurations in.</p>
+    <p>You can see a config file used by <a
+    href="https://github.com/amethyst/website/blob/master/src/.cobalt.yml">amethyst's
+    website</a></p>
+
+    <h3>Full Config File</h3>
+      <pre><code>
+source: PATH_TO_FOLDER
+dest: PATH_TO_FOLDER
+layouts: PATH_TO_FOLDER
+posts: PATH_TO_FOLDER
+template_extensions: ['template', 'lqd', 'whatever']
+rss: PATH_FOR_XML_FILE_TO_GENERATE
+name: Cool name
+description: My awesome blog
+link: http://example.com
+</code></pre>
+    </main>
+  </div>
+</section>
