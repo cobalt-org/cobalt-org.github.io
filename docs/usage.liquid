@@ -19,31 +19,35 @@ title: "Cobalt::Docs::Usage"
     <main>
       <h2>Usage</h2>
       <pre><code>
-cobalt -h
+$ cobalt -h
+USAGE:
+    cobalt [FLAGS] [OPTIONS] <SUBCOMMAND>
 
-  new -- create a new cobalt project
-  build -- build the cobalt project at the source dir
-  serve -- build and serve the cobalt project at the source dir
-  watch -- build, serve, and watch the project at the source dir
-  import -- moves the contents of the dest folder to the gh-pages branch
+FLAGS:
+        --drafts     Include drafts.
+    -h, --help       Prints help information
+        --silent     Suppress all output
+        --trace      Log ultra-verbose (trace level) information
+    -V, --version    Prints version information
 
-Options:
-    -s, --source        Source folder, Default: ./
-    -d, --destination   Destination folder, Default: ./
-    -c, --config        Config file to use, Default: .cobalt.yml
-    -l, --layouts       Layout templates folder, Default: _layouts/
-    -p, --posts         Posts folder, Default: posts/
-    -P, --port          Port to serve from, Default: 3000
-    -b, --branch        Branch that will be used to import the site to,
-                        Default: gh-pages
-    -m, --message       Commit message that will be used on import, Default:
-                        cobalt site import
-        --debug         Log verbose (debug level) information
-        --trace         Log ultra-verbose (trace level) information
-        --silent        Suppress all output
-    -i, --import        Import after build to gh-pages branch
-    -h, --help          Print this help menu
-    -v, --version       Display version
+OPTIONS:
+    -c, --config <FILE>            Config file to use [default: .cobalt.yml]
+    -d, --destination <DIR>        Destination folder [default: ./]
+        --dump <dump>...           Dump the specified internal state [values: Liquid]
+    -l, --layouts <DIR>            Layout templates folder [default: ./_layouts]
+    -L, --log-level <log-level>    Log level [default: info] [values: error, warn, info, debug, trace, off]
+    -p, --posts <DIR>              Posts folder [default: ./posts]
+    -s, --source <DIR>             Source folder [default: ./]
+
+SUBCOMMANDS:
+    build     build the cobalt project at the source dir
+    clean     cleans directory set as destination
+    help      Prints this message or the help of the given subcommand(s)
+    import    moves the contents of the dest folder to the gh-pages branch
+    init      create a new cobalt project
+    new       Create a new post or page
+    serve     build and serve the cobalt project at the source dir
+    watch     build, serve, and watch the project at the source dir
       </code></pre>
     </main>
   </div>
