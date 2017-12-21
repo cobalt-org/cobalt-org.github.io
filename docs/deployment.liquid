@@ -32,22 +32,20 @@ title: "Cobalt::Docs::Deployment"
       on travis. In your <code>travis.yml</code> you will need to have something
       similar to this:</p>
 <pre><code>sudo: false
-language: rust
-
+sudo: false
 before_script:
-  - cargo install cobalt-bin
-  - export PATH="$PATH:/home/travis/.cargo/bin"
-
+  - curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-org/cobalt.rs --crate cobalt --force --target x86_64-unknown-linux-gnu
+  - export PATH="$PATH:~/.cargo/bin"
 script:
   - cobalt build
 
-after_success: |
-  [ $TRAVIS_BRANCH = master ] &&
-  [ $TRAVIS_PULL_REQUEST = false ] &&
-  cobalt import &&
-  git config user.name "Cobalt Site Deployer" &&
-  git config user.email "name@example.com" &&
-  git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  local_dir: build
+  on:
+    branch: master
 </code></pre>
       <p>For the <code>GH_TOKEN</code> you will need to create a personal access
       token, which can be found <a
