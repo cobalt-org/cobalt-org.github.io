@@ -274,13 +274,13 @@ pre code {
   background: var(--med-light-blue);
 }
 
-.button.install {
+.button.start {
   background: var(--light-blue);
 }
 
-.button.install:hover,
-.button.install:active,
-.button.install:focus {
+.button.start:hover,
+.button.start:active,
+.button.start:focus {
   background: var(--med-light-blue);
 }
 
