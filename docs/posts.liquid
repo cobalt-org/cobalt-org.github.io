@@ -1,29 +1,14 @@
-extends: default.liquid
+extends: docs.liquid
 title: "Cobalt::Docs::Posts"
+route: posts
 ---
-
-<section class="docs">
-  <div class="inner">
-    <aside>
-      <ul>
-        <li><a href="/docs/">Getting Started</a></li>
-        <li><a href="/docs/usage.html">Usage</a></li>
-        <li><a href="/docs/config.html">Config</a></li>
-        <li><a href="/docs/layouts.html">Layouts</a></li>
-        <li><a href="/docs/pages.html">Pages</a></li>
-        <li><a class="active" href="/docs/posts.html">Posts</a></li>
-        <li><a href="/docs/rss.html">RSS</a></li>
-        <li><a href="/docs/deployment.html">Deployment</a></li>
-      </ul>
-    </aside>
-    <main>
-      <h2>Posts</h2>
-      <p>Posts are special <a href="/docs/pages.html">pages</a> that live in
-      <code>posts</code>.  You can use a different directory for posts with the
-      <code>-p</code> flag or by setting the <code>posts</code> variable in
-      your .cobalt.yml.</p>
-      <p>Example:</p>
-      <pre><code>
+<h2>Posts</h2>
+<p>Posts are special <a href="/docs/pages.html">pages</a> that live in
+<code>posts</code>.  You can use a different directory for posts with the
+<code>-p</code> flag or by setting the <code>posts</code> variable in
+your .cobalt.yml.</p>
+<p>Example:</p>
+<pre><code>
 extends: posts.liquid
 
 title:   My first Blogpost
@@ -33,19 +18,16 @@ Hey there this is my first blogpost and this is super awesome.
 
 My Blog is lorem ipsum like, yes it is..
 </code></pre>
-      <p>The <code>date</code> attribute will be used to sort blog posts (from
-      last to
-      first). <code>date</code> must have the format <code>%dd %Mon %YYYY
-      %HH:%MM:%SS %zzzz</code>, so for
-      example <code>27 May 2016 21:00:30 +0100</code>.</p>
+<p>The <code>date</code> attribute will be used to sort blog posts (from
+last to
+first). <code>date</code> must have the format <code>%dd %Mon %YYYY
+%HH:%MM:%SS %zzzz</code>, so for
+example <code>27 May 2016 21:00:30 +0100</code>.</p>
 
-      <h3>Drafts</h3>
-      <p>Cobalt supports leaving posts in "draft" state. Drafts will not be
-      rendered unless Cobalt is run with the <code>--drafts</code> flag.</p>
-      <p>To mark a post as draft you can either set draft: true in your front
-      matter or add it to the drafts folder (<code>_drafts</code> by default). The draft
-      folder location can be specified using the draft key in your
-      .cobalt.yml.</p>
-    </main>
-  </div>
-</section>
+<h3>Drafts</h3>
+<p>Cobalt supports leaving posts in "draft" state. Drafts will not be
+rendered unless Cobalt is run with the <code>--drafts</code> flag.</p>
+<p>To mark a post as draft you can either set draft: true in your front
+matter or add it to the drafts folder (<code>_drafts</code> by default). The draft
+folder location can be specified using the draft key in your
+.cobalt.yml.</p>

@@ -1,37 +1,19 @@
-extends: default.liquid
+extends: docs.liquid
 title: "Cobalt::Docs::RSS"
+route: rss
 ---
-
-<section class="docs">
-  <div class="inner">
-    <aside>
-      <ul>
-        <li><a href="/docs/">Getting Started</a></li>
-        <li><a href="/docs/usage.html">Usage</a></li>
-        <li><a href="/docs/config.html">Config</a></li>
-        <li><a href="/docs/layouts.html">Layouts</a></li>
-        <li><a href="/docs/pages.html">Pages</a></li>
-        <li><a href="/docs/posts.html">Posts</a></li>
-        <li><a class="active" href="/docs/rss.html">RSS</a></li>
-        <li><a href="/docs/deployment.html">Deployment</a></li>
-      </ul>
-    </aside>
-    <main>
-      <h2>RSS</h2>
-      <p>To generate an RSS file from the metadata of your <code>_posts</code>,
-      you need to provide the following data in your config.file:</p>
-      <pre><code># path where the RSS file should be generated
+<h2>RSS</h2>
+<p>To generate an RSS file from the metadata of your <code>_posts</code>,
+you need to provide the following data in your config.file:</p>
+<pre><code># path where the RSS file should be generated
 rss: rss.xml
 name: My blog!
 description: Blog description
 link: http://example.com
-      </code></pre>
-      <p>None of these fields are optional, as by the <a
-      href="https://github.com/cobalt-org/cobalt.rs/blob/master">RSS 2.0
-      spec.</a></p>
-      <p>Make sure to also provide the fields <code>title</code>,
-      <code>date</code>, and <code>description</code> in the front matter of
-      your posts.</p>
-    </main>
-  </div>
-</section>
+</code></pre>
+<p>None of these fields are optional, as by the <a
+href="https://github.com/cobalt-org/cobalt.rs/blob/master">RSS 2.0
+spec.</a></p>
+<p>Make sure to also provide the fields <code>title</code>,
+<code>date</code>, and <code>description</code> in the front matter of
+your posts.</p>

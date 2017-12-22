@@ -1,24 +1,9 @@
-extends: default.liquid
+extends: docs.liquid
 title: "Cobalt::Docs::Usage"
+route: usage
 ---
-
-<section class="docs">
-  <div class="inner">
-    <aside>
-      <ul>
-        <li><a href="/docs/">Getting Started</a></li>
-        <li><a class="active" href="/docs/usage.html">Usage</a></li>
-        <li><a href="/docs/config.html">Config</a></li>
-        <li><a href="/docs/layouts.html">Layouts</a></li>
-        <li><a href="/docs/pages.html">Pages</a></li>
-        <li><a href="/docs/posts.html">Posts</a></li>
-        <li><a href="/docs/rss.html">RSS</a></li>
-        <li><a href="/docs/deployment.html">Deployment</a></li>
-      </ul>
-    </aside>
-    <main>
-      <h2>Usage</h2>
-      <pre><code>
+<h2>Usage</h2>
+<pre><code>
 $ cobalt -h
 USAGE:
     cobalt [FLAGS] [OPTIONS] <SUBCOMMAND>
@@ -48,7 +33,4 @@ SUBCOMMANDS:
     new       Create a new post or page
     serve     build and serve the cobalt project at the source dir
     watch     build, serve, and watch the project at the source dir
-      </code></pre>
-    </main>
-  </div>
-</section>
+</code></pre>
