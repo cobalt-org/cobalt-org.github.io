@@ -284,23 +284,23 @@ pre code {
   background: var(--med-light-blue);
 }
 
-.button.contrib:hover,
-.button.contrib:active,
-.button.contrib:focus {
+.button.help {
+  background: var(--yellow);
+}
+
+.button.help:hover,
+.button.help:active,
+.button.help:focus {
   background: var(--med-light-yellow);
 }
 
 .button.contrib {
-  background: var(--yellow);
-}
-
-.button.github {
   background: var(--dark-grey);
 }
 
-.button.github:hover,
-.button.github:active,
-.button.github:focus {
+.button.contrib:hover,
+.button.contrib:active,
+.button.contrib:focus {
   background: var(--med-grey);
 }
 
