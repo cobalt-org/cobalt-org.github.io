@@ -16,7 +16,7 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 ### Usage
 
-#### init
+#### Start
 
 Create a site with an example pages, posts, and layouts:
 ```
@@ -24,7 +24,7 @@ $ cobalt init myBlog
 $ cd myBlog
 ```
 
-#### watch
+#### Preview
 
 Serve your site at `127.0.0.1:3000`
 ```
@@ -32,7 +32,7 @@ $ cobalt watch
 ```
 This provides live reload; it will re-generate your site as you add or change content.
 
-#### new
+#### Add a Page
 
 Add a new page or post to your site:
 ```
@@ -48,7 +48,7 @@ pass the `--drafts` flag:
 $ cobalt watch --drafts
 ```
 
-#### publish
+#### Publish a Post
 
 Once your post is ready, you can publish it:
 ```
