@@ -2,8 +2,9 @@ extends: docs.liquid
 title: "Cobalt::Docs::Usage"
 route: usage
 ---
-<h2>Usage</h2>
-<pre><code>
+## Usage
+
+```
 $ cobalt -h
 USAGE:
     cobalt [FLAGS] [OPTIONS] <SUBCOMMAND>
@@ -33,4 +34,4 @@ SUBCOMMANDS:
     new       Create a new post or page
     serve     build and serve the cobalt project at the source dir
     watch     build, serve, and watch the project at the source dir
-</code></pre>
+```
