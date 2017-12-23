@@ -11,13 +11,22 @@
       <section class="docs">
         <div class="inner">
           <aside>
+            <p>Basics</p>
             <ul>
               <li><a {%if route == "usage"%}class="active"{%endif%} href="/docs/usage.html">Usage</a></li>
               <li><a {%if route == "config"%}class="active"{%endif%} href="/docs/config.html">Config</a></li>
+            </ul>
+            <hr>
+            <p>Content</p>
+            <ul>
               <li><a {%if route == "layouts"%}class="active"{%endif%} href="/docs/layouts.html">Layouts</a></li>
               <li><a {%if route == "pages"%}class="active"{%endif%} href="/docs/pages.html">Pages</a></li>
               <li><a {%if route == "posts"%}class="active"{%endif%} href="/docs/posts.html">Posts</a></li>
               <li><a {%if route == "rss"%}class="active"{%endif%} href="/docs/rss.html">RSS</a></li>
+            </ul>
+            <hr>
+            <p>Deployment</p>
+            <ul>
               <li><a {%if route == "deployment"%}class="active"{%endif%} href="/docs/deployment.html">Deployment</a></li>
             </ul>
           </aside>
