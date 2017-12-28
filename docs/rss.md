@@ -5,7 +5,7 @@ route: rss
 ## RSS
 
 To generate an RSS file from the metadata of your `_posts`,
-you need to provide the following data in your `.cobalt.yml`:
+you need to provide the following data in your `_cobalt.yml`:
 
 ```yml
 # path where the RSS file should be generated

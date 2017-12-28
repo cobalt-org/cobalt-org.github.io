@@ -7,7 +7,7 @@ route: posts
 
 Posts are special [pages](/docs/pages.html) that live in
 [`posts`](/docs/directory.html).  You can use a different directory for posts with the
-[`posts.dir`](/docs/config.html) in your `.cobalt.yml`.
+[`posts.dir`](/docs/config.html) in your `_cobalt.yml`.
 
 ### Drafts
 
