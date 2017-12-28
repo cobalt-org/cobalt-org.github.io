@@ -20,8 +20,8 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 Create a site with an example pages, posts, and layouts:
 ```
-$ cobalt init myBlog
-$ cd myBlog
+$ mkdir myBlog && cd myBlog
+$ cobalt init
 ```
 
 #### Preview

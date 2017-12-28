@@ -2,36 +2,58 @@ extends: docs.liquid
 title: "Cobalt::Docs::Usage"
 route: usage
 ---
+
 ## Usage
 
+### init
+
+Create a site with an example pages, posts, and layouts:
+```bash
+# Create site in current directory
+$ cobalt init
+# Create site in `myBlog` sub-directory
+$ cobalt init myBlog
 ```
-$ cobalt -h
-USAGE:
-    cobalt [FLAGS] [OPTIONS] <SUBCOMMAND>
 
-FLAGS:
-        --drafts     Include drafts.
-    -h, --help       Prints help information
-        --silent     Suppress all output
-        --trace      Log ultra-verbose (trace level) information
-    -V, --version    Prints version information
+### watch
 
-OPTIONS:
-    -c, --config <FILE>            Config file to use [default: .cobalt.yml]
-    -d, --destination <DIR>        Destination folder [default: ./]
-        --dump <dump>...           Dump the specified internal state [values: Liquid]
-    -l, --layouts <DIR>            Layout templates folder [default: ./_layouts]
-    -L, --log-level <log-level>    Log level [default: info] [values: error, warn, info, debug, trace, off]
-    -p, --posts <DIR>              Posts folder [default: ./posts]
-    -s, --source <DIR>             Source folder [default: ./]
+Serve your site at `127.0.0.1:3000`
+```bash
+$ cobalt watch
+# Include drafts
+$ cobalt watch --drafts
+```
+This provides live reload; it will re-generate your site as you add or change content.
 
-SUBCOMMANDS:
-    build     build the cobalt project at the source dir
-    clean     cleans directory set as destination
-    help      Prints this message or the help of the given subcommand(s)
-    import    moves the contents of the dest folder to the gh-pages branch
-    init      create a new cobalt project
-    new       Create a new post or page
-    serve     build and serve the cobalt project at the source dir
-    watch     build, serve, and watch the project at the source dir
+### new
+
+Add a new page or post to your site:
+```bash
+# Creates page `cats-around-the-world.md` in the current dirsctory
+$ cobalt new "Cats Around the World"
+# Creates post `cats-around-the-world.md` in the `posts` directory
+$ cobalt new "Cats Around the World" --destination posts
+# Creates post `cats.md` in the `posts` directory
+$ cobalt new "Cats Around the World" --destination posts/cats.md
+```
+
+### publish
+
+Once your post is ready, you can publish it:
+```bash
+$ cobalt publish posts/cats-around-the-world.md
+```
+
+The page will no longer be a "draft" and the `published_date` will be set to today.
+
+### More
+
+To see all the available commands, run
+```bash
+$ cobalt --help
+```
+
+You can then get help with those commands by running
+```bash
+$ cobalt <command> --help
 ```
