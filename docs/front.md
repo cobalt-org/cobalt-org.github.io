@@ -14,7 +14,7 @@ Example:
 
 ```
 title:   My first Blogpost
-published_date:    01 Jan 2016 21:00:00 +0100
+published_date:    2016-01-01 21:00:00 +0100
 layout: posts.liquid
 ---
 Hey there this is my first blogpost and this is super awesome.
@@ -63,7 +63,7 @@ Metadata            | Format           | Description
 --------------------|------------------|-------------
 `title`             | String           | The user-friendly name of the page.
 `description`       | String           | The description of the page's content.
-`published_date`    | `DD Month YYYY HH:MM:SS TZ` | The date the page was initially published.
+`published_date`    | `YYYY-MM-DD HH:MM:SS TZ` | The date the page was initially published.
 `format`            | `Raw`, `Markdown`        | Content format that needs [parsing](/docs/pages.html).
 `layout`            | String or `null` | The layout template that wraps the page content, if present.
 `is_draft`          | Boolean          | If true, not published by default.

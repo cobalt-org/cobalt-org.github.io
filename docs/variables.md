@@ -49,7 +49,7 @@ Variable              | Format          | Description
 `page.title`          | String          | The title of the page, see [frontmatter](/docs/front.html).
 `page.description`    | String          | The description of the page, see [frontmatter](/docs/front.html).
 `page.categories`     | List of Strings | Hierarchical categories this page lives under, see [frontmatter](/docs/front.html).
-`page.published_date` | `DD Month YYYY HH:MM:SS TZ` | The date the page was initially published, see [frontmatter](/docs/front.html).
+`page.published_date` | `YYYY-MM-DD HH:MM:SS TZ` | The date the page was initially published, see [frontmatter](/docs/front.html).
 `page.is_draft`       | Boolean         | See [frontmatter](/docs/front.html).
 `page.file.permalink` | String          | Relative path to the source file.
 `page.data`           | Object          | User-defined data, see [frontmatter](/docs/front.html).
