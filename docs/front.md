@@ -70,6 +70,6 @@ Metadata            | Format           | Description
 `permalink`         | [String](/docs/permalink.html) | The path for the generated page in [`destination`](/docs/directory.html).
 `slug`              | String           | The path-friendly name of the file for use in [permalinks](/docs/permalink.html)
 `excerpt_separator` | String           | A marker for what leading content should be extracted from the content as an excerpt.  `""` will cause no excerpt to be generated.
-`excerpt`           | String           | Manually override the excerpt.
+`excerpt`           | String           | Manually override the extracted excerpt.  This will be processed like a [page](/docs/pages.html).
 `categories`        | List of Strings  | Hierarchical categories this page lives under.
 `data`              | Object           | User-defined data available at [`page.data`](/docs/variables.html).
