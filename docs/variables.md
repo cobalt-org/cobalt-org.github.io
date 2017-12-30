@@ -25,10 +25,11 @@ Example:
 
 ### Global variables
 
-Variable | Format | Description
----------|--------|-------------
-`site`   | Object | Site-wide information
-`page`   | Object | Current-page information
+Variable     | Format | Description
+-------------|--------|-------------
+`site`       | Object | Site-wide information
+`page`       | Object | Current-page information
+`collection` | Object | Built-in [`posts`](/docs/posts.html).
 
 ### Site Variables
 
@@ -52,6 +53,7 @@ Variable              | Format          | Description
 `page.published_date` | `YYYY-MM-DD HH:MM:SS TZ` | The date the page was initially published, see [frontmatter](/docs/front.html).
 `page.is_draft`       | Boolean         | See [frontmatter](/docs/front.html).
 `page.file.permalink` | String          | Relative path to the source file.
+`page.collection`     | String          | The slug of the page's collection.  `"posts"` for posts.
 `page.data`           | Object          | User-defined data, see [frontmatter](/docs/front.html).
 
 Additionally, in the context of your [page layout](/docs/layouts.html):
@@ -60,3 +62,15 @@ Variable       | Format | Description
 ---------------|--------|------------
 `page.content` | String | The rendered page content (i.e. excludes the layout).
 `page.excerpt` | String | The rendered excerpt of a page, see [`excerpt` / `excerpt_separator`](/docs/front.html).
+
+### Collection Variables
+
+Below, the built-in `posts` collection is demonstrated.
+
+Variable                        | Format | Description
+--------------------------------|--------|------------
+`collections.posts.title`       | String | The title of the posts collection, see [`_cobalt.yml`](/docs/config.html).
+`collections.posts.description` | String | The description of the posts collection, see [`_cobalt.yml`](/docs/config.html).
+`collections.posts.slug`        | String | The identifier of the posts collection, see [`_cobalt.yml`](/docs/config.html).
+`collections.posts.rss`         | String | The permalink for the posts' RSS feed, see [`_cobalt.yml`](/docs/config.html) and [RSS](/docs/rss.html).
+`collections.posts.jsonfeed`    | String | The permalink for the posts' RSS feed, see [`_cobalt.yml`](/docs/config.html).
