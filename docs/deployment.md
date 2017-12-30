@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Deployment"
+title: "Docs::Deployment"
 route: deployment
 ---
 ## Deployment

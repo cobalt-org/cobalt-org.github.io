@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::RSS"
+title: "Docs::RSS"
 route: rss
 ---
 ## RSS

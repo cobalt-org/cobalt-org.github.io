@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Usage"
+title: "Docs::Usage"
 route: usage
 ---
 

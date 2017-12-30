@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Install"
+title: "Docs::Install"
 route: install
 ---
 

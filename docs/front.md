@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Frontmatter"
+title: "Docs::Frontmatter"
 route: front
 ---
 ## Frontmatter

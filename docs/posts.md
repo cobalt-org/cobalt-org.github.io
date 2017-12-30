@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Posts"
+title: "Docs::Posts"
 route: posts
 ---
 

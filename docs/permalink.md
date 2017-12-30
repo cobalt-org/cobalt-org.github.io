@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Permalink Templates"
+title: "Docs::Permalink Templates"
 route: permalink
 ---
 

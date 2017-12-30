@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs:Layouts"
+title: "Docs:Layouts"
 route: layouts
 ---
 

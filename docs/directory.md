@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Directory"
+title: "Docs::Directory"
 route: directory
 ---
 

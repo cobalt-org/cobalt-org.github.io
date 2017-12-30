@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Data Files"
+title: "Docs::Data Files"
 route: data
 ---
 

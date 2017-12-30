@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Liquid Variables"
+title: "Docs::Liquid Variables"
 route: variables
 ---
 

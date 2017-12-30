@@ -1,5 +1,5 @@
 extends: docs.liquid
-title: "Cobalt::Docs::Config"
+title: "Docs::Configuration"
 route: config
 ---
 
