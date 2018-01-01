@@ -25,12 +25,15 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
-  local_dir: _site
+  local_dir: build
+  target_branch: master
   on:
-    branch: master
+    branch: source
 ```
 
-For `local_dir`, update it according to your [`destination`](/docs/config.html)
+- `local_dir`: update it according to your [`destination`](/docs/config.html)
+- `target_branch`: Update to reflect the branch that you configured as the source for [Github Pages](https://pages.github.com/).
+- `on: branch`: Update to reflect the branch your source is kept in.
 
 2. Configure your `GH_TOKEN`
 
