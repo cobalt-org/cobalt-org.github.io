@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include "head.liquid" %}
+  </head>
+  <body>
+    <header>
+      {% include "header.liquid" %}
+    </header>
+    <main>
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a {%if route == "install"%}class="active"{%endif%} href="/docs/install.html">Install</a></li>
+              <li><a {%if route == "usage"%}class="active"{%endif%} href="/docs/usage.html">Usage</a></li>
+              <li><a {%if route == "directory"%}class="active"{%endif%} href="/docs/directory.html">Directory Structure</a></li>
+              <li><a {%if route == "config"%}class="active"{%endif%} href="/docs/config.html">Configuration</a></li>
+            </ul>
+            <hr>
+            <p>Content</p>
+            <ul>
+              <li><a {%if route == "pages"%}class="active"{%endif%} href="/docs/pages.html">Pages</a></li>
+              <li><a {%if route == "posts"%}class="active"{%endif%} href="/docs/posts.html">Posts</a></li>
+              <li><a {%if route == "front"%}class="active"{%endif%} href="/docs/front.html">Frontmatter</a></li>
+              <li><a {%if route == "variables"%}class="active"{%endif%} href="/docs/variables.html">Variables</a></li>
+              <li><a {%if route == "permalink"%}class="active"{%endif%} href="/docs/permalink.html">Permalink</a></li>
+              <li><a {%if route == "layouts"%}class="active"{%endif%} href="/docs/layouts.html">Layouts</a></li>
+              <li><a {%if route == "assets"%}class="active"{%endif%} href="/docs/assets.html">Assets</a></li>
+              <li><a {%if route == "data"%}class="active"{%endif%} href="/docs/data.html">Data files</a></li>
+            </ul>
+            <hr>
+            <p>Misc</p>
+            <ul>
+              <li><a {%if route == "rss"%}class="active"{%endif%} href="/docs/rss.html">RSS</a></li>
+              <li><a {%if route == "deployment"%}class="active"{%endif%} href="/docs/deployment.html">Deployment</a></li>
+            </ul>
+          </aside>
+          <main>
+          {{ content }}
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      {% include "footer.liquid" %}
+    </footer>
+  </body>
+</html>
