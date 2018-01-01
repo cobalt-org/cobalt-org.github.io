@@ -14,7 +14,7 @@ configuring a permalink, you're most likely to want to set it as a
 [default](/docs/config.html)
 
 Example:
-```
+```yml
 title:   My first Blogpost
 layout: posts.liquid
 permalink: /some/other/file.html
@@ -31,7 +31,7 @@ When you omit the file extension (e.g. `.html`) in your permalink, Cobalt will
 treat the permalink as a folder and create the file with the name `index.html`.
 
 Example:
-```
+```yml
 title:   My first Blogpost
 layout: posts.liquid
 permalink: /some/other/file
