@@ -15,10 +15,10 @@ Example:
 ```html
 <html>
   <head>
-    <title>{% raw %}{{ title }}{% endraw %}</title>
+    <title>{% raw %}{{ page.title }}{% endraw %}</title>
   </head>
   <body>
-  {% raw %}{{ content }}{% endraw %}
+  {% raw %}{{ page.content }}{% endraw %}
   </body>
 </html>
 ```
