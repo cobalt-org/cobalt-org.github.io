@@ -60,7 +60,7 @@ Variable     | Description
 `data`       | The frontmatter [`data`](/docs/front.html).
 
 Example:
-```
+```yml
 title: Corgi
 layout: posts.liquid
 categories:
@@ -81,7 +81,7 @@ Permalink Style | URL Template
 `path`          | `/{%raw%}{{parent}}{%endraw%}/{%raw%}{{name}}{%endraw%}{%raw%}{{ext}}{%endraw%}`
 
 Example file `some/other/file.md`:
-```
+```yml
 title:   My first Blogpost
 layout: posts.liquid
 permalink: path
