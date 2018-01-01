@@ -10,6 +10,7 @@ deploy:
   skip_cleanup: true
   github_token: $GH_TOKEN
   local_dir: build
+  target_branch: master
   on:
     branch: source
 env:
