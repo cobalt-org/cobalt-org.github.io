@@ -28,7 +28,7 @@ $ cobalt init
 
 Serve your site at `127.0.0.1:3000`
 ```
-$ cobalt watch
+$ cobalt serve
 ```
 This provides live reload; it will re-generate your site as you add or change content.
 
@@ -42,10 +42,10 @@ $ cobalt new "Cats Around the World"
 A file `cats-around-the-world.md` will be created in the current directory.
 The type of file created is based on which directory you put it in.
 
-Posts start out as "drafts".  For them to show up on `watch`, you'll need to
+Posts start out as "drafts".  For them to show up on `serve`, you'll need to
 pass the `--drafts` flag:
 ```
-$ cobalt watch --drafts
+$ cobalt serve --drafts
 ```
 
 #### Publish a Post

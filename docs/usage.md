@@ -15,13 +15,13 @@ $ cobalt init
 $ cobalt init myBlog
 ```
 
-### watch
+### serve
 
 Serve your site at `127.0.0.1:3000`
 ```bash
-$ cobalt watch
+$ cobalt serve
 # Include drafts
-$ cobalt watch --drafts
+$ cobalt serve --drafts
 ```
 This provides live reload; it will re-generate your site as you add or change content.
 

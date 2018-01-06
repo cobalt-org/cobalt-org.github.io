@@ -37,7 +37,7 @@ Variable           | Format | Description
 -------------------|--------|------------
 `site.title`       | String | The title of the entire site, see [`_cobalt.yml`](/docs/config.html).
 `site.description` | String | The description of the entire site, see [`_cobalt.yml`](/docs/config.html).
-`site.base_url`    | String | The URL of your site, see [`_cobalt.yml`](/docs/config.html).  This is helpful for making absolute URLs, particularly when run within [`cobalt watch`](/docs/usage.html).
+`site.base_url`    | String | The URL of your site, see [`_cobalt.yml`](/docs/config.html).  This is helpful for making absolute URLs, particularly when run within [`cobalt serve`](/docs/usage.html).
 `site.data`        | Object | The merged result of [`_data`](/docs/directory.html) and [`site: data`](/docs/config.html).
 
 ### Page Variables
