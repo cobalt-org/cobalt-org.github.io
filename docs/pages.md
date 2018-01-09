@@ -28,3 +28,13 @@ You can highlight your code using the `{%raw%}{% highlight LANG %}{%endraw%}` / 
 
 Alternatively, if your using Markdown, you can [annotate your code
 blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting).
+
+To see what syntaxes are supported:
+```sh
+$ cobalt debug highlight syntaxes
+```
+
+The theme is taken from your [`_cobalt.yml`](/docs/config.html).  To see the list of supported themes:
+```sh
+$ cobalt debug highlight themes
+```
