@@ -1,6 +1,7 @@
-extends: docs.liquid
 title: "Docs::Frontmatter"
-route: front
+layout: docs.liquid
+data:
+  route: front
 ---
 ## Frontmatter
 

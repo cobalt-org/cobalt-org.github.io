@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Posts"
-route: posts
+layout: docs.liquid
+data:
+  route: posts
 ---
-
 ## Posts
 
 Posts are special [pages](/docs/pages.html) that live in

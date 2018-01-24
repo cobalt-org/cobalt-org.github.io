@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Configuration"
-route: config
+layout: docs.liquid
+data:
+  route: config
 ---
-
 ## Config File
 
 [`_cobalt.yml`](/docs/directory.html) let's you specify site-wide options as well as defaults for pages.

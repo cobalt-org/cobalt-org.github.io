@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Data Files"
-route: data
+layout: docs.liquid
+data:
+  route: data
 ---
-
 ## Data Files
 
 Cobalt supports loading [yaml](http://yaml.org), [json](http://json.org), abd

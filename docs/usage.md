@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Usage"
-route: usage
+layout: docs.liquid
+data:
+  route: usage
 ---
-
 ## Usage
 
 ### init

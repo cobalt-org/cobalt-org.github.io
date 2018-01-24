@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Troubleshooting"
-route: trouble
+layout: docs.liquid
+data:
+  route: trouble
 ---
-
 ## Troubleshooting
 
 Every command supports logging additional detail that can be useful when troubleshooting cobalt.  For example:

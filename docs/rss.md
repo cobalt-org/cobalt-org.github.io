@@ -1,6 +1,7 @@
-extends: docs.liquid
 title: "Docs::RSS"
-route: rss
+layout: docs.liquid
+data:
+  route: rss
 ---
 ## RSS
 

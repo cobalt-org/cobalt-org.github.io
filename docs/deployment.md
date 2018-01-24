@@ -1,6 +1,7 @@
-extends: docs.liquid
 title: "Docs::Deployment"
-route: deployment
+layout: docs.liquid
+data:
+  route: deployment
 ---
 ## Deployment
 
@@ -16,7 +17,13 @@ also very easy.
 ```yml
 sudo: false
 before_script:
-  - curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-org/cobalt.rs --crate cobalt --force --target x86_64-unknown-linux-gnu
+  - curl -LSfs https://japaric.github.io/trust/install.sh |
+    sh -s --
+    --git cobalt-org/cobalt.rs
+    --crate cobalt
+    --force
+    --target x86_64-unknown-linux-gnu
+    --tag v0.11.1
   - export PATH="$PATH:~/.cargo/bin"
 script:
   - cobalt build
@@ -25,12 +32,13 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
-  local_dir: build
+  local_dir: _site
   target_branch: master
   on:
     branch: source
 ```
 
+- `--tag`: update to reflect the desired version of cobalt.
 - `local_dir`: update it according to your [`destination`](/docs/config.html)
 - `target_branch`: Update to reflect the branch that you configured as the source for [Github Pages](https://pages.github.com/).
 - `on: branch`: Update to reflect the branch your source is kept in.

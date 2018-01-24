@@ -1,6 +1,7 @@
-extends: docs.liquid
-title: "Docs"
-route: ""
+title: Docs
+layout: docs.liquid
+data:
+  route: ""
 ---
 ## Documentation
 

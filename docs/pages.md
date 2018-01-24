@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Pages"
-route: pages
+layout: docs.liquid
+data:
+  route: pages
 ---
-
 ## Pages
 
 A page is any file found in the [`source`](/docs/config.html) directory that

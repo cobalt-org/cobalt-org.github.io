@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Directory"
-route: directory
+layout: docs.liquid
+data:
+  route: directory
 ---
-
 ## Directory Structure
 
 By default, cobalt mirrors your source file hierarchy in the destination,

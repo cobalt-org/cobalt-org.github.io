@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Liquid Variables"
-route: variables
+layout: docs.liquid
+data:
+  route: variables
 ---
-
 ## Variables
 
 Cobalt makes a variety of data availale as Liquid variables.

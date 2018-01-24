@@ -1,0 +1,10 @@
+source: "."
+destination: build
+posts:
+  dir: posts
+  drafts_dir: _drafts
+site:
+  title: "Cobalt: Static Site Generator"
+  base_url: "https://cobalt-org.github.io"
+ignore:
+  - "build/*"

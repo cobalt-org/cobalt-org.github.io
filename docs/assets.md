@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Assets"
-route: assets
+layout: docs.liquid
+data:
+  route: assets
 ---
-
 ## Assets
 
 Assets are any non-[page](/docs/pages.html) files found in the

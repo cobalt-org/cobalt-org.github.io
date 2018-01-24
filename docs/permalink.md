@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Permalink Templates"
-route: permalink
+layout: docs.liquid
+data:
+  route: permalink
 ---
-
 ## Permalink Templates
 
 Permalinks refer to the relative URL for your pages.  Cobalt supports a

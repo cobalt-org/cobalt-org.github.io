@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs:Layouts"
-route: layouts
+layout: docs.liquid
+data:
+  route: layouts
 ---
-
 ## Layouts
 
 Layouts are templates in the [`_layouts` directory](/docs/directory.html) that contain the common

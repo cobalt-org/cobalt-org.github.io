@@ -1,8 +1,8 @@
-extends: docs.liquid
 title: "Docs::Install"
-route: install
+layout: docs.liquid
+data:
+  route: install
 ---
-
 ## Installation
 
 Cobalt supports Windows, Linux, and Mac.
