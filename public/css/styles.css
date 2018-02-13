@@ -31,7 +31,7 @@
 
   --font-stack: helvetica, arial, sans-serif;
 
-  --breakpoint: 41em;
+  --breakpoint: 45em;
 }
 
 html {
@@ -53,6 +53,11 @@ body {
 
 a {
   color: var(--orange);
+}
+
+hr {
+    color: #ccc;
+    width: 75%;
 }
 
 header {
@@ -112,7 +117,7 @@ header nav .button > span {
 @media (min-width: 41em) {
   header .inner {
     display: flex;
-    justtify-content: center;
+    justify-content: center;
   }
 
   header .primary {
@@ -304,7 +309,7 @@ pre code {
   background: var(--med-grey);
 }
 
-@media (min-width: 41em) {
+@media (min-width: 45em) {
   .columns {
     display: flex;
   }
@@ -332,4 +337,23 @@ footer .inner {
 footer p {
   margin: 0;
   padding: 1em 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table thead {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+table thead th {
+    border: 1px solid var(--dark-blue);
+    padding: 0.5em;
+}
+
+table tbody td {
+    border: 1px solid #ccc;
+    padding: 0.5em;
 }
