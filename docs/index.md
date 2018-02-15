@@ -10,7 +10,7 @@ take us from installation to deployment, and everywhere in between.
 
 ### Table of Contents
 
-To the left, to the left, you will find a basic table of contents.
+To the left, you will find a basic table of contents.
 For your convenience, you can find this on every docs page.
 
 ### Bugs
