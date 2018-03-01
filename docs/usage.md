@@ -29,7 +29,7 @@ This provides live reload; it will re-generate your site as you add or change co
 
 Add a new page or post to your site:
 ```bash
-# Creates page `cats-around-the-world.md` in the current dirsctory
+# Creates page `cats-around-the-world.md` in the current directory
 $ cobalt new "Cats Around the World"
 # Creates post `cats-around-the-world.md` in the `posts` directory
 $ cobalt new "Cats Around the World" --destination posts
