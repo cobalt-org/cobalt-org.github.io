@@ -58,6 +58,14 @@ Setting               | Format          | Description
 `ignore`              | List of [Strings](https://git-scm.com/docs/gitignore) | Specifies what files should be ignored by Cobalt by way of a list of [gitignore](https://git-scm.com/docs/gitignore) patterns for, relative to `source`.
 `destination`         | String          | Directory, relative to `_cobalt.yml`, where the output is written to.
 
+For example to unignore the `.well-known/` folder used in LetsEncrypt, add this to your `_cobalt.yml`.
+
+```yaml
+ignore:
+  - "!.well-known"
+  - "!.well-known/**/*"
+```
+
 ### Site options
 
 These are all under `site:` in the yaml:
