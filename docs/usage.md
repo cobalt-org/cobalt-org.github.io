@@ -32,9 +32,9 @@ Add a new page or post to your site:
 # Creates page `cats-around-the-world.md` in the current directory
 $ cobalt new "Cats Around the World"
 # Creates post `cats-around-the-world.md` in the `posts` directory
-$ cobalt new "Cats Around the World" --destination posts
+$ cobalt new "Cats Around the World" --file posts
 # Creates post `cats.md` in the `posts` directory
-$ cobalt new "Cats Around the World" --destination posts/cats.md
+$ cobalt new "Cats Around the World" --file posts/cats.md
 ```
 
 ### publish
