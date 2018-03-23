@@ -15,8 +15,16 @@ $ cobalt build --log-level=trace # Same as above
 
 ### Useful commands
 
+Show config after processing defaults, etc:
+```sh
+$ cobalt debug config
+```
+
 Show all files for a given collection:
 ```sh
+$ cobalt debug files pages
+$ cobalt debug files posts
+$ cobalt debug files posts --draft
 $ cobalt debug files assets
 $ cobalt debug files assets --trace
 ```
