@@ -26,7 +26,7 @@ source](/docs/install.html) with the `syntax-highlight` feature.
 
 You can highlight your code using the `{%raw%}{% highlight LANG %}{%endraw%}` / `{%raw%}{% endhighlight %}{%endraw%}` Liquid tags.
 
-Alternatively, if your using Markdown, you can [annotate your code
+Alternatively, if you are using Markdown, you can [annotate your code
 blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting).
 
 To see what syntaxes are supported:
