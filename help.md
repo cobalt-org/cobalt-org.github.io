@@ -20,6 +20,7 @@ Learn from other site's using cobalt
 - [sda.io](https://sda.io) ([Source](https://github.com/mfs/blog))
 - [booyaa.wtf](https://booyaa.wtf/tags/cobalt/) ([Source](https://github.com/booyaa/booyaa.github.io))
 - [uwe-arzt.de](https://uwe-arzt.de) ([Source](https://github.com/uwearzt/site-uwe-arzt.git))
+- [metta.systems](https://metta.systems) ([Source](https://github.com/metta-systems/metta.systems))
 
 ## Issues
 
