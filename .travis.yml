@@ -6,7 +6,7 @@ before_script:
     --crate cobalt
     --force
     --target x86_64-unknown-linux-gnu
-    --tag v0.11.1
+    --tag v0.12.2
   - export PATH="$PATH:~/.cargo/bin"
 script:
   - cobalt build
