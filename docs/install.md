@@ -26,15 +26,34 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 Requirements: [Rust](https://www.rust-lang.org/en-US/install.html)
 
-#### Prepration
+#### Preparation
 
 ##### Debian 9 (stretch)
 
-1. Install needed packages with `sudo apt install cmake git curl`
-2. Install rust (do **not** use the package `sudo apt install rust`
-   as this will install a old rust version). Use 
-   `curl https://sh.rustup.rs -sSf | sh` instead.
-3. Source the Rust environment with `source $HOME/.cargo/env`
+```bash
+# Install needed packages with
+sudo apt install cmake git curl build-essential libssl-dev
+
+# Install rust (do **not** use the package `sudo apt install rust`
+# ass this will install a old rust version). Use:
+curl https://sh.rustup.rs -sSf | sh
+# Source the Rust environment
+source $HOME/.cargo/env
+```
+
+##### Windows
+
+Without syntax highlighting / sass (requires `cargo ... --no-default-features`):
+
+1. Ensure [Rust is installed](https://rustup.rs/).
+
+With syntax highlighting / sass:
+
+1. Ensure [Rust is installed](https://rustup.rs/) using [Build Tools for Visual
+   Studio](https://visualstudio.microsoft.com/downloads/) instead of
+   MinGW/MSYS2.
+2. Install [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+3. Run `"<VS Path>\vcvarsall.bat" amd64` in your command prompt you'll build from.
 
 #### Compile Steps
 1. Either
