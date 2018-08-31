@@ -24,9 +24,7 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 ### From Source
 
-Requirements: [Rust](https://www.rust-lang.org/en-US/install.html)
-
-#### Preparation
+#### Requirements
 
 ##### Debian 9 (stretch)
 
