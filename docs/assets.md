@@ -12,5 +12,4 @@ These will be mirrored directly in the [`destination`](/docs/config.html) direct
 
 ### Sass
 
-Cobalt has experimental support for Sass.  It requires [installing from
-source](/docs/install.html).
+Cobalt has default support for Sass since v0.12.2.
