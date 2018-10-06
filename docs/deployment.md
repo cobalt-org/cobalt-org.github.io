@@ -64,19 +64,24 @@ cobalt import your site into the `master` branch.
 ### GitLab CI
 
 You can also deploy a cobalt site to [Gitlab Pages](http://pages.gitlab.io/)
-using GitLab CI.  GitLab CI uses [Docker](https://docs.docker.com), you can use
-[nott/cobalt](https://hub.docker.com/r/nott/cobalt/) or any other image with
-`cobalt` in `PATH`.
+using GitLab CI.  GitLab CI uses [Docker](https://docs.docker.com), so there
+are many ways to accomplish building your cobalt site.
 
-An example of `.gitlab-ci.yml`:
+This example `.gitlab-ci.yml` downloads a cobalt release from github, decompresses
+the program, and runs it:
 
 ```yml
-image: nott/cobalt:latest
+image: debian:latest
 
+variables:
+  COBALT_VERSION: "v0.13.2"
 pages:
   script:
+  - apt-get update && apt-get -y install wget tar
+  - wget https://github.com/cobalt-org/cobalt.rs/releases/download/$COBALT_VERSION/cobalt-$COBALT_VERSION-x86_64-unknown-linux-gnu.tar.gz
+  - tar -xf cobalt-$COBALT_VERSION-x86_64-unknown-linux-gnu.tar.gz
   - mkdir -p public
-  - cobalt build -d public
+  - ./cobalt build -d public
   artifacts:
     paths:
     - public/
