@@ -67,8 +67,7 @@ You can also deploy a cobalt site to [Gitlab Pages](http://pages.gitlab.io/)
 using GitLab CI.  GitLab CI uses [Docker](https://docs.docker.com), so there
 are many ways to accomplish building your cobalt site.
 
-This example `.gitlab-ci.yml` downloads a cobalt release from github, decompresses
-the program, and runs it:
+This example `.gitlab-ci.yml` installs and runs cobalt:
 
 ```yml
 image: debian:latest
@@ -77,11 +76,17 @@ variables:
   COBALT_VERSION: "v0.13.2"
 pages:
   script:
-  - apt-get update && apt-get -y install wget tar
-  - wget https://github.com/cobalt-org/cobalt.rs/releases/download/$COBALT_VERSION/cobalt-$COBALT_VERSION-x86_64-unknown-linux-gnu.tar.gz
-  - tar -xf cobalt-$COBALT_VERSION-x86_64-unknown-linux-gnu.tar.gz
+  - apt-get update && apt-get -y install curl
+  - curl -LSfs https://japaric.github.io/trust/install.sh |
+    sh -s --
+    --git cobalt-org/cobalt.rs
+    --crate cobalt
+    --force
+    --target x86_64-unknown-linux-gnu
+    --tag $COBALT_VERSION
+  - export PATH="$PATH:~/.cargo/bin"
   - mkdir -p public
-  - ./cobalt build -d public
+  - cobalt build -d public
   artifacts:
     paths:
     - public/
