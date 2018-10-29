@@ -33,7 +33,7 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 sudo apt install cmake git curl build-essential libssl-dev
 
 # Install rust (do **not** use the package `sudo apt install rust`
-# ass this will install a old rust version). Use:
+# as it will install an old rust version). Use:
 curl https://sh.rustup.rs -sSf | sh
 # Source the Rust environment
 source $HOME/.cargo/env
