@@ -23,7 +23,7 @@ before_script:
     --crate cobalt
     --force
     --target x86_64-unknown-linux-gnu
-    --tag v0.13.0
+    --tag v0.15.0
   - export PATH="$PATH:~/.cargo/bin"
 script:
   - cobalt build
@@ -73,7 +73,7 @@ This example `.gitlab-ci.yml` installs and runs cobalt:
 image: debian:latest
 
 variables:
-  COBALT_VERSION: "v0.13.2"
+  COBALT_VERSION: "v0.15.0"
 pages:
   script:
   - apt-get update && apt-get -y install curl
