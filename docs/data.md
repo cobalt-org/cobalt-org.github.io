@@ -7,8 +7,8 @@ data:
 ## Data Files
 
 Cobalt supports loading [yaml](http://yaml.org), [json](http://json.org), abd
-[toml](https://github.com/toml-lang/toml) from [`_data`](/docs/directory.html)
-and making it available as [`site.data.<DIR>.<FILE>`](/docs/variables.html).
+[toml](https://github.com/toml-lang/toml.html) from [`_data`](/docs/directory)
+and making it available as [`site.data.<DIR>.<FILE>`](/docs/variables).
 
 ### Example
 

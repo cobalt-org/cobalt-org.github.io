@@ -40,7 +40,7 @@ deploy:
 ```
 
 - `--tag`: update to reflect the desired version of cobalt.
-- `local_dir`: update it according to your [`destination`](/docs/config.html)
+- `local_dir`: update it according to your [`destination`](/docs/config)
 - `target_branch`: Update to reflect the branch that you configured as the source for [Github Pages](https://pages.github.com/).
 - `on: branch`: Update to reflect the branch your source is kept in.
 

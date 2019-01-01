@@ -1,6 +1,4 @@
 ---
-permalink: "/{{ name }}/"
-layout: default.liquid
 ---
 <section class="introduction">
 <div class="inner">

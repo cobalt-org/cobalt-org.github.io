@@ -38,15 +38,15 @@ The default Cobalt site usually looks like this
 
 File / Directory | Description
 -----------------|------------
-`.`              | Root directory for your content.  Can be modified in [`_cobalt.yml`](/docs/config.html).
-`_cobalt.yml`    | Site-wide [configuration](/docs/config.html) file
-`_layouts`       | [Templates](/docs/layouts.html) that wrap pages.  The layout is chosen in the [frontmatter](/docs/pages.html)
-`_includes`      | Liquid snippets of content to be shared among [layouts](/docs/layouts.html) or pages.
+`.`              | Root directory for your content.  Can be modified in [`_cobalt.yml`](/docs/config).
+`_cobalt.yml`    | Site-wide [configuration](/docs/config) file
+`_layouts`       | [Templates](/docs/layouts) that wrap pages.  The layout is chosen in the [frontmatter](/docs/pages)
+`_includes`      | Liquid snippets of content to be shared among [layouts](/docs/layouts) or pages.
 `_data`          | Data files that will be loaded as part of the `{%raw%}{{ site.data }}{%endraw%}` variable.
 `_sass`          | Sass snippets that can be imported into your `.scss` files.
-`_site`          | The output directory of cobalt.  Can be modified in [`_cobalt.yml`](/docs/config.html).
+`_site`          | The output directory of cobalt.  Can be modified in [`_cobalt.yml`](/docs/config).
 `_defaults`      | `cobalt new` initializes files from here based on the collection name.
-`posts`          | Pages in this directory will be treated as [blog posts](/docs/posts.html).  Can be modified in [`_cobalt.yml`](/docs/config.html).
-`_drafts`        | Pages in this directory will be treated as [draft blog posts](/docs/posts.html).  Can be modified in [`_cobalt.yml`](/docs/config.html).
-`index.liquid`   | Any other [pages](/docs/pages.html) found will be transformed by cobalt.
+`posts`          | Pages in this directory will be treated as [blog posts](/docs/posts).  Can be modified in [`_cobalt.yml`](/docs/config).
+`_drafts`        | Pages in this directory will be treated as [draft blog posts](/docs/posts).  Can be modified in [`_cobalt.yml`](/docs/config).
+`index.liquid`   | Any other [pages](/docs/pages) found will be transformed by cobalt.
 Other files      | Assets will be copied directly over from the source directory to the output directory.
