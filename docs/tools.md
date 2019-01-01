@@ -1,3 +1,4 @@
+---
 title: "Docs::Tools"
 layout: docs.liquid
 data:

@@ -1,3 +1,4 @@
+---
 title: "Docs::Data Files"
 layout: docs.liquid
 data:

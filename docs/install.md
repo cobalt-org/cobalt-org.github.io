@@ -1,3 +1,4 @@
+---
 title: "Docs::Install"
 layout: docs.liquid
 data:

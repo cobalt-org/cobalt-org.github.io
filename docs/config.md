@@ -1,3 +1,4 @@
+---
 title: "Docs::Configuration"
 layout: docs.liquid
 data:

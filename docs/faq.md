@@ -1,3 +1,4 @@
+---
 title: "Docs::FAQ"
 layout: docs.liquid
 data:

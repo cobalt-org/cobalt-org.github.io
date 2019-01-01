@@ -1,3 +1,4 @@
+---
 title: "Docs::Permalink Templates"
 layout: docs.liquid
 data:

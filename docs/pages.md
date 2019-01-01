@@ -1,3 +1,4 @@
+---
 title: "Docs::Pages"
 layout: docs.liquid
 data:

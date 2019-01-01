@@ -1,3 +1,4 @@
+---
 title: "Docs::Directory"
 layout: docs.liquid
 data:

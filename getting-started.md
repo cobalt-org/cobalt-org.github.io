@@ -1,3 +1,4 @@
+---
 permalink: "/{{ name }}/"
 layout: default.liquid
 ---

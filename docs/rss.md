@@ -1,3 +1,4 @@
+---
 title: "Docs::RSS"
 layout: docs.liquid
 data:

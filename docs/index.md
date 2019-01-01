@@ -1,3 +1,4 @@
+---
 title: Docs
 layout: docs.liquid
 data:

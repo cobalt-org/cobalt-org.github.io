@@ -1,3 +1,4 @@
+---
 title: "Docs::Assets"
 layout: docs.liquid
 data:
