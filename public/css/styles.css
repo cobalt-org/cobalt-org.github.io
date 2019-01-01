@@ -304,6 +304,16 @@ pre code {
   background: var(--dark-grey);
 }
 
+.button.news {
+  background: var(--light-blue);
+}
+
+.button.news:hover,
+.button.news:active,
+.button.news:focus {
+  background: var(--med-light-blue);
+}
+
 .button.contrib:hover,
 .button.contrib:active,
 .button.contrib:focus {
