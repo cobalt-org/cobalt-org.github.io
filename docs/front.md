@@ -9,11 +9,12 @@ All [pages](/docs/pages.html) optionally support having some metadata
 associated with them, called the frontmatter.
 
 The frontmatter metadata is formatted using [yaml](http://yaml.org/) and
-separated by the main content by `---`.
+surrounded, above and below, with `---`.
 
 Example:
 
 ```
+---
 title:   My first Blogpost
 published_date:    2016-01-01 21:00:00 +0100
 layout: posts.liquid
@@ -26,6 +27,7 @@ My Blog is lorem ipsum like, yes it is..
 ### Default Frontmatter
 
 ```yaml
+---
 title: ~
 description: ~
 published_date: ~
