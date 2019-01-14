@@ -9,7 +9,7 @@ data:
 Layouts are templates in the [`_layouts` directory](/docs/directory) that contain the common
 formatting for your pages.  They are compiled as [liquid
 templates](https://shopify.github.io/liquid/) (see
-[reference](https://help.shopify.com/themes/liquid)).  See what [variables](/docs/variables) are avaialble.
+[reference](https://help.shopify.com/themes/liquid)).  See what [variables](/docs/variables) are available.
 
 ## Reusing Formatting
 
