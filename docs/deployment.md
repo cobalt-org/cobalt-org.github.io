@@ -1,3 +1,4 @@
+---
 title: "Docs::Deployment"
 layout: docs.liquid
 data:
@@ -23,7 +24,7 @@ before_script:
     --crate cobalt
     --force
     --target x86_64-unknown-linux-gnu
-    --tag v0.13.0
+    --tag v0.15.0
   - export PATH="$PATH:~/.cargo/bin"
 script:
   - cobalt build
@@ -39,7 +40,7 @@ deploy:
 ```
 
 - `--tag`: update to reflect the desired version of cobalt.
-- `local_dir`: update it according to your [`destination`](/docs/config.html)
+- `local_dir`: update it according to your [`destination`](/docs/config)
 - `target_branch`: Update to reflect the branch that you configured as the source for [Github Pages](https://pages.github.com/).
 - `on: branch`: Update to reflect the branch your source is kept in.
 
@@ -73,7 +74,7 @@ This example `.gitlab-ci.yml` installs and runs cobalt:
 image: debian:latest
 
 variables:
-  COBALT_VERSION: "v0.13.2"
+  COBALT_VERSION: "v0.15.0"
 pages:
   script:
   - apt-get update && apt-get -y install curl

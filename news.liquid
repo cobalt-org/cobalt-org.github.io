@@ -1,0 +1,15 @@
+---
+---
+<section class="introduction">
+<div class="inner">
+
+   {% for post in collections.posts.pages %}
+    <div>
+      <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+      {% if post.description != "" %}<p>{{ post.description }}</p>{% elsif post.excerpt %}<p>{{ post.excerpt }}</p>{% else %}<br />{% endif %}
+      <time pubdate="pubdate">{{ post.published_date | date:"%a&nbsp;%d&nbsp;%b&nbsp;'%y" }}</time>
+    </div>
+
+   {% endfor %}
+</div>
+</section>

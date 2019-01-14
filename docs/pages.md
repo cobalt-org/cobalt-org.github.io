@@ -1,3 +1,4 @@
+---
 title: "Docs::Pages"
 layout: docs.liquid
 data:
@@ -5,24 +6,24 @@ data:
 ---
 ## Pages
 
-A page is any file found in the [`source`](/docs/config.html) directory that
-- Has an extension in [`template_extensions`](/docs/config.html)
+A page is any file found in the [`source`](/docs/config) directory that
+- Has an extension in [`template_extensions`](/docs/config)
 - isn't hidden (leading `.` or `_`)
-- isn't excluded through [`ignore`](/docs/config.html)
+- isn't excluded through [`ignore`](/docs/config)
 
 Pages go through several transformations:
 1. Evaluate Liquid template expressions.
 2. (If `.md` extension) Convert [Markdown](http://commonmark.org/help/) to HTML.
-3. Wrap the content in a Liquid [layout](/docs/layouts.html).
-4. Write the results to a parallel location in the [`destination`](/docs/config.html) but with a `.html` extension.
+3. Wrap the content in a Liquid [layout](/docs/layouts).
+4. Write the results to a parallel location in the [`destination`](/docs/config) but with a `` extension.
 
-You can customize this behavior with the [frontmatter](/docs/front.html).
+You can customize this behavior with the [frontmatter](/docs/front).
 
 ### Syntax Highlighting
 
 This feature is currently experimental and causes installation to fail on
 Windows. To enable syntax highlighting, you need to install Cobalt [from
-source](/docs/install.html) with the `syntax-highlight` feature.
+source](/docs/install) with the `syntax-highlight` feature.
 
 You can highlight your code using the `{%raw%}{% highlight LANG %}{%endraw%}` / `{%raw%}{% endhighlight %}{%endraw%}` Liquid tags.
 
@@ -34,7 +35,7 @@ To see what syntaxes are supported:
 $ cobalt debug highlight syntaxes
 ```
 
-The theme is taken from your [`_cobalt.yml`](/docs/config.html).  To see the list of supported themes:
+The theme is taken from your [`_cobalt.yml`](/docs/config).  To see the list of supported themes:
 ```sh
 $ cobalt debug highlight themes
 ```

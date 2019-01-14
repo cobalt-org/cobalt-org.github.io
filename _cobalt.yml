@@ -1,10 +1,20 @@
 source: "."
 destination: build
-posts:
-  dir: posts
-  drafts_dir: _drafts
 site:
   title: "Cobalt: Static Site Generator"
   base_url: "https://cobalt-org.github.io"
+pages:
+  default:
+    layout: default.liquid
+    permalink: /{{parent}}/{{name}}/
+posts:
+  dir: "news"
+  rss: "news.rss"
+  drafts_dir: "_drafts"
+  default:
+    # For simpler drafts
+    published_date: "2020-03-14 01:59:26 -0500"
+    layout: news.liquid
+    permalink: /news/{{year}}/{{month}}/{{slug}}/
 ignore:
   - "build/*"

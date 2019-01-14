@@ -1,3 +1,4 @@
+---
 title: "Docs::Liquid Variables"
 layout: docs.liquid
 data:
