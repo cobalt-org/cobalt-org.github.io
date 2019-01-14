@@ -36,6 +36,7 @@ assets:
   sass:
     style: Nested
 pages:
+  publish_date_in_filename: false
   default: {}
 posts:
   title: ~
@@ -45,6 +46,7 @@ posts:
   order: Desc
   rss: ~
   jsonfeed: ~
+  publish_date_in_filename: true
   default: {}
 ```
 
@@ -91,6 +93,7 @@ Setting            | Format      | Description
 `assets`           |             | Asset configuration
 - `sass`           |             | Sass' CSS generation settings
 - - `style`        | `Nested`, `Expanded`, `Compact`, `Compressed` | Site-wide format style for sass-generated CSS
+`publish_date_in_filename`|Boolean| Prepend `YYYY-MM-DD-` to filename on `publish`
 
 These are under `pages:` in the yaml:
 
