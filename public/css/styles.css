@@ -36,6 +36,7 @@
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 *, *:before, *:after {
@@ -49,6 +50,13 @@ body {
   font-family: var(--font-stack);
   line-height: 1.4;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1;
 }
 
 a {
