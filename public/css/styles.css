@@ -31,11 +31,12 @@
 
   --font-stack: helvetica, arial, sans-serif;
 
-  --breakpoint: 45em;
+  --breakpoint: 55em;
 }
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 *, *:before, *:after {
@@ -49,6 +50,13 @@ body {
   font-family: var(--font-stack);
   line-height: 1.4;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -67,6 +75,7 @@ header {
 
 header .primary h1 {
   text-align: center;
+  margin-bottom: 0;
 }
 
 header .primary h1 a {
@@ -91,7 +100,7 @@ header nav {
   justify-content: center;
 }
 
-@media (max-width: 41em) {
+@media (max-width: 51em) {
   header nav {
     max-width: 100%;
     overflow: hidden;
@@ -114,7 +123,7 @@ header nav .button > span {
   display: inline-block;
 }
 
-@media (min-width: 41em) {
+@media (min-width: 51em) {
   header .inner {
     display: flex;
     justify-content: center;
@@ -137,6 +146,7 @@ header nav .button > span {
     flex: 1 0 50%;
     flex-direction: column;
     justify-content: flex-end;
+    margin-bottom: 0.8rem;
   }
 
   header h1 {
@@ -148,7 +158,7 @@ header nav .button > span {
   padding: 0 1em 0 1em;
 }
 
-@media (min-width: 41em) {
+@media (min-width: 51em) {
   .inner {
     margin: 0 auto;
     max-width: var(--breakpoint);
@@ -205,7 +215,7 @@ section.docs aside ul li a:focus {
   }
 
   section.docs aside {
-    flex: 0 1 30%;
+    flex: 0 0 30%;
   }
 
   section.docs main {
@@ -217,8 +227,6 @@ section.docs ul {
   list-style-type: none;
   padding: 0;
 }
-
-
 
 pre {
   display: block;
@@ -232,7 +240,7 @@ pre {
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   text-shadow: none;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 
 code {
@@ -253,6 +261,10 @@ pre code {
   background-color: transparent;
   border-radius: 0;
   border: 0;
+}
+
+.top_margin {
+  padding-top: 3em;
 }
 
 .button {
@@ -320,14 +332,14 @@ pre code {
   background: var(--med-grey);
 }
 
-@media (min-width: 45em) {
+@media (min-width: 51em) {
   .columns {
     display: flex;
   }
 
   .columns.three > article {
     flex: 0 1 33%;
-    margin-right: 1%;
+    margin-right: 3%;
   }
 
   .columns.three > article:last-child {
@@ -367,4 +379,9 @@ table thead th {
 table tbody td {
     border: 1px solid #ccc;
     padding: 0.5em;
+}
+
+.flex_h {
+  display: flex;
+  flex-direction: row;
 }
