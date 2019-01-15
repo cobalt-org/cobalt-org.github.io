@@ -75,6 +75,7 @@ header {
 
 header .primary h1 {
   text-align: center;
+  margin-bottom: 0;
 }
 
 header .primary h1 a {
@@ -99,7 +100,7 @@ header nav {
   justify-content: center;
 }
 
-@media (max-width: 41em) {
+@media (max-width: 51em) {
   header nav {
     max-width: 100%;
     overflow: hidden;
@@ -122,7 +123,7 @@ header nav .button > span {
   display: inline-block;
 }
 
-@media (min-width: 41em) {
+@media (min-width: 51em) {
   header .inner {
     display: flex;
     justify-content: center;
@@ -145,6 +146,7 @@ header nav .button > span {
     flex: 1 0 50%;
     flex-direction: column;
     justify-content: flex-end;
+    margin-bottom: 0.8rem;
   }
 
   header h1 {
@@ -156,7 +158,7 @@ header nav .button > span {
   padding: 0 1em 0 1em;
 }
 
-@media (min-width: 41em) {
+@media (min-width: 51em) {
   .inner {
     margin: 0 auto;
     max-width: var(--breakpoint);
@@ -332,7 +334,7 @@ pre code {
   background: var(--med-grey);
 }
 
-@media (min-width: 45em) {
+@media (min-width: 51em) {
   .columns {
     display: flex;
   }
@@ -379,4 +381,9 @@ table thead th {
 table tbody td {
     border: 1px solid #ccc;
     padding: 0.5em;
+}
+
+.flex_h {
+  display: flex;
+  flex-direction: row;
 }
