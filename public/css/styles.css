@@ -215,7 +215,7 @@ section.docs aside ul li a:focus {
   }
 
   section.docs aside {
-    flex: 0 1 30%;
+    flex: 0 0 30%;
   }
 
   section.docs main {
@@ -227,8 +227,6 @@ section.docs ul {
   list-style-type: none;
   padding: 0;
 }
-
-
 
 pre {
   display: block;
@@ -242,7 +240,7 @@ pre {
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   text-shadow: none;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 
 code {
