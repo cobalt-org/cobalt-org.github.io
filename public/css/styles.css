@@ -240,7 +240,7 @@ pre {
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   text-shadow: none;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 code {
