@@ -7,7 +7,7 @@
     <header>
       {% include "header.liquid" %}
     </header>
-    <main>
+    <main class="flex_main">
       <section class="docs">
         <div class="inner">
           <aside>
@@ -35,7 +35,7 @@
             <ul>
               <li><a {% if page.data.route == "faq"%}class="active"{%endif%} href="/docs/faq">FAQ</a></li>
               <li><a {% if page.data.route == "rss"%}class="active"{%endif%} href="/docs/rss">RSS</a></li>
-	      <li><a {% if page.data.route == "tools"%}class="active"{%endif%} href="/docs/tools">Tools</a></li>
+	            <li><a {% if page.data.route == "tools"%}class="active"{%endif%} href="/docs/tools">Tools</a></li>
               <li><a {% if page.data.route == "deployment"%}class="active"{%endif%} href="/docs/deployment">Deployment</a></li>
               <li><a {% if page.data.route == "trouble"%}class="active"{%endif%} href="/docs/trouble">Troubleshooting</a></li>
             </ul>

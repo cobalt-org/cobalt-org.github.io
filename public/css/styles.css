@@ -39,10 +39,6 @@ html {
   height: 100%;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 body {
   background: var(--white);
   border-top: 5px solid var(--orange);
@@ -55,7 +51,7 @@ body {
   height: 100%;
 }
 
-main {
+.flex_main {
   flex: 1;
 }
 
@@ -379,9 +375,4 @@ table thead th {
 table tbody td {
     border: 1px solid #ccc;
     padding: 0.5em;
-}
-
-.flex_h {
-  display: flex;
-  flex-direction: row;
 }
