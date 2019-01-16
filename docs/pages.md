@@ -21,10 +21,6 @@ You can customize this behavior with the [frontmatter](/docs/front).
 
 ### Syntax Highlighting
 
-This feature is currently experimental and causes installation to fail on
-Windows. To enable syntax highlighting, you need to install Cobalt [from
-source](/docs/install) with the `syntax-highlight` feature.
-
 You can highlight your code using the `{%raw%}{% highlight LANG %}{%endraw%}` / `{%raw%}{% endhighlight %}{%endraw%}` Liquid tags.
 
 Alternatively, if you are using Markdown, you can [annotate your code
