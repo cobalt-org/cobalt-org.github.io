@@ -47,7 +47,25 @@ Once your post is ready, you can publish it:
 $ cobalt publish posts/cats-around-the-world.md
 ```
 
-The page will no longer be a "draft" and the `published_date` will be set to today.
+The page will no longer be a "draft" and the `published_date` will be set to today. 
+
+For posts, by default, the date (`YYYY-MM-DD-`) will be prepend to your posts filename in
+order to keep them in a chronological order. This can be turn off in the configuration
+(see `publish_date_in_filename`). This setting is disabled for pages (and can be turn on
+in configuration).
+
+### build
+
+Once the states of your documents are in a position to be put online − by using
+`publish` on the documents you want to make visible, or manually setting
+`is_draft: false` − it's time to build the website:
+
+```bash
+$ cobalt build
+```
+
+All the documents not in draft state will be build into a html file ready to be serve by
+your web server.
 
 ### More
 
