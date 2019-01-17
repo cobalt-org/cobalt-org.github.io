@@ -55,3 +55,12 @@ $ cobalt publish posts/cats-around-the-world.md
 ```
 
 The page will no longer be a "draft" and the `published_date` will be set to today.
+
+#### Build the site
+
+Once the post is in published state, build the site:
+```
+$ cobalt build
+```
+
+The site is sitting in `_site` and ready to be uploaded!
