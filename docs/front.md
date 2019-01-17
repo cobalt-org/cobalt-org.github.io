@@ -40,6 +40,7 @@ slug: ~
 excerpt_separator: "\n\n"
 excerpt: ~
 categories: []
+tags: ~
 data: {}
 ---
 ```
@@ -49,9 +50,12 @@ data: {}
 Cobalt will infer some information from the filename.
 
 Recognized name formats include:
+- `slug.extension`
 - `YYYY-MM-DD-slug.extension`
 - `YYYY-MM-DD slug.extension`
-- `slug.extension`
+
+The two later ones are only recognised on `build` as `publish` managed the
+`published_date` and [prepend the date to the filename by default](/docs/usage).
 
 Metadata         | Inferred Default
 -----------------|-----------------
@@ -76,4 +80,5 @@ Metadata            | Format           | Description
 `excerpt_separator` | String           | A marker for what leading content should be extracted from the content as an excerpt.  `""` will cause no excerpt to be generated.
 `excerpt`           | String           | Manually override the extracted excerpt.  This will be processed like a [page](/docs/pages).
 `categories`        | List of Strings  | Hierarchical categories this page lives under.
+`tags`              | List of Strings  | Tags attached to the page.
 `data`              | Object           | User-defined data available at [`page.data`](/docs/variables).
