@@ -6,7 +6,7 @@ data:
 ---
 ## Pages
 
-A page is any file found in the [`source`](/docs/config) directory that
+A page is any file found in the [`source`](/docs/config) directory that:
 - Has an extension in [`template_extensions`](/docs/config)
 - isn't hidden (leading `.` or `_`)
 - isn't excluded through [`ignore`](/docs/config)

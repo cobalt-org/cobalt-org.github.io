@@ -186,6 +186,11 @@ section.introduction p {
   margin-top: 0;
 }
 
+section.docs aside ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 section.docs aside ul li a {
   display: inline-block;
   margin-bottom: 0.25em;
@@ -219,10 +224,6 @@ section.docs aside ul li a:focus {
   }
 }
 
-section.docs ul {
-  list-style-type: none;
-  padding: 0;
-}
 
 pre {
   display: block;
