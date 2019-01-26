@@ -21,6 +21,7 @@ Learn from other site's using cobalt
 - [uwe-arzt.de](https://uwe-arzt.de) ([Source](https://github.com/uwearzt/site-uwe-arzt.git))
 - [metta.systems](https://metta.systems) ([Source](https://github.com/metta-systems/metta.systems))
 - [Actix中文](https://actix-cn.github.io/) ([Source](https://github.com/actix-cn/actix-cn-website))
+- [Geob-o-matic](https://haurchefant.fr) ([Source](https://github.com/Geobert/blog))
 
 ## Issues
 
