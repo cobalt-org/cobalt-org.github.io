@@ -49,6 +49,13 @@ $ cobalt publish posts/cats-around-the-world.md
 
 The page will no longer be a "draft" and the `published_date` will be set to today. 
 
+You can also publish from the `drafts` folder:
+```bash
+$ cobalt publish drafts/dogs-around-the-world.md
+```
+
+It will move it to `posts` folder besides changing "draft" status and `published_date`.
+
 For posts, by default, the date (`YYYY-MM-DD-`) will be prepend to your posts filename in
 order to keep them in a chronological order. This can be turn off in the configuration
 (see `publish_date_in_filename`). This setting is disabled for pages (and can be turn on
