@@ -103,3 +103,78 @@ you have build the site with `build` you can run
 `import`. There are also some flags that can be found via
 `import --help`.
 
+### Self-hosted
+
+If you host your site yourself, for example on a virtual private
+server, here are some ideas on how to deploy.
+
+#### Simple uploading
+
+You can use tools such as
+[`rsync`](https://en.wikipedia.org/wiki/Rsync/), or other file
+synchronization tools to upload your rendered site to a web
+server. For example (note that this will delete all extraneous files
+on your server):
+
+```
+$ rsync --delete -a _site/ YOUR-SERVER:public_html/
+```
+
+#### Publishing with git
+
+Note that this section assumes familiarity with
+[git](https://git-scm.com/), so if you are not familiar with git, feel
+free to ignore it, or take the time to make yourself familiar. It
+further assumes you already keep your cobalt project in git, as well
+as basic familiarity with Unix-like systems.
+
+Instead of just copying the locally rendered site to your web server,
+you can install cobalt and git on the web server, and publish via
+pushing to a git repository. This is advantageous especially in a
+multi-user setting, where multiple users (or maybe just yourself using
+different machines) are maintaining the same site, as git will prevent
+users from overwriting each other's changes. Conflicts will have to be
+resolved locally by git rebasing and/or merging.
+
+To set this up, you will need to have both cobalt and git installed on
+your server. Then, create a bare repository on your server and
+configure it as a remote in your local cobalt repository to be able to
+push to it. Once that is done, you can set up a `post-update` hook on
+the server's git repository to render your site. To make that process
+reliable in case cobalt fails to render your site, you can use the
+[`cobalt-git-deploy`](https://github.com/cobalt-org/cobalt.rs/blob/master/contrib/cobalt-git-deploy)
+script. To learn more about `cobalt-git-deploy`, call it with the
+`--help` option. Specifically, you should make sure that the
+directories it is invoked with from the git hook are not already
+existing.
+
+Assuming you have installed `cobalt-git-deploy` somewhere in your
+`PATH`, create a `post-update` hook on the server's git repository
+that looks something like this:
+
+```
+$ cat homepage.git/hooks/post-update
+#!/bin/sh
+
+PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin"
+export PATH
+
+exec cobalt-git-deploy ~/cobalt-stage ~/public_html
+```
+
+Make sure that your hook is executable. Now pushing to the repository
+should show status information from the hook, e.g.:
+
+```
+$ git push
+No previous state saved. First run?
+Checking out master to /home/foo/cobalt-stage/left
+Already on 'master'
+HEAD is now at 9ef95c1 New exciting blog post
+Building site
+[info] Building from "/home/foo/cobalt-stage/left/" into "/home/foo/cobalt-stage/left/_site"
+[info] Build successful
+Deploying site in /home/foo/public_html
+```
+
+You can now enjoy publishing using `git commit` and `git push`!
