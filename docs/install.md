@@ -10,7 +10,8 @@ Cobalt supports Windows, Linux, and Mac.
 
 ### OS Package
 
-*None available yet*
+**Arch Linux**
+`pacman -S cobalt`
 
 ### Pre-built Binary
 
