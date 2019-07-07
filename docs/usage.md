@@ -38,7 +38,7 @@ $ cobalt new "Cats Around the World" --file posts
 $ cobalt new "Cats Around the World" --file posts/cats.md
 ```
 
-You can modify the template used for `new` by editing the files in [`_defaults`](/docs/directory.html).
+You can modify the template used for `new` by editing the files in [`_defaults`](/docs/directory).
 
 ### publish
 
