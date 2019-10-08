@@ -33,6 +33,7 @@ default:
   is_draft: false
 syntax_highlight:
   theme: "base16-ocean.dark"
+  enabled: true
 assets:
   sass:
     style: Nested
@@ -91,6 +92,7 @@ Setting            | Format      | Description
 `default`          | [Frontmatter](/docs/front) | Site-wide defaults for page [frontmatters](/docs/front).
 `syntax_highlight` |             | Site-wide syntax highlighting settings
 - `theme`          | String      | Site-wide syntax highlighting theme
+- `enabled`        | Boolean     | Enables or disables site-wide syntax highlighting
 `assets`           |             | Asset configuration
 - `sass`           |             | Sass' CSS generation settings
 - - `style`        | `Nested`, `Expanded`, `Compact`, `Compressed` | Site-wide format style for sass-generated CSS
