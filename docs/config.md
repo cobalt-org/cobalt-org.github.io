@@ -38,7 +38,6 @@ assets:
   sass:
     style: Nested
 pages:
-  publish_date_in_filename: false
   default: {}
 posts:
   title: ~
@@ -87,6 +86,8 @@ configurations in.
 
 ### Pages and Posts
 
+Global options:
+
 Setting            | Format      | Description
 -------------------|-------------|------------
 `default`          | [Frontmatter](/docs/front) | Site-wide defaults for page [frontmatters](/docs/front).
@@ -96,7 +97,6 @@ Setting            | Format      | Description
 `assets`           |             | Asset configuration
 - `sass`           |             | Sass' CSS generation settings
 - - `style`        | `Nested`, `Expanded`, `Compact`, `Compressed` | Site-wide format style for sass-generated CSS
-`publish_date_in_filename`|Boolean| Prepend `YYYY-MM-DD-` to filename on `publish`
 
 These are under `pages:` in the yaml:
 
@@ -116,3 +116,4 @@ Setting       | Format          | Description
 `rss`         | String        | Path for a posts RSS file.
 `jsonfeed`    | String        | Path for a posts jsonfeed file.
 `default`     | [Frontmatter](/docs/front) | Defaults for post [frontmatters](/docs/front).
+`publish_date_in_filename`|Boolean| Prepend `YYYY-MM-DD-` to filename on `publish`
