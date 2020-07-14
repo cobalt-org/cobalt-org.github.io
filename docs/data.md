@@ -6,7 +6,7 @@ data:
 ---
 ## Data Files
 
-Cobalt supports loading [yaml](http://yaml.org), [json](http://json.org), abd
+Cobalt supports loading [yaml](http://yaml.org), [json](http://json.org), and
 [toml](https://github.com/toml-lang/toml.html) from [`_data`](/docs/directory)
 and making it available as [`site.data.<DIR>.<FILE>`](/docs/variables).
 
