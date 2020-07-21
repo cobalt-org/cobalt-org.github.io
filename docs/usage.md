@@ -26,6 +26,10 @@ $ cobalt serve --drafts
 ```
 This provides live reload; it will re-generate your site as you add or change content.
 
+Use the `--host` argument to listen on a different address (ex. 0.0.0.0/INADDR\_ANY);
+the default is `localhost`.  Use `--port` (or `-P`) to listen on a different TCP port
+number (default: 3000).
+
 ### new
 
 Add a new page or post to your site:
