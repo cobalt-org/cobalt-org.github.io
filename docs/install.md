@@ -30,7 +30,7 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 ##### Debian 9 (stretch)
 
-```console
+```
 # Install needed packages with
 $ sudo apt install cmake git curl build-essential libssl-dev
 
@@ -50,9 +50,8 @@ Without syntax highlighting / sass (requires `cargo ... --no-default-features`):
 
 With syntax highlighting / sass:
 
-1. Ensure [Rust is installed](https://rustup.rs/) using [Build Tools for Visual
-   Studio](https://visualstudio.microsoft.com/downloads/) instead of
-   MinGW/MSYS2.
+1. Ensure [Rust is installed](https://rustup.rs/) using [Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/)
+   instead of MinGW/MSYS2.
 2. Install [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 3. Run `"<VS Path>\vcvarsall.bat" amd64` in your command prompt you'll build from.
 
@@ -67,13 +66,13 @@ With syntax highlighting / sass:
 
 You can also customize the build, including adding support for unstable [features](https://github.com/cobalt-org/cobalt.rs/blob/master/Cargo.toml#L66):
 
-```console
+```
 $ cargo build --release --features=sass
 ```
 
 #### Building with Docker
 
-```console
+```
 $ docker pull rust:latest
 $ git clone https://github.com/cobalt-org/cobalt.rs.git
 $ cd cobalt.rs
