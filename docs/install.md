@@ -67,7 +67,7 @@ With syntax highlighting / sass:
 
 You can also customize the build, including adding support for unstable [features](https://github.com/cobalt-org/cobalt.rs/blob/master/Cargo.toml#L66):
 
-```text
+```console
 $ cargo build --release --features=sass
 ```
 
