@@ -60,10 +60,9 @@ $ cobalt publish drafts/dogs-around-the-world.md
 
 It will move it to `posts` folder besides changing "draft" status and `published_date`.
 
-For posts, by default, the date (`YYYY-MM-DD-`) will be prepend to your posts filename in
-order to keep them in a chronological order. This can be turn off in the configuration
-(see `publish_date_in_filename`). This setting is disabled for pages (and can be turn on
-in configuration).
+For posts only: by default, the date (`YYYY-MM-DD-`) will be prepend to your posts
+filename in order to keep them in chronological order. This can be disabled by manually
+setting `publish_date_in_filename: false` in your configuration.
 
 ### build
 
