@@ -30,15 +30,16 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 ##### Debian 9 (stretch)
 
-```bash
+```
 # Install needed packages with
-sudo apt install cmake git curl build-essential libssl-dev
+$ sudo apt install cmake git curl build-essential libssl-dev
 
 # Install rust (do **not** use the package `sudo apt install rust`
 # as it will install an old rust version). Use:
-curl https://sh.rustup.rs -sSf | sh
+$ curl https://sh.rustup.rs -sSf | sh
+
 # Source the Rust environment
-source $HOME/.cargo/env
+$ source $HOME/.cargo/env
 ```
 
 ##### Windows
@@ -49,9 +50,8 @@ Without syntax highlighting / sass (requires `cargo ... --no-default-features`):
 
 With syntax highlighting / sass:
 
-1. Ensure [Rust is installed](https://rustup.rs/) using [Build Tools for Visual
-   Studio](https://visualstudio.microsoft.com/downloads/) instead of
-   MinGW/MSYS2.
+1. Ensure [Rust is installed](https://rustup.rs/) using [Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/)
+   instead of MinGW/MSYS2.
 2. Install [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 3. Run `"<VS Path>\vcvarsall.bat" amd64` in your command prompt you'll build from.
 
@@ -66,6 +66,18 @@ With syntax highlighting / sass:
 
 You can also customize the build, including adding support for unstable [features](https://github.com/cobalt-org/cobalt.rs/blob/master/Cargo.toml#L66):
 
-```bash
+```
 $ cargo build --release --features=sass
 ```
+
+#### Building with Docker
+
+```
+$ docker pull rust:latest
+$ git clone https://github.com/cobalt-org/cobalt.rs.git
+$ cd cobalt.rs
+$ docker run --rm -it -u $(id -u):$(id -g) -v ${PWD}:/app -w /app rust:latest cargo build --release --features=sass
+```
+
+The compiled cobalt binary will be in `target/release`. If you want to run all tests, use
+`cargo test --workspace ...` instead.

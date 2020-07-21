@@ -6,7 +6,7 @@ data:
 ---
 ## Variables
 
-Cobalt makes a variety of data availale as Liquid variables.
+Cobalt makes a variety of data available as Liquid variables.
 
 This is can be helpful for:
 - Theming
