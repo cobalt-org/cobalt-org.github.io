@@ -80,9 +80,9 @@ Setting       | Format | Description
 `base_url`    | String | The root for the site.  This is used in making paths absolute for RSS as well as in Liquid (`{% raw %}{{ site.base_url }}{% endraw %}/docs`).
 `data`        | Object | Values made available via the `{%raw%}{{ site.data }}{%endraw%}` variable.
 
-In addition to change the defaults through cli options cobalt allows to
-specify a config file (_cobalt.yml per default) where you can write these
-configurations in.
+In addition to changing the defaults through CLI arguments/flags, Cobalt allows
+to specify a config file (default: [`_cobalt.yml`](/docs/directory)) where you
+can store such settings.
 
 ### Pages and Posts
 
