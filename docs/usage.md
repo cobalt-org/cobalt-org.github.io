@@ -9,7 +9,7 @@ data:
 ### init
 
 Create a site with an example pages, posts, and layouts:
-```bash
+```text
 # Create site in current directory
 $ cobalt init
 # Create site in `myBlog` sub-directory
@@ -19,7 +19,7 @@ $ cobalt init myBlog
 ### serve
 
 Serve your site at `127.0.0.1:3000`
-```bash
+```text
 $ cobalt serve
 # Include drafts
 $ cobalt serve --drafts
@@ -33,7 +33,7 @@ number (default: 3000).
 ### new
 
 Add a new page or post to your site:
-```bash
+```text
 # Creates page `cats-around-the-world.md` in the current directory
 $ cobalt new "Cats Around the World"
 # Creates post `cats-around-the-world.md` in the `posts` directory
@@ -47,14 +47,14 @@ You can modify the template used for `new` by editing the files in [`_defaults`]
 ### publish
 
 Once your post is ready, you can publish it:
-```bash
+```text
 $ cobalt publish posts/cats-around-the-world.md
 ```
 
 The page will no longer be a "draft" and the `published_date` will be set to today. 
 
 You can also publish from the `drafts` folder:
-```bash
+```text
 $ cobalt publish drafts/dogs-around-the-world.md
 ```
 
@@ -70,7 +70,7 @@ Once the states of your documents are in a position to be put online − by usin
 `publish` on the documents you want to make visible, or manually setting
 `is_draft: false` − it's time to build the website:
 
-```bash
+```text
 $ cobalt build
 ```
 
@@ -90,11 +90,11 @@ further details.
 ### More
 
 To see all the available commands, run
-```bash
+```text
 $ cobalt --help
 ```
 
 You can then get help with those commands by running
-```bash
+```text
 $ cobalt <command> --help
 ```

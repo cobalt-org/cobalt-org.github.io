@@ -30,7 +30,7 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 ##### Debian 9 (stretch)
 
-```bash
+```text
 # Install needed packages with
 sudo apt install cmake git curl build-essential libssl-dev
 
@@ -66,6 +66,6 @@ With syntax highlighting / sass:
 
 You can also customize the build, including adding support for unstable [features](https://github.com/cobalt-org/cobalt.rs/blob/master/Cargo.toml#L66):
 
-```bash
+```text
 $ cargo build --release --features=sass
 ```
