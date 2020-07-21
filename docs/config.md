@@ -92,8 +92,8 @@ Setting            | Format      | Description
 -------------------|-------------|------------
 `default`          | [Frontmatter](/docs/front) | Site-wide defaults for page [frontmatters](/docs/front).
 `syntax_highlight` |             | Site-wide syntax highlighting settings
-- `theme`          | String      | Site-wide syntax highlighting theme
-- `enabled`        | Boolean     | Enables or disables site-wide syntax highlighting
+`- theme`          | String      | Site-wide syntax highlighting theme
+`- enabled`        | Boolean     | Enables or disables site-wide syntax highlighting
 
 These are under `pages:` in the yaml:
 
@@ -120,4 +120,4 @@ These are under `assets:` in the yaml:
 Setting       | Format | Description
 --------------|--------|------------
 `sass`        |        | Sass' CSS generation settings
-- `style`     | `Nested`, `Expanded`, `Compact`, `Compressed` | Site-wide format style for Sass-generated CSS.
+`- style`     | `Nested`, `Expanded`, `Compact`, `Compressed` | Site-wide format style for Sass-generated CSS.
