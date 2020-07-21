@@ -94,9 +94,6 @@ Setting            | Format      | Description
 `syntax_highlight` |             | Site-wide syntax highlighting settings
 - `theme`          | String      | Site-wide syntax highlighting theme
 - `enabled`        | Boolean     | Enables or disables site-wide syntax highlighting
-`assets`           |             | Asset configuration
-- `sass`           |             | Sass' CSS generation settings
-- - `style`        | `Nested`, `Expanded`, `Compact`, `Compressed` | Site-wide format style for sass-generated CSS
 
 These are under `pages:` in the yaml:
 
@@ -117,3 +114,10 @@ Setting       | Format          | Description
 `jsonfeed`    | String        | Path for a posts jsonfeed file.
 `default`     | [Frontmatter](/docs/front) | Defaults for post [frontmatters](/docs/front).
 `publish_date_in_filename`|Boolean| Prepend `YYYY-MM-DD-` to filename on `publish`
+
+These are under `assets:` in the yaml:
+
+Setting       | Format | Description
+--------------|--------|------------
+`sass`        |        | Sass' CSS generation settings
+- `style`     | `Nested`, `Expanded`, `Compact`, `Compressed` | Site-wide format style for Sass-generated CSS.
