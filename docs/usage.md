@@ -77,6 +77,16 @@ $ cobalt build
 All the documents not in draft state will be build into a html file ready to be serve by
 your web server.
 
+### clean
+
+Cleans/prunes the `destination` directory.
+
+### debug
+
+Displays site debug information.  There are subcommands that output various information,
+ex. `config`, `files`, and `highlight`.  Refer to [Troubleshooting](/docs/trouble) for
+further details.
+
 ### More
 
 To see all the available commands, run
