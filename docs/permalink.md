@@ -16,7 +16,7 @@ configuring a permalink, you're most likely to want to set it as a
 
 Example:
 ```yml
-title:   My first Blogpost
+title: My first Blogpost
 layout: posts.liquid
 permalink: /some/other/file.html
 ```
@@ -49,7 +49,7 @@ Variable     | Description
 `name`       | The file name without the extension.  e.g. If the file is `posts/some/file.md`, then `name` will be `file`.
 `ext`        | The output file extension.
 `slug`       | The page's [`slug`](/docs/front).
-`categories` | The [`categoies`](/docs/front) for the page, separated by `/`.  e.g. If the frontmatter's `categories` are `"Animals", "Dogs"`, then the permalink's `categories` is `animals/dogs`.
+`categories` | The [`categories`](/docs/front) for the page, separated by `/`.  e.g. If the frontmatter's `categories` are `"Animals", "Dogs"`, then the permalink's `categories` is `animals/dogs`.
 `year`       | The [`published_date`](/docs/front)'s year.
 `i_month`    | The [`published_date`](/docs/front)'s month.
 `month`      | The [`published_date`](/docs/front)'s month, with a leading `0`.
