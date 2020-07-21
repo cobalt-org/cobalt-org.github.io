@@ -70,3 +70,15 @@ You can also customize the build, including adding support for unstable [feature
 ```text
 $ cargo build --release --features=sass
 ```
+
+#### Building with Docker
+
+```console
+$ docker pull rust:latest
+$ git clone https://github.com/cobalt-org/cobalt.rs.git
+$ cd cobalt.rs
+$ docker run --rm -it -u $(id -u):$(id -g) -v ${PWD}:/app -w /app rust:latest cargo build --release --features=sass
+```
+
+The compiled cobalt binary will be in `target/release`. If you want to run all tests, use
+`cargo test --workspace ...` instead.
