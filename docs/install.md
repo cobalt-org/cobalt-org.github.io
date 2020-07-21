@@ -30,15 +30,16 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 ##### Debian 9 (stretch)
 
-```text
+``console
 # Install needed packages with
-sudo apt install cmake git curl build-essential libssl-dev
+$ sudo apt install cmake git curl build-essential libssl-dev
 
 # Install rust (do **not** use the package `sudo apt install rust`
 # as it will install an old rust version). Use:
-curl https://sh.rustup.rs -sSf | sh
+$ curl https://sh.rustup.rs -sSf | sh
+
 # Source the Rust environment
-source $HOME/.cargo/env
+$ source $HOME/.cargo/env
 ```
 
 ##### Windows

@@ -15,7 +15,7 @@ Pages go through several transformations:
 1. Evaluate Liquid template expressions.
 2. (If `.md` extension) Convert [Markdown](http://commonmark.org/help/) to HTML.
 3. Wrap the content in a Liquid [layout](/docs/layouts).
-4. Write the results to a parallel location in the [`destination`](/docs/config) but with a `` extension.
+4. Write the results to a parallel location in the [`destination`](/docs/config), but with an `.html` extension.
 
 You can customize this behavior with the [frontmatter](/docs/front).
 
@@ -27,11 +27,11 @@ Alternatively, if you are using Markdown, you can [annotate your code
 blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting).
 
 To see what syntaxes are supported:
-```sh
+```console
 $ cobalt debug highlight syntaxes
 ```
 
 The theme is taken from your [`_cobalt.yml`](/docs/config).  To see the list of supported themes:
-```sh
+```console
 $ cobalt debug highlight themes
 ```
