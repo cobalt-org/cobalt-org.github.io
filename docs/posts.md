@@ -16,8 +16,7 @@ Cobalt supports leaving posts in "draft" state. Drafts will not be
 rendered unless Cobalt is run with the `--drafts` flag.
 
 To mark a post as draft you can either set `is_draft: true` in your
-[frontmatter](/docs/front) or add it to the drafts folder
-([`_drafts`](/docs/directory) by [default](/docs/config)).
+[frontmatter](/docs/front), or add it to the [drafts folder](/docs/directory).
 
 ## Pagination
 
