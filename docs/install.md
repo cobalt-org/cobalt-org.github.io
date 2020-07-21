@@ -30,7 +30,7 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 ##### Debian 9 (stretch)
 
-``console
+```console
 # Install needed packages with
 $ sudo apt install cmake git curl build-essential libssl-dev
 
