@@ -20,9 +20,6 @@ To mark a post as draft you can either set `is_draft: true` in your
 
 ## Pagination
 
-This feature is currently experimental and need to be enabled by installing Cobalt [from
-source](https://cobalt-org.github.io/docs/install) with the `pagination-unstable` feature.
-
 ### Activation
 
 In the page that will be used as the index, turn on the pagination feature in the
