@@ -19,6 +19,8 @@ Learn from other site's using cobalt
 - [sda.io](https://sda.io) ([Source](https://github.com/mfs/blog))
 - [booyaa.wtf](https://booyaa.wtf/tags/cobalt/) ([Source](https://github.com/booyaa/booyaa.github.io))
 - [Geob-o-matic](https://haurchefant.fr) ([Source of Cobalt fork](https://github.com/Geobert/blog))
+- [Artemis' Blog](https://artemislena.eu) ([Source](https://codeberg.org/FantasyCookie17/artemislena.eu))
+- [The GTRR](https://gtrr.artemislena.eu) ([Source](https://codeberg.org/FantasyCookie17/gtrr))
 
 ## Issues
 
