@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Troubleshooting</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a class="active" href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Troubleshooting</h2>
+<p>Every command supports logging additional detail that can be useful when troubleshooting cobalt.  For example:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt build</span><span style="background-color:#2b303b;color:#bf616a;"> --log-level</span><span style="background-color:#2b303b;color:#c0c5ce;">=debug </span><span style="background-color:#2b303b;color:#65737e;"># Show some additional context
+
+</span><span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt build</span><span style="background-color:#2b303b;color:#bf616a;"> --trace </span><span style="background-color:#2b303b;color:#65737e;"># Show everything
+</span><span style="background-color:#2b303b;color:#bf616a;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt build</span><span style="background-color:#2b303b;color:#bf616a;"> --log-level</span><span style="background-color:#2b303b;color:#c0c5ce;">=trace </span><span style="background-color:#2b303b;color:#65737e;"># Same as above
+</span></pre>
+<h3>Useful commands</h3>
+<p>Show config after processing defaults, etc:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt debug config
+</span></pre>
+<p>Show all files for a given collection:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt debug files pages
+</span><span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt debug files posts
+</span><span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt debug files posts</span><span style="background-color:#2b303b;color:#bf616a;"> --draft
+</span><span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt debug files assets
+</span><span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt debug files assets</span><span style="background-color:#2b303b;color:#bf616a;"> --trace
+</span></pre>
+<p><code>--trace</code> is useful to know</p>
+<ul>
+<li>What the final <code>ignore</code> pattern is</li>
+<li>Why files or directories where ignored</li>
+<li>etc</li>
+</ul>
+<p>Supported code highlight themes:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt debug highlight themes
+</span></pre>
+<p>Supported code highlight language syntaxes:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">$</span><span style="background-color:#2b303b;color:#c0c5ce;"> cobalt debug highlight syntaxes
+</span></pre>
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

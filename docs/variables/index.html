@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Liquid Variables</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a class="active" href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Variables</h2>
+<p>Cobalt makes a variety of data available as Liquid variables.</p>
+<p>This is can be helpful for:</p>
+<ul>
+<li>Theming</li>
+<li>Easier maintenance for only having one place to update things</li>
+</ul>
+<p>Example:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">&lt;</span><span style="background-color:#2b303b;color:#bf616a;">html</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  &lt;</span><span style="background-color:#2b303b;color:#bf616a;">head</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    &lt;</span><span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;{{ page.title }}&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">head</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  &lt;</span><span style="background-color:#2b303b;color:#bf616a;">body</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  {{ page.content }}
+  &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">body</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">html</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+</span></pre>
+<h3>Global variables</h3>
+<table><thead><tr><th>Variable</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>site</code></td><td>Object</td><td>Site-wide information</td></tr>
+<tr><td><code>page</code></td><td>Object</td><td>Current-page information</td></tr>
+<tr><td><code>collection</code></td><td>Object</td><td>Built-in <a href="/docs/posts"><code>posts</code></a>.</td></tr>
+</tbody></table>
+<h3>Site Variables</h3>
+<table><thead><tr><th>Variable</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>site.title</code></td><td>String</td><td>The title of the entire site, see <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>site.description</code></td><td>String</td><td>The description of the entire site, see <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>site.base_url</code></td><td>String</td><td>The URL of your site, see <a href="/docs/config"><code>_cobalt.yml</code></a>.  This is helpful for making absolute URLs, particularly when run within <a href="/docs/usage"><code>cobalt serve</code></a>.</td></tr>
+<tr><td><code>site.data</code></td><td>Object</td><td>The merged result of <a href="/docs/directory"><code>_data</code></a> and <a href="/docs/config"><code>site: data</code></a>.</td></tr>
+</tbody></table>
+<h3>Page Variables</h3>
+<p>In the context of your <a href="/docs/pages">page content</a>:</p>
+<table><thead><tr><th>Variable</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>page.permalink</code></td><td>String</td><td>Relative path to the page, see <a href="/docs/front">frontmatter</a>.</td></tr>
+<tr><td><code>page.title</code></td><td>String</td><td>The title of the page, see <a href="/docs/front">frontmatter</a>.</td></tr>
+<tr><td><code>page.slug</code></td><td>String</td><td>The identifier of the page, see <a href="/docs/front">frontmatter</a>.</td></tr>
+<tr><td><code>page.description</code></td><td>String</td><td>The description of the page, see <a href="/docs/front">frontmatter</a>.</td></tr>
+<tr><td><code>page.categories</code></td><td>List of Strings</td><td>Hierarchical categories this page lives under, see <a href="/docs/front">frontmatter</a>.</td></tr>
+<tr><td><code>page.published_date</code></td><td><code>YYYY-MM-DD HH:MM:SS TZ</code></td><td>The date the page was initially published, see <a href="/docs/front">frontmatter</a>.</td></tr>
+<tr><td><code>page.is_draft</code></td><td>Boolean</td><td>See <a href="/docs/front">frontmatter</a>.</td></tr>
+<tr><td><code>page.file.permalink</code></td><td>String</td><td>Relative path to the source file.</td></tr>
+<tr><td><code>page.collection</code></td><td>String</td><td>The slug of the page's collection.  <code>&quot;posts&quot;</code> for posts.</td></tr>
+<tr><td><code>page.data</code></td><td>Object</td><td>User-defined data, see <a href="/docs/front">frontmatter</a>.</td></tr>
+</tbody></table>
+<p>Additionally, in the context of your <a href="/docs/layouts">page layout</a>:</p>
+<table><thead><tr><th>Variable</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>page.content</code></td><td>String</td><td>The rendered page content (i.e. excludes the layout).</td></tr>
+<tr><td><code>page.excerpt</code></td><td>String</td><td>The rendered excerpt of a page, see <a href="/docs/front"><code>excerpt</code> / <code>excerpt_separator</code></a>.</td></tr>
+</tbody></table>
+<h3>Collection Variables</h3>
+<p>Below, the built-in <code>posts</code> collection is demonstrated.</p>
+<table><thead><tr><th>Variable</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>collections.posts.title</code></td><td>String</td><td>The title of the posts collection, see <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>collections.posts.description</code></td><td>String</td><td>The description of the posts collection, see <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>collections.posts.slug</code></td><td>String</td><td>The identifier of the posts collection, see <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>collections.posts.rss</code></td><td>String</td><td>The permalink for the posts' RSS feed, see <a href="/docs/config"><code>_cobalt.yml</code></a> and <a href="/docs/rss">RSS</a>.</td></tr>
+<tr><td><code>collections.posts.jsonfeed</code></td><td>String</td><td>The permalink for the posts' RSS feed, see <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+</tbody></table>
+
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

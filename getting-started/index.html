@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Getting Started</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="introduction">
+<div class="inner">
+<h3>Installation</h3>
+<p>Download a <a href="https://github.com/cobalt-org/cobalt.rs/releases">release</a>.</p>
+<p>or</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-org/cobalt.rs --crate cobalt
+</span></pre>
+<h3>Usage</h3>
+<h4>Start</h4>
+<p>Create a site with an example pages, posts, and layouts:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ mkdir myBlog &amp;&amp; cd myBlog
+$ cobalt init
+</span></pre>
+<h4>Preview</h4>
+<p>Serve your site at <code>127.0.0.1:3000</code></p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt serve
+</span></pre>
+<p>This provides live reload; it will re-generate your site as you add or change content.</p>
+<h4>Add a Page</h4>
+<p>Add a new page or post to your site:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt new &quot;Cats Around the World&quot;
+</span></pre>
+<p>A file <code>cats-around-the-world.md</code> will be created in the current directory.
+The type of file created is based on which directory you put it in.</p>
+<p>Posts start out as &quot;drafts&quot;.  For them to show up on <code>serve</code>, you'll need to
+pass the <code>--drafts</code> flag:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt serve --drafts
+</span></pre>
+<h4>Publish a Post</h4>
+<p>Once your post is ready, you can publish it:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt publish posts/cats-around-the-world.md
+</span></pre>
+<p>The page will no longer be a &quot;draft&quot; and the <code>published_date</code> will be set to today.</p>
+<h4>Build the site</h4>
+<p>Once the post is in published state, build the site:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt build
+</span></pre>
+<p>The site is sitting in <code>_site</code> and ready to be uploaded!</p>
+
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Directory</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a class="active" href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Directory Structure</h2>
+<p>By default, cobalt mirrors your source file hierarchy in the destination,
+helping you get closer to a What-You-See-Is-What-You-Get experience.</p>
+<p>Files or folders that help generate the site but aren't directly part of the output
+are &quot;hidden&quot; from cobalt by prefixing them with a <code>_</code>.</p>
+<p>The default Cobalt site usually looks like this</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">.
+|- _cobalt.yml
+|- _layouts
+|  |- default.liquid
+|- _includes
+|  |- header.liquid
+|- _data
+|  |- movies.json
+|- _sass
+|  |- base.scss
+|- _site
+|  |- index.html
+|- _defaults
+|  |- pages.md
+|  |- posts.md
+|- posts
+|  |- cats.md
+|- _drafts
+|  |- dogs.md
+|- index.liquid
+</span></pre><table><thead><tr><th>File / Directory</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>.</code></td><td>Root directory for your content.  Can be modified in <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>_cobalt.yml</code></td><td>Site-wide <a href="/docs/config">configuration</a> file</td></tr>
+<tr><td><code>_layouts</code></td><td><a href="/docs/layouts">Templates</a> that wrap pages.  The layout is chosen in the <a href="/docs/pages">frontmatter</a></td></tr>
+<tr><td><code>_includes</code></td><td>Liquid snippets of content to be shared among <a href="/docs/layouts">layouts</a> or pages.</td></tr>
+<tr><td><code>_data</code></td><td>Data files that will be loaded as part of the <code>{{ site.data }}</code> variable.</td></tr>
+<tr><td><code>_sass</code></td><td>Sass snippets that can be imported into your <code>.scss</code> files.</td></tr>
+<tr><td><code>_site</code></td><td>The output directory of cobalt.  Can be modified in <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>_defaults</code></td><td><code>cobalt new</code> initializes files from here based on the collection name.</td></tr>
+<tr><td><code>posts</code></td><td>Pages in this directory will be treated as <a href="/docs/posts">blog posts</a>.  Can be modified in <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>_drafts</code></td><td>Pages in this directory will be treated as <a href="/docs/posts">draft blog posts</a>.  Can be modified in <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>index.liquid</code></td><td>Any other <a href="/docs/pages">pages</a> found will be transformed by cobalt.</td></tr>
+<tr><td>Other files</td><td>Assets will be copied directly over from the source directory to the output directory.</td></tr>
+</tbody></table>
+
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

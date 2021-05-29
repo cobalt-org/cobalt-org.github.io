@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::FAQ</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a class="active" href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>FAQ</h2>
+<h3>How can I add MathJax to my pages?</h3>
+<p>You can include an import for the MathJax library in the <code>&lt;head&gt;</code> element of a <a href="/docs/layouts">layout</a>. The following code snippet should be plug and play for getting basic MathJax to work in your <a href="/docs/pages">pages</a>.</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">&lt;</span><span style="background-color:#2b303b;color:#bf616a;">script </span><span style="background-color:#2b303b;color:#d08770;">type</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">text/x-mathjax-config</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;&gt;
+  MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&quot;\\[&quot;,&quot;\\]&quot;] ],
+      processEscapes: true
+    },
+    &quot;HTML-CSS&quot;: { fonts: [&quot;TeX&quot;] }
+  });
+&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">script</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+&lt;</span><span style="background-color:#2b303b;color:#bf616a;">script </span><span style="background-color:#2b303b;color:#d08770;">src</span><span style="background-color:#2b303b;color:#c0c5ce;">=&#39;</span><span style="background-color:#2b303b;color:#a3be8c;">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML</span><span style="background-color:#2b303b;color:#c0c5ce;">&#39; </span><span style="background-color:#2b303b;color:#d08770;">async</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">script</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+</span></pre>
+<p>After including the above snippet in your <a href="/docs/layouts">layout</a>, on any <a href="/docs/pages">page</a> implementing that layout you can surround any text with <code>$ $</code> or <code>$$ $$</code> to have MathJax render it inline or on a new line, respectively.</p>
+<p>You can read more about how to customize or configure MathJax <a href="https://docs.mathjax.org/en/latest/configuration.html#configuring-mathjax">here</a>. For Cobalt gaining built-in support for MathJax, see <a href="https://github.com/cobalt-org/cobalt.rs/issues/280">the Github issue</a>.</p>
+
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

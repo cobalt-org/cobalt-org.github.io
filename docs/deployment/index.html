@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Deployment</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a class="active" href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Deployment</h2>
+<h3>TravisCI</h3>
+<h4>Project Site</h4>
+<p>You can easily deploy a cobalt site to <code>gh-pages</code>! To do this with travis is
+also very easy.</p>
+<ol>
+<li>Create your <code>.travis.yml</code> file:</li>
+</ol>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#bf616a;">sudo</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">false
+</span><span style="background-color:#2b303b;color:#bf616a;">before_script</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  - </span><span style="background-color:#2b303b;color:#bf616a;">curl -LSfs https://japaric.github.io/trust/install.sh |
+    sh -s --
+    --git cobalt-org/cobalt.rs
+    --crate cobalt
+    --force
+    --target x86_64-unknown-linux-gnu
+    --tag v0.15.0
+  </span><span style="background-color:#2b303b;color:#c0c5ce;">- </span><span style="background-color:#2b303b;color:#bf616a;">export PATH=&quot;$PATH:~/.cargo/bin&quot;
+script</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  - </span><span style="background-color:#2b303b;color:#bf616a;">cobalt build
+
+deploy</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">provider</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">pages
+  skip_cleanup</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">true
+  </span><span style="background-color:#2b303b;color:#bf616a;">github_token</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">$GH_TOKEN
+  local_dir</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">_site
+  target_branch</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">master
+  </span><span style="background-color:#2b303b;color:#d08770;">on</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+    </span><span style="background-color:#2b303b;color:#bf616a;">branch</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#a3be8c;">source
+</span></pre>
+<ul>
+<li><code>--tag</code>: update to reflect the desired version of cobalt.</li>
+<li><code>local_dir</code>: update it according to your <a href="/docs/config"><code>destination</code></a></li>
+<li><code>target_branch</code>: Update to reflect the branch that you configured as the source for <a href="https://pages.github.com/">Github Pages</a>.</li>
+<li><code>on: branch</code>: Update to reflect the branch your source is kept in.</li>
+</ul>
+<ol start="2">
+<li>Configure your <code>GH_TOKEN</code></li>
+</ol>
+<p>This is a limited access API token for Travis to commit to your page's github repo.  You can create one <a href="https://github.com/settings/tokens">here</a>.</p>
+<p>To add it to your <code>.travis.yml</code> file, you will need to use the <a href="https://github.com/travis-ci/travis.rb#the-travis-client-">travis cli
+tool</a>.  This will
+encrypt the token specifically to your repo and branch.</p>
+<p>Example:
+<code>travis encrypt GH_TOKEN=... --add env.global</code></p>
+<h4>Personal or Organization Site</h4>
+<p>The main difference with a personal site is that github only allows
+the <code>master</code> branch to serve the pages.  Instead, you could
+keep your source in another branch, like <code>source</code> and have
+cobalt import your site into the <code>master</code> branch.</p>
+<h3>GitLab CI</h3>
+<p>You can also deploy a cobalt site to <a href="http://pages.gitlab.io/">Gitlab Pages</a>
+using GitLab CI.  GitLab CI uses <a href="https://docs.docker.com">Docker</a>, so there
+are many ways to accomplish building your cobalt site.</p>
+<p>This example <code>.gitlab-ci.yml</code> installs and runs cobalt:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#bf616a;">image</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">debian:latest
+
+variables</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">COBALT_VERSION</span><span style="background-color:#2b303b;color:#c0c5ce;">: &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">v0.15.0</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;
+</span><span style="background-color:#2b303b;color:#bf616a;">pages</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">script</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  - </span><span style="background-color:#2b303b;color:#bf616a;">apt-get update &amp;&amp; apt-get -y install curl
+  </span><span style="background-color:#2b303b;color:#c0c5ce;">- </span><span style="background-color:#2b303b;color:#bf616a;">curl -LSfs https://japaric.github.io/trust/install.sh |
+    sh -s --
+    --git cobalt-org/cobalt.rs
+    --crate cobalt
+    --force
+    --target x86_64-unknown-linux-gnu
+    --tag $COBALT_VERSION
+  </span><span style="background-color:#2b303b;color:#c0c5ce;">- </span><span style="background-color:#2b303b;color:#bf616a;">export PATH=&quot;$PATH:~/.cargo/bin&quot;
+  </span><span style="background-color:#2b303b;color:#c0c5ce;">- </span><span style="background-color:#2b303b;color:#bf616a;">mkdir -p public
+  </span><span style="background-color:#2b303b;color:#c0c5ce;">- </span><span style="background-color:#2b303b;color:#bf616a;">cobalt build -d public
+  artifacts</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+    </span><span style="background-color:#2b303b;color:#bf616a;">paths</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+    - </span><span style="background-color:#2b303b;color:#bf616a;">public/
+  only</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  - </span><span style="background-color:#2b303b;color:#a3be8c;">master
+</span></pre>
+<h3>Other</h3>
+<p>To import your site to your <code>gh-pages</code> branch you can either
+pass a <code>build --import</code> flag when you build the site or after
+you have build the site with <code>build</code> you can run
+<code>import</code>. There are also some flags that can be found via
+<code>import --help</code>.</p>
+<h3>Self-hosted</h3>
+<p>If you host your site yourself, for example on a virtual private
+server, here are some ideas on how to deploy.</p>
+<h4>Simple uploading</h4>
+<p>You can use tools such as
+<a href="https://en.wikipedia.org/wiki/Rsync/"><code>rsync</code></a>, or other file
+synchronization tools to upload your rendered site to a web
+server. For example (note that this will delete all extraneous files
+on your server):</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ rsync --delete -a _site/ YOUR-SERVER:public_html/
+</span></pre>
+<h4>Publishing with git</h4>
+<p>Note that this section assumes familiarity with
+<a href="https://git-scm.com/">git</a>, so if you are not familiar with git, feel
+free to ignore it, or take the time to make yourself familiar. It
+further assumes you already keep your cobalt project in git, as well
+as basic familiarity with Unix-like systems.</p>
+<p>Instead of just copying the locally rendered site to your web server,
+you can install cobalt and git on the web server, and publish via
+pushing to a git repository. This is advantageous especially in a
+multi-user setting, where multiple users (or maybe just yourself using
+different machines) are maintaining the same site, as git will prevent
+users from overwriting each other's changes. Conflicts will have to be
+resolved locally by git rebasing and/or merging.</p>
+<p>To set this up, you will need to have both cobalt and git installed on
+your server. Then, create a bare repository on your server and
+configure it as a remote in your local cobalt repository to be able to
+push to it. Once that is done, you can set up a <code>post-update</code> hook on
+the server's git repository to render your site. To make that process
+reliable in case cobalt fails to render your site, you can use the
+<a href="https://github.com/cobalt-org/cobalt.rs/blob/master/contrib/cobalt-git-deploy"><code>cobalt-git-deploy</code></a>
+script. To learn more about <code>cobalt-git-deploy</code>, call it with the
+<code>--help</code> option. Specifically, you should make sure that the
+directories it is invoked with from the git hook are not already
+existing.</p>
+<p>Assuming you have installed <code>cobalt-git-deploy</code> somewhere in your
+<code>PATH</code>, create a <code>post-update</code> hook on the server's git repository
+that looks something like this:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cat homepage.git/hooks/post-update
+#!/bin/sh
+
+PATH=&quot;$HOME/bin:/usr/local/bin:/usr/bin:/bin&quot;
+export PATH
+
+exec cobalt-git-deploy ~/cobalt-stage ~/public_html
+</span></pre>
+<p>Make sure that your hook is executable. Now pushing to the repository
+should show status information from the hook, e.g.:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ git push
+No previous state saved. First run?
+Checking out master to /home/foo/cobalt-stage/left
+Already on &#39;master&#39;
+HEAD is now at 9ef95c1 New exciting blog post
+Building site
+[info] Building from &quot;/home/foo/cobalt-stage/left/&quot; into &quot;/home/foo/cobalt-stage/left/_site&quot;
+[info] Build successful
+Deploying site in /home/foo/public_html
+</span></pre>
+<p>You can now enjoy publishing using <code>git commit</code> and <code>git push</code>!</p>
+
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

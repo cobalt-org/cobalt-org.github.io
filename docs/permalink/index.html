@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Permalink Templates</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a class="active" href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Permalink Templates</h2>
+<p>Permalinks refer to the relative URL for your pages.  Cobalt supports a
+flexible way to build permalinks, allowing you to leverage various Liquid
+template variables.</p>
+<p>Permalinks are configured in the <a href="/docs/front">frontmatter</a>.  When
+configuring a permalink, you're most likely to want to set it as a
+<a href="/docs/config">default</a></p>
+<p>Example:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">My first Blogpost
+layout</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">posts.liquid
+permalink</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#a3be8c;">/some/other/file.html
+</span></pre>
+<p>Results in</p>
+<ul>
+<li>The file's URL: <code>your-website.com/some/other/file.html</code></li>
+<li><a href="/docs/variables"><code>page.permalink</code></a>: <code>some/other/file.html</code></li>
+</ul>
+<p>Note: Permalinks templates must start with a <code>/</code>.</p>
+<h3>Pretty URLs</h3>
+<p>When you omit the file extension (e.g. <code>.html</code>) in your permalink, Cobalt will
+treat the permalink as a folder and create the file with the name <code>index.html</code>.</p>
+<p>Example:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">:   </span><span style="background-color:#2b303b;color:#bf616a;">My first Blogpost
+layout</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">posts.liquid
+permalink</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#a3be8c;">/some/other/file
+</span></pre>
+<p>Results in</p>
+<ul>
+<li>The file's URL: <code>your-website.com/some/other/file/index.html</code></li>
+<li><a href="/docs/variables"><code>page.permalink</code></a>: <code>some/other/file</code></li>
+</ul>
+<h3>Template Variables</h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>parent</code></td><td>The directory path to the file.  e.g. If the file is <code>posts/some/file.md</code>, then <code>parent</code> will be <code>posts/some</code>.</td></tr>
+<tr><td><code>name</code></td><td>The file name without the extension.  e.g. If the file is <code>posts/some/file.md</code>, then <code>name</code> will be <code>file</code>.</td></tr>
+<tr><td><code>ext</code></td><td>The output file extension.</td></tr>
+<tr><td><code>slug</code></td><td>The page's <a href="/docs/front"><code>slug</code></a>.</td></tr>
+<tr><td><code>categories</code></td><td>The <a href="/docs/front"><code>categories</code></a> for the page, separated by <code>/</code>.  e.g. If the frontmatter's <code>categories</code> are <code>&quot;Animals&quot;, &quot;Dogs&quot;</code>, then the permalink's <code>categories</code> is <code>animals/dogs</code>.</td></tr>
+<tr><td><code>year</code></td><td>The <a href="/docs/front"><code>published_date</code></a>'s year.</td></tr>
+<tr><td><code>i_month</code></td><td>The <a href="/docs/front"><code>published_date</code></a>'s month.</td></tr>
+<tr><td><code>month</code></td><td>The <a href="/docs/front"><code>published_date</code></a>'s month, with a leading <code>0</code>.</td></tr>
+<tr><td><code>i_day</code></td><td>The <a href="/docs/front"><code>published_date</code></a>'s day.</td></tr>
+<tr><td><code>day</code></td><td>The <a href="/docs/front"><code>published_date</code></a>'s day, with a leading <code>0</code>.</td></tr>
+<tr><td><code>hour</code></td><td>The <a href="/docs/front"><code>published_date</code></a>'s hour, 24-hour clock, with a leading <code>0</code>.</td></tr>
+<tr><td><code>minute</code></td><td>The <a href="/docs/front"><code>published_date</code></a>'s minute, with a leading <code>0</code>.</td></tr>
+<tr><td><code>second</code></td><td>The <a href="/docs/front"><code>published_date</code></a>'s second, with a leading <code>0</code>.</td></tr>
+<tr><td><code>data</code></td><td>The frontmatter <a href="/docs/front"><code>data</code></a>.</td></tr>
+</tbody></table>
+<p>Example:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">Corgi
+layout</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">posts.liquid
+categories</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  - </span><span style="background-color:#2b303b;color:#bf616a;">Animals
+  </span><span style="background-color:#2b303b;color:#c0c5ce;">- </span><span style="background-color:#2b303b;color:#bf616a;">Dogs
+permalink</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#a3be8c;">/{{categories}}/{{slug}}
+</span></pre>
+<p>Results in</p>
+<ul>
+<li>The file's URL: <code>your-website.com/animals/dogs/corgi/index.html</code></li>
+<li><a href="/docs/variables"><code>page.permalink</code></a>: <code>animals/dogs/corgi</code></li>
+</ul>
+<h3>Built-in Permalink Styles</h3>
+<p>Cobalt also provides some built-in permalink templates.</p>
+<table><thead><tr><th>Permalink Style</th><th>URL Template</th></tr></thead><tbody>
+<tr><td><code>path</code></td><td><code>/{{parent}}/{{name}}{{ext}}</code></td></tr>
+</tbody></table>
+<p>Example file <code>some/other/file.md</code>:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">:   </span><span style="background-color:#2b303b;color:#bf616a;">My first Blogpost
+layout</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">posts.liquid
+permalink</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#a3be8c;">path
+</span></pre>
+<p>Results in</p>
+<ul>
+<li>The file's URL: <code>your-website.com/some/other/file.html</code></li>
+<li><a href="/docs/variables"><code>page.permalink</code></a>: <code>some/other/file.html</code></li>
+</ul>
+
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

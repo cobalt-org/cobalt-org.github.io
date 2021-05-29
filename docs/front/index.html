@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Frontmatter</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a class="active" href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Frontmatter</h2>
+<p>All <a href="/docs/pages">pages</a> optionally support having some metadata
+associated with them, called the frontmatter.</p>
+<p>The frontmatter metadata is formatted using <a href="http://yaml.org/">yaml</a> and
+surrounded, above and below, with <code>---</code>.</p>
+<p>Example:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">---
+title:   My first Blogpost
+published_date:    2016-01-01 21:00:00 +0100
+layout: posts.liquid
+---
+Hey there this is my first blogpost and this is super awesome.
+
+My Blog is lorem ipsum like, yes it is..
+</span></pre>
+<h3>Default Frontmatter</h3>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">---
+</span><span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+</span><span style="background-color:#2b303b;color:#bf616a;">description</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+</span><span style="background-color:#2b303b;color:#bf616a;">published_date</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+</span><span style="background-color:#2b303b;color:#bf616a;">format</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">Raw
+layout</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+</span><span style="background-color:#2b303b;color:#bf616a;">is_draft</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">false
+</span><span style="background-color:#2b303b;color:#bf616a;">permalink</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">path
+slug</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+</span><span style="background-color:#2b303b;color:#bf616a;">excerpt_separator</span><span style="background-color:#2b303b;color:#c0c5ce;">: &quot;</span><span style="background-color:#2b303b;color:#96b5b4;">\n\n</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;
+</span><span style="background-color:#2b303b;color:#bf616a;">excerpt</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+</span><span style="background-color:#2b303b;color:#bf616a;">categories</span><span style="background-color:#2b303b;color:#c0c5ce;">: []
+</span><span style="background-color:#2b303b;color:#bf616a;">tags</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+</span><span style="background-color:#2b303b;color:#bf616a;">data</span><span style="background-color:#2b303b;color:#c0c5ce;">: {}
+</span><span style="background-color:#2b303b;color:#a3be8c;">---
+</span></pre>
+<h4>Overriding defaults from filename</h4>
+<p>Cobalt will infer some information from the filename.</p>
+<p>Recognized name formats include:</p>
+<ul>
+<li><code>slug.extension</code></li>
+<li><code>YYYY-MM-DD-slug.extension</code></li>
+<li><code>YYYY-MM-DD slug.extension</code></li>
+</ul>
+<p>The two later ones are only recognised on <code>build</code> as <code>publish</code> managed the
+<code>published_date</code> and <a href="/docs/usage">prepend the date to the filename by default</a>.</p>
+<table><thead><tr><th>Metadata</th><th>Inferred Default</th></tr></thead><tbody>
+<tr><td><code>slug</code></td><td>The <code>slug</code> portion of the name.</td></tr>
+<tr><td><code>title</code></td><td>A best-effort at making a title from the <code>slug</code> portion.</td></tr>
+<tr><td><code>published_date</code></td><td>The <code>YYYY-MM-DD</code> portion, if present.</td></tr>
+<tr><td><code>format</code></td><td><code>Markdown</code> if <code>extension</code> is <code>md</code>.</td></tr>
+<tr><td><code>is_draft</code></td><td><code>true</code> if in the <a href="/docs/directory">drafts folder</a>.</td></tr>
+</tbody></table>
+<h3>Field Descriptions</h3>
+<table><thead><tr><th>Metadata</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>title</code></td><td>String</td><td>The user-friendly name of the page.</td></tr>
+<tr><td><code>description</code></td><td>String</td><td>The description of the page's content.</td></tr>
+<tr><td><code>published_date</code></td><td><code>YYYY-MM-DD HH:MM:SS TZ</code></td><td>The date the page was initially published.</td></tr>
+<tr><td><code>format</code></td><td><code>Raw</code>, <code>Markdown</code></td><td>Content format that needs <a href="/docs/pages">parsing</a>.</td></tr>
+<tr><td><code>layout</code></td><td>String or <code>null</code></td><td>The layout template that wraps the page content, if present.</td></tr>
+<tr><td><code>is_draft</code></td><td>Boolean</td><td>If true, not published by default.</td></tr>
+<tr><td><code>permalink</code></td><td><a href="/docs/permalink">String</a></td><td>The path for the generated page in <a href="/docs/directory"><code>destination</code></a>.</td></tr>
+<tr><td><code>slug</code></td><td>String</td><td>The path-friendly name of the file for use in <a href="/docs/permalink">permalinks</a></td></tr>
+<tr><td><code>excerpt_separator</code></td><td>String</td><td>A marker for what leading content should be extracted from the content as an excerpt.  <code>&quot;&quot;</code> will cause no excerpt to be generated.</td></tr>
+<tr><td><code>excerpt</code></td><td>String</td><td>Manually override the extracted excerpt.  This will be processed like a <a href="/docs/pages">page</a>.</td></tr>
+<tr><td><code>categories</code></td><td>List of Strings</td><td>Hierarchical categories this page lives under.</td></tr>
+<tr><td><code>tags</code></td><td>List of Strings</td><td>Tags attached to the page.</td></tr>
+<tr><td><code>data</code></td><td>Object</td><td>User-defined data available at <a href="/docs/variables"><code>page.data</code></a>.</td></tr>
+</tbody></table>
+
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

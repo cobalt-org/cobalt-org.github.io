@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Usage</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a class="active" href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Usage</h2>
+<h3>init</h3>
+<p>Create a site with an example pages, posts, and layouts:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;"># Create site in current directory
+$ cobalt init
+# Create site in `myBlog` sub-directory
+$ cobalt init myBlog
+</span></pre>
+<h3>serve</h3>
+<p>Serve your site at <code>127.0.0.1:3000</code></p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt serve
+# Include drafts
+$ cobalt serve --drafts
+</span></pre>
+<p>This provides live reload; it will re-generate your site as you add or change content.</p>
+<p>Use the <code>--host</code> argument to listen on a different address (ex. 0.0.0.0/INADDR_ANY);
+the default is <code>localhost</code>.  Use <code>--port</code> (or <code>-P</code>) to listen on a different TCP port
+number (default: 3000).</p>
+<h3>new</h3>
+<p>Add a new page or post to your site:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;"># Creates page `cats-around-the-world.md` in the current directory
+$ cobalt new &quot;Cats Around the World&quot;
+# Creates post `cats-around-the-world.md` in the `posts` directory
+$ cobalt new &quot;Cats Around the World&quot; --file posts
+# Creates post `cats.md` in the `posts` directory
+$ cobalt new &quot;Cats Around the World&quot; --file posts/cats.md
+</span></pre>
+<p>You can modify the template used for <code>new</code> by editing the files in <a href="/docs/directory"><code>_defaults</code></a>.</p>
+<h3>publish</h3>
+<p>Once your post is ready, you can publish it:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt publish posts/cats-around-the-world.md
+</span></pre>
+<p>The page will no longer be a &quot;draft&quot; and the <code>published_date</code> will be set to today. </p>
+<p>You can also publish from the <code>drafts</code> folder:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt publish drafts/dogs-around-the-world.md
+</span></pre>
+<p>It will move it to <code>posts</code> folder besides changing &quot;draft&quot; status and <code>published_date</code>.</p>
+<p>For posts only: by default, the date (<code>YYYY-MM-DD-</code>) will be prepend to your posts
+filename in order to keep them in chronological order. This can be disabled by manually
+setting <code>publish_date_in_filename: false</code> in your configuration.</p>
+<h3>build</h3>
+<p>Once the states of your documents are in a position to be put online − by using
+<code>publish</code> on the documents you want to make visible, or manually setting
+<code>is_draft: false</code> − it's time to build the website:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt build
+</span></pre>
+<p>All the documents not in draft state will be build into a html file ready to be serve by
+your web server.</p>
+<h3>clean</h3>
+<p>Cleans/prunes the <code>destination</code> directory.</p>
+<h3>debug</h3>
+<p>Displays site debug information.  There are subcommands that output various information,
+ex. <code>config</code>, <code>files</code>, and <code>highlight</code>.  Refer to <a href="/docs/trouble">Troubleshooting</a> for
+further details.</p>
+<h3>More</h3>
+<p>To see all the available commands, run</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt --help
+</span></pre>
+<p>You can then get help with those commands by running</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">$ cobalt &lt;command&gt; --help
+</span></pre>
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

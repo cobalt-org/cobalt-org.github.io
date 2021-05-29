@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Posts</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a  href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a class="active" href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Posts</h2>
+<p>Posts are special <a href="/docs/pages">pages</a> that live in
+<a href="/docs/directory"><code>posts</code></a>.  You can use a different directory for posts with the
+<a href="/docs/config"><code>posts.dir</code></a> in your <code>_cobalt.yml</code>.</p>
+<h3>Drafts</h3>
+<p>Cobalt supports leaving posts in &quot;draft&quot; state. Drafts will not be
+rendered unless Cobalt is run with the <code>--drafts</code> flag.</p>
+<p>To mark a post as draft you can either set <code>is_draft: true</code> in your
+<a href="/docs/front">frontmatter</a>, or add it to the <a href="/docs/directory">drafts folder</a>.</p>
+<h2>Pagination</h2>
+<h3>Activation</h3>
+<p>In the page that will be used as the index, turn on the pagination feature in the
+frontmatter. All non mandatory fields have a default value as show below:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">---
+</span><span style="background-color:#2b303b;color:#bf616a;">pagination</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">include</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">All // mandatory
+  per_page</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">5 
+  </span><span style="background-color:#2b303b;color:#bf616a;">permalink_suffix</span><span style="background-color:#2b303b;color:#c0c5ce;">: &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">./{{ num }}/</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;
+  </span><span style="background-color:#2b303b;color:#bf616a;">order</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">Desc
+  sort_by</span><span style="background-color:#2b303b;color:#c0c5ce;">: [&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">published_date</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;]
+  </span><span style="background-color:#2b303b;color:#bf616a;">date_index</span><span style="background-color:#2b303b;color:#c0c5ce;">: [&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">Year</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;, &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">Month</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;]
+</span><span style="background-color:#2b303b;color:#a3be8c;">---
+</span></pre><table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>include</code></td><td><code>All</code>, <code>Tags</code>, <code>Categories</code> or <code>Dates</code></td><td>Defines how we index the posts.</td></tr>
+<tr><td><code>per_page</code></td><td>Integer</td><td>Defines how many posts we got per index.</td></tr>
+<tr><td><code>permalink_suffix</code></td><td>String</td><td>Defines where the subsequent indexes after the first are stored.</td></tr>
+<tr><td><code>order</code></td><td><code>Desc</code> or <code>Asc</code></td><td>Defines the sorting order.</td></tr>
+<tr><td><code>sort_by</code></td><td>Array of Strings</td><td>Defines the sorting criteria.</td></tr>
+<tr><td><code>date_index</code></td><td>Array of a combination of <code>Year</code>, <code>Month</code>, <code>Day</code>, <code>Hour</code>, <code>Minute</code></td><td>For <code>include: Dates</code> only. Defines the date fields to index over.</td></tr>
+</tbody></table>
+<h3>Paginator</h3>
+<p>In a page with pagination activated, we access the posts through the <code>paginator</code> object
+instead of <code>collection</code>:</p>
+<table><thead><tr><th>Variable</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>pages</code></td><td>Array of Object</td><td>The list of <a href="/docs/variables">pages objects</a> that belong to this pagination index.</td></tr>
+<tr><td><code>total_pages</code></td><td>Integer</td><td>Total number of pages contained in this paginator.</td></tr>
+<tr><td><code>index</code></td><td>Integer</td><td>Current index.</td></tr>
+<tr><td><code>index_permalink</code></td><td>String</td><td>The relative Url path of the current pagination index.</td></tr>
+<tr><td><code>total_indexes</code></td><td>Integer</td><td>Total number of pagination pages created.</td></tr>
+<tr><td><code>previous_index_permalink</code></td><td>String</td><td>The relative Url of the previous page. Nil if no previous page is available.</td></tr>
+<tr><td><code>next_index_permalink</code></td><td>String</td><td>The relative Url of the next page in the pagination. Nil if there is no next page available.</td></tr>
+<tr><td><code>first_index_permalink</code></td><td>String</td><td>The relative Url of the first page in the pagination.</td></tr>
+<tr><td><code>last_index_permalink</code></td><td>String</td><td>The relative Url of the last page in the pagination.</td></tr>
+<tr><td><code>next_index</code></td><td>Integer</td><td>Page number of the next index</td></tr>
+<tr><td><code>previous_index</code></td><td>Integer</td><td>Page number of the previous index</td></tr>
+<tr><td><code>indexes</code></td><td>Array of Paginators</td><td>If it's a meta paginator, list of paginators</td></tr>
+</tbody></table>
+<h4>Field <code>permalink_suffix</code></h4>
+<p>This suffix is concatenated to the <code>permalink</code>. When the permalink has a extension, it is
+removed before concatenation.</p>
+<p>Some examples:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">permalink: /                     
+pagination:                      
+  include: All                   
+  permalink_suffix: ./{{num}}/   
+</span></pre>
+<p>gives us:</p>
+<ul>
+<li><code>/index.html</code></li>
+<li><code>/all/2/index.html</code></li>
+</ul>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">permalink: /tags_page.html
+pagination:
+  include: Tags
+  permalink_suffix: ./{{num}}/
+</span></pre>
+<p>gives us:</p>
+<ul>
+<li><code>/tags_page.html</code></li>
+<li><code>/tags_page/my_tag/index.html</code></li>
+<li><code>/tags_page/my_tag/2/index.html</code></li>
+</ul>
+<p>and</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">permalink: /tags
+pagination:
+  include: Tags
+  permalink_suffix: ./{{num}}/
+</span></pre>
+<p>gives us:</p>
+<ul>
+<li><code>/tags/index.html</code></li>
+<li><code>/tags/my_tag/index.html</code></li>
+<li><code>/tags/my_tag/2/index.html</code></li>
+</ul>
+<h4>Field <code>sort_by</code></h4>
+<p>We can sort the posts in the paginator with multiples criteria at the same time. By
+default we sort by <code>weight</code> then <code>published_date</code> but anything that makes sense in the
+frontmatter can be used.</p>
+<h4>Field <code>indexes</code></h4>
+<p>This field is present only with include values <code>Tags</code>, <code>Categories</code> and <code>Dates</code>. Only one
+paginator, called &quot;meta paginator&quot;, has it. Here we have the list of paginators, one per
+value of the <code>include</code>.</p>
+<p>An example with <code>include: Tags</code> will clear things out:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">{% if paginator.indexes %} {% comment %} meta paginator case {% endcomment %}
+  &lt;</span><span style="background-color:#2b303b;color:#bf616a;">h1</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;Tags&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">h1</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  &lt;</span><span style="background-color:#2b303b;color:#bf616a;">p</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    {% for ptag in paginator.indexes %}
+      &lt;</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+        &lt;</span><span style="background-color:#2b303b;color:#bf616a;">a </span><span style="background-color:#2b303b;color:#d08770;">href</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">/{{ ptag.index_permalink }}/</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot; 
+           </span><span style="background-color:#2b303b;color:#d08770;">style</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;font-size: {{ ptag.total_pages | times: </span><span style="background-color:#2b303b;color:#d08770;">4</span><span style="background-color:#2b303b;color:#c0c5ce;"> | plus: </span><span style="background-color:#2b303b;color:#d08770;">80 </span><span style="background-color:#2b303b;color:#c0c5ce;">}}%&quot;&gt;
+          {{ ptag.index_title }} ({{ ptag.total_pages }})
+        &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">a</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+      &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    {% endfor %}
+  &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">p</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+{% else %} {% comment %} normal paginator case {% endcomment %}
+&lt;</span><span style="background-color:#2b303b;color:#bf616a;">h1</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;Tag: {{ paginator.index_title }}&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">h1</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+&lt;</span><span style="background-color:#2b303b;color:#bf616a;">ul</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  {% for page in paginator.pages %}
+    {% capture date_fr_raw %}{% include date_fr.liquid %}{% endcapture %}
+    {% assign date_fr = date_fr_raw | strip %}
+    &lt;</span><span style="background-color:#2b303b;color:#bf616a;">li</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;&lt;</span><span style="background-color:#2b303b;color:#bf616a;">a </span><span style="background-color:#2b303b;color:#d08770;">href</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">/{{ page.permalink }}</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;&gt;{{ page.title }}&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">a</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt; — &lt;</span><span style="background-color:#2b303b;color:#bf616a;">time 
+           </span><span style="background-color:#2b303b;color:#d08770;">datetime</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">{{ date_fr }}</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot; </span><span style="background-color:#2b303b;color:#d08770;">class</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">catalogue-time</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;&gt;{{ date_fr }}&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">time</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  {% endfor %}
+&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">ul</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+</span></pre>
+<p>If <code>indexes</code> is present, we list all the tags in a tag cloud, each tag being clickable to
+access to the posts that contain the tag.</p>
+<p>If not present, we are in the paginator of a tag and list the pages contained in it.</p>
+<h4>Field <code>date_index</code></h4>
+<p>This field is only valid with the <code>Dates</code> include. It defines which date field we want
+to index the posts. The default value <code>[&quot;Year&quot;, &quot;Month&quot;]</code> means that the posts will be
+classified per year and per month.</p>
+<p>The value must be in a logical order: <code>[&quot;Month&quot;, &quot;Year&quot;]</code> will trigger an error.</p>
+<h4>Navigate the different pages of a paginator</h4>
+<p>Using fields like <code>previous_index_permalink</code> or <code>next_index_permalink</code>, we can construct
+the navigation across the pages:</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">&lt;</span><span style="background-color:#2b303b;color:#bf616a;">div</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  {% if paginator.previous_index %}
+  &lt;</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    &lt;</span><span style="background-color:#2b303b;color:#bf616a;">a
+    </span><span style="background-color:#2b303b;color:#d08770;">href</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">/{{ paginator.previous_index_permalink }}</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;&gt;Previous&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">a</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  {% endif %}
+  {% if paginator.next_index %}
+  &lt;</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    &lt;</span><span style="background-color:#2b303b;color:#bf616a;">a
+    </span><span style="background-color:#2b303b;color:#d08770;">href</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">/{{ paginator.next_index_permalink }}</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;&gt;Next&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">a</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  {% endif %}
+
+  &lt;</span><span style="background-color:#2b303b;color:#bf616a;">div</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    {{ paginator.index }} / {{ paginator.total_indexes }}
+  &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">div</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+  &lt;</span><span style="background-color:#2b303b;color:#bf616a;">div</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    {% if paginator.previous_index %}
+    &lt;</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+      &lt;</span><span style="background-color:#2b303b;color:#bf616a;">a </span><span style="background-color:#2b303b;color:#d08770;">href</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">/{{ paginator.first_index_permalink }}</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;&gt;First&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">a</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    {% endif %}
+    {% if paginator.next_index %}
+    &lt;</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+      &lt;</span><span style="background-color:#2b303b;color:#bf616a;">a </span><span style="background-color:#2b303b;color:#d08770;">href</span><span style="background-color:#2b303b;color:#c0c5ce;">=&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">/{{ paginator.last_index_permalink }}</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;&gt;Last&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">a</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">span</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+    {% endif %}
+  &lt;/</span><span style="background-color:#2b303b;color:#bf616a;">div</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+&lt;/</span><span style="background-color:#2b303b;color:#bf616a;">div</span><span style="background-color:#2b303b;color:#c0c5ce;">&gt;
+{% endif %}
+</span></pre>
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>

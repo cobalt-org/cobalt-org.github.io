@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+  <title>Cobalt::Docs::Configuration</title>
+<link rel="stylesheet" href="/public/css/styles.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+  <div class="primary">
+    <h1><a href="/">
+      <img src="/public/images/logo.svg" width="50" />obalt
+    </a></h1>
+  </div>
+  <div class="secondary">
+      <nav>
+    <a href="/getting-started" class="button start"><span>Start</span></a>
+    <a href="/docs" class="button docs"><span>Reference</span></a>
+    <a href="/news" class="button news"><span>News</span></a>
+    <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/CONTRIBUTING.md" class="button contrib"><span>Contribute</span></a>
+    <a href="/help" class="button help"><span>Help!</span></a>
+  </nav>
+  </div>
+</div>
+
+    </header>
+    <main class="flex_main">
+      <section class="docs">
+        <div class="inner">
+          <aside>
+            <p>Basics</p>
+            <ul>
+              <li><a  href="/docs/install">Install</a></li>
+              <li><a  href="/docs/usage">Usage</a></li>
+              <li><a  href="/docs/directory">Directory Structure</a></li>
+              <li><a class="active" href="/docs/config">Configuration</a></li>
+            </ul>
+            <hr align="left">
+            <p>Content</p>
+            <ul>
+              <li><a  href="/docs/pages">Pages</a></li>
+              <li><a  href="/docs/posts">Posts</a></li>
+              <li><a  href="/docs/front">Frontmatter</a></li>
+              <li><a  href="/docs/variables">Variables</a></li>
+              <li><a  href="/docs/permalink">Permalink</a></li>
+              <li><a  href="/docs/layouts">Layouts</a></li>
+              <li><a  href="/docs/assets">Assets</a></li>
+              <li><a  href="/docs/data">Data files</a></li>
+            </ul>
+            <hr align="left">
+            <p>Misc</p>
+            <ul>
+              <li><a  href="/docs/faq">FAQ</a></li>
+              <li><a  href="/docs/rss">RSS</a></li>
+	            <li><a  href="/docs/tools">Tools</a></li>
+              <li><a  href="/docs/deployment">Deployment</a></li>
+              <li><a  href="/docs/trouble">Troubleshooting</a></li>
+            </ul>
+          </aside>
+          <main>
+          <h2>Config File</h2>
+<p><a href="/docs/directory"><code>_cobalt.yml</code></a> let's you specify site-wide options as well as defaults for pages.</p>
+<h3>Default <code>_cobalt.yml</code>:</h3>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#65737e;"># Build options
+</span><span style="background-color:#2b303b;color:#bf616a;">source</span><span style="background-color:#2b303b;color:#c0c5ce;">: &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">.</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;
+</span><span style="background-color:#2b303b;color:#bf616a;">template_extensions</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  - </span><span style="background-color:#2b303b;color:#bf616a;">md
+  </span><span style="background-color:#2b303b;color:#c0c5ce;">- </span><span style="background-color:#2b303b;color:#bf616a;">liquid
+include_drafts</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">false
+</span><span style="background-color:#2b303b;color:#bf616a;">ignore</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+</span><span style="background-color:#2b303b;color:#bf616a;">destination</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#a3be8c;">_site</span><span style="background-color:#2b303b;color:#c0c5ce;">
+
+# </span><span style="background-color:#2b303b;color:#bf616a;">Site options
+site</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+  </span><span style="background-color:#2b303b;color:#bf616a;">description</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+  </span><span style="background-color:#2b303b;color:#bf616a;">base_url</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+  </span><span style="background-color:#2b303b;color:#bf616a;">data</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~</span><span style="background-color:#2b303b;color:#c0c5ce;">
+
+# </span><span style="background-color:#2b303b;color:#bf616a;">Page/Post options
+default</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">excerpt_separator</span><span style="background-color:#2b303b;color:#c0c5ce;">: &quot;</span><span style="background-color:#2b303b;color:#96b5b4;">\n\n</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;
+  </span><span style="background-color:#2b303b;color:#bf616a;">is_draft</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">false
+</span><span style="background-color:#2b303b;color:#bf616a;">syntax_highlight</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">theme</span><span style="background-color:#2b303b;color:#c0c5ce;">: &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">base16-ocean.dark</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;
+  </span><span style="background-color:#2b303b;color:#bf616a;">enabled</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">true
+</span><span style="background-color:#2b303b;color:#bf616a;">assets</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">sass</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+    </span><span style="background-color:#2b303b;color:#bf616a;">style</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">Nested
+pages</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">default</span><span style="background-color:#2b303b;color:#c0c5ce;">: {}
+</span><span style="background-color:#2b303b;color:#bf616a;">posts</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  </span><span style="background-color:#2b303b;color:#bf616a;">title</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+  </span><span style="background-color:#2b303b;color:#bf616a;">description</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+  </span><span style="background-color:#2b303b;color:#bf616a;">dir</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">posts
+  drafts_dir</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">_drafts
+  order</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#bf616a;">Desc
+  rss</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+  </span><span style="background-color:#2b303b;color:#bf616a;">jsonfeed</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">~
+  </span><span style="background-color:#2b303b;color:#bf616a;">publish_date_in_filename</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#d08770;">true
+  </span><span style="background-color:#2b303b;color:#bf616a;">default</span><span style="background-color:#2b303b;color:#c0c5ce;">: {}
+</span></pre>
+<h3>Build options</h3>
+<table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>source</code></td><td>String</td><td>Directory, relative to <code>_cobalt.yml</code>, where content lives.</td></tr>
+<tr><td><code>template_extensions</code></td><td>List of Strings</td><td>File extensions that mark a file as a <a href="/docs/pages">page</a> as compared to an asset.</td></tr>
+<tr><td><code>include_drafts</code></td><td>Boolean</td><td>Specifies whether posts marked <a href="/docs/pages"><code>is_draft</code></a> should be generated by default.  This can be overriden with <a href="/docs/usage">command line flags</a>.</td></tr>
+<tr><td><code>ignore</code></td><td>List of Strings</td><td>Specifies what files should be ignored by Cobalt by way <a href="https://git-scm.com/docs/gitignore">gitignore</a> patterns, relative to <code>source</code>.</td></tr>
+<tr><td><code>destination</code></td><td>String</td><td>Directory, relative to <code>_cobalt.yml</code>, where the output is written to.</td></tr>
+</tbody></table>
+<p>For example to unignore the <code>.well-known/</code> folder used in LetsEncrypt, add this to your <code>_cobalt.yml</code>.</p>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#bf616a;">ignore</span><span style="background-color:#2b303b;color:#c0c5ce;">:
+  - &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">!.well-known</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;
+  - &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">!.well-known/**/*</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;
+</span></pre>
+<h3>Site options</h3>
+<p>These are all under <code>site:</code> in the yaml:</p>
+<table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>title</code></td><td>String</td><td>The title for the site</td></tr>
+<tr><td><code>description</code></td><td>String</td><td>A description for the site</td></tr>
+<tr><td><code>base_url</code></td><td>String</td><td>The root for the site.  This is used in making paths absolute for RSS as well as in Liquid (<code>{{ site.base_url }}/docs</code>).</td></tr>
+<tr><td><code>data</code></td><td>Object</td><td>Values made available via the <code>{{ site.data }}</code> variable.</td></tr>
+</tbody></table>
+<p>In addition to changing the defaults through CLI arguments/flags, Cobalt allows
+to specify a config file (default: <a href="/docs/directory"><code>_cobalt.yml</code></a>) where you
+can store such settings.</p>
+<h3>Pages and Posts</h3>
+<p>Global options:</p>
+<table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>default</code></td><td><a href="/docs/front">Frontmatter</a></td><td>Site-wide defaults for page <a href="/docs/front">frontmatters</a>.</td></tr>
+<tr><td><code>syntax_highlight</code></td><td></td><td>Site-wide syntax highlighting settings</td></tr>
+<tr><td><code>- theme</code></td><td>String</td><td>Site-wide syntax highlighting theme</td></tr>
+<tr><td><code>- enabled</code></td><td>Boolean</td><td>Enables or disables site-wide syntax highlighting</td></tr>
+</tbody></table>
+<p>These are under <code>pages:</code> in the yaml:</p>
+<table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>default</code></td><td><a href="/docs/front">Frontmatter</a></td><td>Defaults for page <a href="/docs/front">frontmatters</a>.</td></tr>
+</tbody></table>
+<p>These are under <code>posts:</code> in the yaml:</p>
+<table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>title</code></td><td>String</td><td>Title for the posts collection.  Falls back to <code>site.title</code> if not present.</td></tr>
+<tr><td><code>description</code></td><td>String</td><td>Description for the posts collection.  Falls back to <code>site.description</code> if not present.</td></tr>
+<tr><td><code>dir</code></td><td>String</td><td>Directory, relative to <code>source</code>, where posts lives.</td></tr>
+<tr><td><code>drafts_dir</code></td><td>Boolean</td><td>Directory, relative to <code>source</code>, where draft posts can live.</td></tr>
+<tr><td><code>order</code></td><td><code>Asc</code>, <code>Desc</code></td><td>Sort order for <code>{{posts}}</code> variable.</td></tr>
+<tr><td><code>rss</code></td><td>String</td><td>Path for a posts RSS file.</td></tr>
+<tr><td><code>jsonfeed</code></td><td>String</td><td>Path for a posts jsonfeed file.</td></tr>
+<tr><td><code>default</code></td><td><a href="/docs/front">Frontmatter</a></td><td>Defaults for post <a href="/docs/front">frontmatters</a>.</td></tr>
+<tr><td><code>publish_date_in_filename</code></td><td>Boolean</td><td>Prepend <code>YYYY-MM-DD-</code> to filename on <code>publish</code></td></tr>
+</tbody></table>
+<p>These are under <code>assets:</code> in the yaml:</p>
+<table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>sass</code></td><td></td><td>Sass' CSS generation settings</td></tr>
+<tr><td><code>- style</code></td><td><code>Nested</code>, <code>Expanded</code>, <code>Compact</code>, <code>Compressed</code></td><td>Site-wide format style for Sass-generated CSS.</td></tr>
+</tbody></table>
+
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="inner">
+  <p>Made with ❤️  by the Cobalt contributors</p>
+</div>
+
+    </footer>
+  </body>
+</html>
