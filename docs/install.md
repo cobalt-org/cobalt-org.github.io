@@ -13,6 +13,9 @@ Cobalt supports Windows, Linux, and Mac.
 **Arch Linux**
 `pacman -S cobalt`
 
+**macOS (with [Homebrew](https://brew.sh)**
+`brew install cobalt`
+
 ### Pre-built Binary
 
 Requirements: *None*
