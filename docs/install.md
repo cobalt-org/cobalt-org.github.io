@@ -31,7 +31,7 @@ $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-
 
 #### Requirements
 
-##### Debian 9 (stretch)
+##### Debian
 
 ```
 # Install needed packages with
@@ -58,7 +58,15 @@ With syntax highlighting / sass:
 2. Install [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 3. Run `"<VS Path>\vcvarsall.bat" amd64` in your command prompt you'll build from.
 
-#### Compile Steps
+#### From crates.io
+
+Run
+```
+$ cargo install cobalt-bin
+```
+
+#### Building Natively
+
 1. Either
   `git clone https://github.com/cobalt-org/cobalt.rs.git`
   or
@@ -67,11 +75,11 @@ With syntax highlighting / sass:
 3. Check if all tests are passing with:
     `cargo test`
 
-You can also customize the build, including adding support for unstable [features](https://github.com/cobalt-org/cobalt.rs/blob/master/Cargo.toml#L66):
-
 ```
 $ cargo build --release --features=sass
 ```
+
+You can also customize the build, including adding support for unstable [features](https://github.com/cobalt-org/cobalt.rs/blob/master/Cargo.toml#L66):
 
 #### Building with Docker
 
