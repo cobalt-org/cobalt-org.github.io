@@ -92,7 +92,7 @@ Setting            | Format      | Description
 -------------------|-------------|------------
 `default`          | [Frontmatter](/docs/front) | Site-wide defaults for page [frontmatters](/docs/front).
 `syntax_highlight` |             | Site-wide syntax highlighting settings
-`- theme`          | String      | Site-wide syntax highlighting theme
+`- theme`          | String      | Site-wide syntax highlighting theme.  Run `cobalt debug highlight themes` for list of available themes
 `- enabled`        | Boolean     | Enables or disables site-wide syntax highlighting
 
 These are under `pages:` in the yaml:
