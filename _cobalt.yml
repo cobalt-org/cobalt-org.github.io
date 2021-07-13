@@ -1,5 +1,5 @@
 source: "."
-destination: build
+destination: _site
 site:
   title: "Cobalt: Static Site Generator"
   base_url: "https://cobalt-org.github.io"
@@ -16,5 +16,3 @@ posts:
     published_date: "2020-03-14 01:59:26 -0500"
     layout: news.liquid
     permalink: /news/{{year}}/{{month}}/{{slug}}/
-ignore:
-  - "build/*"
