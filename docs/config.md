@@ -25,6 +25,7 @@ site:
   title: ~
   description: ~
   base_url: ~
+  sitemap: ~
   data: ~
 
 # Page/Post options
@@ -78,6 +79,7 @@ Setting       | Format | Description
 `title`       | String | The title for the site
 `description` | String | A description for the site
 `base_url`    | String | The root for the site.  This is used in making paths absolute for RSS as well as in Liquid (`{% raw %}{{ site.base_url }}{% endraw %}/docs`).
+`sitemap`     | String | Relative path for where to generate a [sitemap XML file](https://www.sitemaps.org).
 `data`        | Object | Values made available via the `{%raw%}{{ site.data }}{%endraw%}` variable.
 
 In addition to changing the defaults through CLI arguments/flags, Cobalt allows
