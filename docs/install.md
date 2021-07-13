@@ -24,7 +24,7 @@ Download a [release](https://github.com/cobalt-org/cobalt.rs/releases).
 
 or the following will install cobalt to `~/.cargo/bin`:
 ```
-$ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git cobalt-org/cobalt.rs --crate cobalt
+$ curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | sh -s -- --git cobalt-org/cobalt.rs --crate cobalt
 ```
 
 ### From Source
