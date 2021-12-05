@@ -34,12 +34,13 @@ Variable     | Format | Description
 
 ### Site Variables
 
-Variable           | Format | Description
--------------------|--------|------------
-`site.title`       | String | The title of the entire site, see [`_cobalt.yml`](/docs/config).
-`site.description` | String | The description of the entire site, see [`_cobalt.yml`](/docs/config).
-`site.base_url`    | String | The URL of your site, see [`_cobalt.yml`](/docs/config).  This is helpful for making absolute URLs, particularly when run within [`cobalt serve`](/docs/usage).
-`site.data`        | Object | The merged result of [`_data`](/docs/directory) and [`site: data`](/docs/config).
+Variable           |  Format | Description
+-------------------|---------|------------
+`site.title`       |  String | The title of the entire site, see [`_cobalt.yml`](/docs/config).
+`site.description` |  String | The description of the entire site, see [`_cobalt.yml`](/docs/config).
+`site.base_url`    |  String | The URL of your site, see [`_cobalt.yml`](/docs/config).  This is helpful for making absolute URLs, particularly when run within [`cobalt serve`](/docs/usage).
+`site.data`        |  Object  | The merged result of [`_data`](/docs/directory) and [`site: data`](/docs/config).
+`site.time`        | DateTime | A `liquid_core::model::DateTime` representing the time of the website re-generation.
 
 ### Page Variables
 
