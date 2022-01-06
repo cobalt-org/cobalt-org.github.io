@@ -5,7 +5,7 @@
 
 ## Gitter
 
-[Gitter](https://gitter.im/cobalt-org/cobalt.rs) is the main place to chat with us
+[Gitter](https://gitter.im/cobalt-org/cobalt.rs) is the main place to chat with us. You can also join the room via [Matrix](https://matrix.to/#/#cobalt-org_cobalt.rs:gitter.im) (messages are synced with Gitter).
 
 ## Examples
 
