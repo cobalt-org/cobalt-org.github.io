@@ -21,6 +21,7 @@ Learn from other site's using cobalt
 - [Geob-o-matic](https://haurchefant.fr) ([Source of Cobalt fork](https://github.com/Geobert/blog))
 - [Artemis' Blog](https://artemislena.eu) ([Source](https://codeberg.org/artemislena/artemislena.eu))
 - [The GTRR](https://gtrr.artemislena.eu) ([Source](https://codeberg.org/artemislena/gtrr))
+- [`water` theme](https://aljazerzen.github.io/cobalt-theme-water/) ([Source](https://github.com/aljazerzen/cobalt-theme-water))
 
 ## Issues
 
