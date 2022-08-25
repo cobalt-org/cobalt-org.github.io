@@ -87,6 +87,8 @@ are &quot;hidden&quot; from cobalt by prefixing them with a <code>_</code>.</p>
 </span><span style="color:#c0c5ce;">|  |- cats.md
 </span><span style="color:#c0c5ce;">|- _drafts
 </span><span style="color:#c0c5ce;">|  |- dogs.md
+</span><span style="color:#c0c5ce;">|- _syntaxes
+</span><span style="color:#c0c5ce;">|  |- language.sublime-syntax
 </span><span style="color:#c0c5ce;">|- index.liquid
 </span></pre><table><thead><tr><th>File / Directory</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>.</code></td><td>Root directory for your content.  Can be modified in <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
@@ -99,6 +101,7 @@ are &quot;hidden&quot; from cobalt by prefixing them with a <code>_</code>.</p>
 <tr><td><code>_defaults</code></td><td><code>cobalt new</code> initializes files from here based on the collection name.</td></tr>
 <tr><td><code>posts</code></td><td>Pages in this directory will be treated as <a href="/docs/posts">blog posts</a>.  Can be modified in <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
 <tr><td><code>_drafts</code></td><td>Pages in this directory will be treated as <a href="/docs/posts">draft blog posts</a>.  Can be modified in <a href="/docs/config"><code>_cobalt.yml</code></a>.</td></tr>
+<tr><td><code>_syntaxes</code></td><td>Syntax highlighting support will be added for each <a href="http://www.sublimetext.com/docs/syntax.html#include-syntax">Sublime Text syntax definition</a> in this directory.</td></tr>
 <tr><td><code>index.liquid</code></td><td>Any other <a href="/docs/pages">pages</a> found will be transformed by cobalt.</td></tr>
 <tr><td>Other files</td><td>Assets will be copied directly over from the source directory to the output directory.</td></tr>
 </tbody></table>
