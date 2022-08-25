@@ -31,6 +31,9 @@ To see what syntaxes are supported:
 $ cobalt debug highlight syntaxes
 ```
 
+To add support for additional syntaxes you can add a `_syntaxes/` directory to the project root and include in this directory a
+[Sublime Text syntax definition](http://www.sublimetext.com/docs/syntax.html#include-syntax) file each syntax.
+
 The theme is taken from your [`_cobalt.yml`](/docs/config).  To see the list of supported themes:
 ```
 $ cobalt debug highlight themes
