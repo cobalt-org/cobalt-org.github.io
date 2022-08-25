@@ -33,6 +33,8 @@ The default Cobalt site usually looks like this
 |  |- cats.md
 |- _drafts
 |  |- dogs.md
+|- _syntaxes
+|  |- language.sublime-syntax
 |- index.liquid
 ```
 
@@ -48,5 +50,6 @@ File / Directory | Description
 `_defaults`      | `cobalt new` initializes files from here based on the collection name.
 `posts`          | Pages in this directory will be treated as [blog posts](/docs/posts).  Can be modified in [`_cobalt.yml`](/docs/config).
 `_drafts`        | Pages in this directory will be treated as [draft blog posts](/docs/posts).  Can be modified in [`_cobalt.yml`](/docs/config).
+`_syntaxes`      | Syntax highlighting support will be added for each [Sublime Text syntax definition](http://www.sublimetext.com/docs/syntax.html#include-syntax) in this directory.
 `index.liquid`   | Any other [pages](/docs/pages) found will be transformed by cobalt.
 Other files      | Assets will be copied directly over from the source directory to the output directory.
