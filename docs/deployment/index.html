@@ -70,15 +70,15 @@ also very easy.</p>
 <li>Create your <code>.travis.yml</code> file:</li>
 </ol>
 <pre style="background-color:#2b303b;">
-<span style="color:#bf616a;">sudo</span><span style="color:#c0c5ce;">: </span><span style="color:#d08770;">false
+<code><span style="color:#bf616a;">sudo</span><span style="color:#c0c5ce;">: </span><span style="color:#d08770;">false
 </span><span style="color:#bf616a;">before_script</span><span style="color:#c0c5ce;">:
-</span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">curl -LSfs https://japaric.github.io/trust/install.sh |
+</span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh |
 </span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">sh -s --
 </span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">--git cobalt-org/cobalt.rs
 </span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">--crate cobalt
 </span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">--force
 </span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">--target x86_64-unknown-linux-gnu
-</span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">--tag v0.15.0
+</span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">--tag v0.19.0
 </span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">export PATH=&quot;$PATH:~/.cargo/bin&quot;
 </span><span style="color:#bf616a;">script</span><span style="color:#c0c5ce;">:
 </span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">cobalt build
@@ -91,7 +91,7 @@ also very easy.</p>
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">target_branch</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">master
 </span><span style="color:#c0c5ce;">  </span><span style="color:#d08770;">on</span><span style="color:#c0c5ce;">:
 </span><span style="color:#c0c5ce;">    </span><span style="color:#bf616a;">branch</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">source
-</span></pre>
+</span></code></pre>
 <ul>
 <li><code>--tag</code>: update to reflect the desired version of cobalt.</li>
 <li><code>local_dir</code>: update it according to your <a href="/docs/config"><code>destination</code></a></li>
@@ -118,14 +118,14 @@ using GitLab CI.  GitLab CI uses <a href="https://docs.docker.com">Docker</a>, s
 are many ways to accomplish building your cobalt site.</p>
 <p>This example <code>.gitlab-ci.yml</code> installs and runs cobalt:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#bf616a;">image</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">debian:latest
+<code><span style="color:#bf616a;">image</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">debian:latest
 </span><span style="color:#c0c5ce;">
 </span><span style="color:#bf616a;">variables</span><span style="color:#c0c5ce;">:
-</span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">COBALT_VERSION</span><span style="color:#c0c5ce;">: &quot;</span><span style="color:#a3be8c;">v0.15.0</span><span style="color:#c0c5ce;">&quot;
+</span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">COBALT_VERSION</span><span style="color:#c0c5ce;">: &quot;</span><span style="color:#a3be8c;">v0.19.0</span><span style="color:#c0c5ce;">&quot;
 </span><span style="color:#bf616a;">pages</span><span style="color:#c0c5ce;">:
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">script</span><span style="color:#c0c5ce;">:
 </span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">apt-get update &amp;&amp; apt-get -y install curl
-</span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">curl -LSfs https://japaric.github.io/trust/install.sh |
+</span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh |
 </span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">sh -s --
 </span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">--git cobalt-org/cobalt.rs
 </span><span style="color:#c0c5ce;">    </span><span style="color:#a3be8c;">--crate cobalt
@@ -140,7 +140,7 @@ are many ways to accomplish building your cobalt site.</p>
 </span><span style="color:#c0c5ce;">    - </span><span style="color:#a3be8c;">public/
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">only</span><span style="color:#c0c5ce;">:
 </span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">master
-</span></pre>
+</span></code></pre>
 <h3>Other</h3>
 <p>To import your site to your <code>gh-pages</code> branch you can either
 pass a <code>build --import</code> flag when you build the site or after
@@ -157,8 +157,8 @@ synchronization tools to upload your rendered site to a web
 server. For example (note that this will delete all extraneous files
 on your server):</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">$ rsync --delete -a _site/ YOUR-SERVER:public_html/
-</span></pre>
+<code><span style="color:#c0c5ce;">$ rsync --delete -a _site/ YOUR-SERVER:public_html/
+</span></code></pre>
 <h4>Publishing with git</h4>
 <p>Note that this section assumes familiarity with
 <a href="https://git-scm.com/">git</a>, so if you are not familiar with git, feel
@@ -187,18 +187,18 @@ existing.</p>
 <code>PATH</code>, create a <code>post-update</code> hook on the server's git repository
 that looks something like this:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">$ cat homepage.git/hooks/post-update
+<code><span style="color:#c0c5ce;">$ cat homepage.git/hooks/post-update
 </span><span style="color:#c0c5ce;">#!/bin/sh
 </span><span style="color:#c0c5ce;">
 </span><span style="color:#c0c5ce;">PATH=&quot;$HOME/bin:/usr/local/bin:/usr/bin:/bin&quot;
 </span><span style="color:#c0c5ce;">export PATH
 </span><span style="color:#c0c5ce;">
 </span><span style="color:#c0c5ce;">exec cobalt-git-deploy ~/cobalt-stage ~/public_html
-</span></pre>
+</span></code></pre>
 <p>Make sure that your hook is executable. Now pushing to the repository
 should show status information from the hook, e.g.:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">$ git push
+<code><span style="color:#c0c5ce;">$ git push
 </span><span style="color:#c0c5ce;">No previous state saved. First run?
 </span><span style="color:#c0c5ce;">Checking out master to /home/foo/cobalt-stage/left
 </span><span style="color:#c0c5ce;">Already on &#39;master&#39;
@@ -207,7 +207,7 @@ should show status information from the hook, e.g.:</p>
 </span><span style="color:#c0c5ce;">[info] Building from &quot;/home/foo/cobalt-stage/left/&quot; into &quot;/home/foo/cobalt-stage/left/_site&quot;
 </span><span style="color:#c0c5ce;">[info] Build successful
 </span><span style="color:#c0c5ce;">Deploying site in /home/foo/public_html
-</span></pre>
+</span></code></pre>
 <p>You can now enjoy publishing using <code>git commit</code> and <code>git push</code>!</p>
 
           </main>

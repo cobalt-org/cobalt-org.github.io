@@ -65,7 +65,7 @@
 <h3>How can I add MathJax to my pages?</h3>
 <p>You can include an import for the MathJax library in the <code>&lt;head&gt;</code> element of a <a href="/docs/layouts">layout</a>. The following code snippet should be plug and play for getting basic MathJax to work in your <a href="/docs/pages">pages</a>.</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">script </span><span style="color:#d08770;">type</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">text/x-mathjax-config</span><span style="color:#c0c5ce;">&quot;&gt;
+<code><span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">script </span><span style="color:#d08770;">type</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">text/x-mathjax-config</span><span style="color:#c0c5ce;">&quot;&gt;
 </span><span style="color:#c0c5ce;">  MathJax.Hub.Config({
 </span><span style="color:#c0c5ce;">    extensions: [&quot;tex2jax.js&quot;],
 </span><span style="color:#c0c5ce;">    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
@@ -78,7 +78,7 @@
 </span><span style="color:#c0c5ce;">  });
 </span><span style="color:#c0c5ce;">&lt;/</span><span style="color:#bf616a;">script</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">script </span><span style="color:#d08770;">src</span><span style="color:#c0c5ce;">=&#39;</span><span style="color:#a3be8c;">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML</span><span style="color:#c0c5ce;">&#39; </span><span style="color:#d08770;">async</span><span style="color:#c0c5ce;">&gt;&lt;/</span><span style="color:#bf616a;">script</span><span style="color:#c0c5ce;">&gt;
-</span></pre>
+</span></code></pre>
 <p>After including the above snippet in your <a href="/docs/layouts">layout</a>, on any <a href="/docs/pages">page</a> implementing that layout you can surround any text with <code>$ $</code> or <code>$$ $$</code> to have MathJax render it inline or on a new line, respectively.</p>
 <p>You can read more about how to customize or configure MathJax <a href="https://docs.mathjax.org/en/latest/configuration.html#configuring-mathjax">here</a>. For Cobalt gaining built-in support for MathJax, see <a href="https://github.com/cobalt-org/cobalt.rs/issues/280">the Github issue</a>.</p>
 

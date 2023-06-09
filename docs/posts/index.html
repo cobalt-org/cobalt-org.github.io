@@ -75,7 +75,7 @@ rendered unless Cobalt is run with the <code>--drafts</code> flag.</p>
 <p>In the page that will be used as the index, turn on the pagination feature in the
 frontmatter. All non mandatory fields have a default value as show below:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">---
+<code><span style="color:#c0c5ce;">---
 </span><span style="color:#bf616a;">pagination</span><span style="color:#c0c5ce;">:
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">include</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">All // mandatory
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">per_page</span><span style="color:#c0c5ce;">: </span><span style="color:#d08770;">5 
@@ -84,7 +84,8 @@ frontmatter. All non mandatory fields have a default value as show below:</p>
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">sort_by</span><span style="color:#c0c5ce;">: [&quot;</span><span style="color:#a3be8c;">published_date</span><span style="color:#c0c5ce;">&quot;]
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">date_index</span><span style="color:#c0c5ce;">: [&quot;</span><span style="color:#a3be8c;">Year</span><span style="color:#c0c5ce;">&quot;, &quot;</span><span style="color:#a3be8c;">Month</span><span style="color:#c0c5ce;">&quot;]
 </span><span style="color:#c0c5ce;">---
-</span></pre><table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
+</span></code></pre>
+<table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>include</code></td><td><code>All</code>, <code>Tags</code>, <code>Categories</code> or <code>Dates</code></td><td>Defines how we index the posts.</td></tr>
 <tr><td><code>per_page</code></td><td>Integer</td><td>Defines how many posts we got per index.</td></tr>
 <tr><td><code>permalink_suffix</code></td><td>String</td><td>Defines where the subsequent indexes after the first are stored.</td></tr>
@@ -114,22 +115,22 @@ instead of <code>collection</code>:</p>
 removed before concatenation.</p>
 <p>Some examples:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">permalink: /                     
+<code><span style="color:#c0c5ce;">permalink: /                     
 </span><span style="color:#c0c5ce;">pagination:                      
 </span><span style="color:#c0c5ce;">  include: All                   
 </span><span style="color:#c0c5ce;">  permalink_suffix: ./{{num}}/   
-</span></pre>
+</span></code></pre>
 <p>gives us:</p>
 <ul>
 <li><code>/index.html</code></li>
 <li><code>/all/2/index.html</code></li>
 </ul>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">permalink: /tags_page.html
+<code><span style="color:#c0c5ce;">permalink: /tags_page.html
 </span><span style="color:#c0c5ce;">pagination:
 </span><span style="color:#c0c5ce;">  include: Tags
 </span><span style="color:#c0c5ce;">  permalink_suffix: ./{{num}}/
-</span></pre>
+</span></code></pre>
 <p>gives us:</p>
 <ul>
 <li><code>/tags_page.html</code></li>
@@ -138,11 +139,11 @@ removed before concatenation.</p>
 </ul>
 <p>and</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">permalink: /tags
+<code><span style="color:#c0c5ce;">permalink: /tags
 </span><span style="color:#c0c5ce;">pagination:
 </span><span style="color:#c0c5ce;">  include: Tags
 </span><span style="color:#c0c5ce;">  permalink_suffix: ./{{num}}/
-</span></pre>
+</span></code></pre>
 <p>gives us:</p>
 <ul>
 <li><code>/tags/index.html</code></li>
@@ -159,7 +160,7 @@ paginator, called &quot;meta paginator&quot;, has it. Here we have the list of p
 value of the <code>include</code>.</p>
 <p>An example with <code>include: Tags</code> will clear things out:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">{% if paginator.indexes %} {% comment %} meta paginator case {% endcomment %}
+<code><span style="color:#c0c5ce;">{% if paginator.indexes %} {% comment %} meta paginator case {% endcomment %}
 </span><span style="color:#c0c5ce;">  &lt;</span><span style="color:#bf616a;">h1</span><span style="color:#c0c5ce;">&gt;Tags&lt;/</span><span style="color:#bf616a;">h1</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">  &lt;</span><span style="color:#bf616a;">p</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">    {% for ptag in paginator.indexes %}
@@ -181,7 +182,7 @@ value of the <code>include</code>.</p>
 </span><span style="color:#c0c5ce;">           </span><span style="color:#d08770;">datetime</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">{{ date_fr }}</span><span style="color:#c0c5ce;">&quot; </span><span style="color:#d08770;">class</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">catalogue-time</span><span style="color:#c0c5ce;">&quot;&gt;{{ date_fr }}&lt;/</span><span style="color:#bf616a;">time</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">  {% endfor %}
 </span><span style="color:#c0c5ce;">&lt;/</span><span style="color:#bf616a;">ul</span><span style="color:#c0c5ce;">&gt;
-</span></pre>
+</span></code></pre>
 <p>If <code>indexes</code> is present, we list all the tags in a tag cloud, each tag being clickable to
 access to the posts that contain the tag.</p>
 <p>If not present, we are in the paginator of a tag and list the pages contained in it.</p>
@@ -194,7 +195,7 @@ classified per year and per month.</p>
 <p>Using fields like <code>previous_index_permalink</code> or <code>next_index_permalink</code>, we can construct
 the navigation across the pages:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">div</span><span style="color:#c0c5ce;">&gt;
+<code><span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">div</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">  {% if paginator.previous_index %}
 </span><span style="color:#c0c5ce;">  &lt;</span><span style="color:#bf616a;">span</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">    &lt;</span><span style="color:#bf616a;">a
@@ -225,7 +226,8 @@ the navigation across the pages:</p>
 </span><span style="color:#c0c5ce;">  &lt;/</span><span style="color:#bf616a;">div</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">&lt;/</span><span style="color:#bf616a;">div</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">{% endif %}
-</span></pre>
+</span></code></pre>
+
           </main>
         </div>
       </section>

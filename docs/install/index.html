@@ -73,13 +73,13 @@
 <p>Download a <a href="https://github.com/cobalt-org/cobalt.rs/releases">release</a>.</p>
 <p>or the following will install cobalt to <code>~/.cargo/bin</code>:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">$ curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | sh -s -- --git cobalt-org/cobalt.rs --crate cobalt
-</span></pre>
+<code><span style="color:#c0c5ce;">$ curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | sh -s -- --git cobalt-org/cobalt.rs --crate cobalt
+</span></code></pre>
 <h3>From Source</h3>
 <h4>Requirements</h4>
 <h5>Debian</h5>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;"># Install needed packages with
+<code><span style="color:#c0c5ce;"># Install needed packages with
 </span><span style="color:#c0c5ce;">$ sudo apt install cmake git curl build-essential libssl-dev
 </span><span style="color:#c0c5ce;">
 </span><span style="color:#c0c5ce;"># Install rust (do **not** use the package `sudo apt install rust`
@@ -88,7 +88,7 @@
 </span><span style="color:#c0c5ce;">
 </span><span style="color:#c0c5ce;"># Source the Rust environment
 </span><span style="color:#c0c5ce;">$ source $HOME/.cargo/env
-</span></pre>
+</span></code></pre>
 <h5>Windows</h5>
 <p>Without syntax highlighting / sass (requires <code>cargo ... --no-default-features</code>):</p>
 <ol>
@@ -104,8 +104,8 @@ instead of MinGW/MSYS2.</li>
 <h4>From crates.io</h4>
 <p>Run</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">$ cargo install cobalt-bin
-</span></pre>
+<code><span style="color:#c0c5ce;">$ cargo install cobalt-bin
+</span></code></pre>
 <h4>Building Natively</h4>
 <ol>
 <li>Either
@@ -117,16 +117,16 @@ Download a <a href="https://github.com/cobalt-org/cobalt.rs/archive/master.zip">
 <code>cargo test</code></li>
 </ol>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">$ cargo build --release --features=sass
-</span></pre>
+<code><span style="color:#c0c5ce;">$ cargo build --release --features=sass
+</span></code></pre>
 <p>You can also customize the build, including adding support for unstable <a href="https://github.com/cobalt-org/cobalt.rs/blob/master/Cargo.toml#L66">features</a>:</p>
 <h4>Building with Docker</h4>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">$ docker pull rust:latest
+<code><span style="color:#c0c5ce;">$ docker pull rust:latest
 </span><span style="color:#c0c5ce;">$ git clone https://github.com/cobalt-org/cobalt.rs.git
 </span><span style="color:#c0c5ce;">$ cd cobalt.rs
 </span><span style="color:#c0c5ce;">$ docker run --rm -it -u $(id -u):$(id -g) -v ${PWD}:/app -w /app rust:latest cargo build --release --features=sass
-</span></pre>
+</span></code></pre>
 <p>The compiled cobalt binary will be in <code>target/release</code>. If you want to run all tests, use
 <code>cargo test --workspace ...</code> instead.</p>
 

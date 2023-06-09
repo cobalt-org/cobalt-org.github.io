@@ -65,7 +65,7 @@
 <p><a href="/docs/directory"><code>_cobalt.yml</code></a> let's you specify site-wide options as well as defaults for pages.</p>
 <h3>Default <code>_cobalt.yml</code>:</h3>
 <pre style="background-color:#2b303b;">
-<span style="color:#65737e;"># Build options
+<code><span style="color:#65737e;"># Build options
 </span><span style="color:#bf616a;">source</span><span style="color:#c0c5ce;">: &quot;</span><span style="color:#a3be8c;">.</span><span style="color:#c0c5ce;">&quot;
 </span><span style="color:#bf616a;">template_extensions</span><span style="color:#c0c5ce;">:
 </span><span style="color:#c0c5ce;">  - </span><span style="color:#a3be8c;">md
@@ -104,7 +104,7 @@
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">jsonfeed</span><span style="color:#c0c5ce;">: </span><span style="color:#d08770;">~
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">publish_date_in_filename</span><span style="color:#c0c5ce;">: </span><span style="color:#d08770;">true
 </span><span style="color:#c0c5ce;">  </span><span style="color:#bf616a;">default</span><span style="color:#c0c5ce;">: {}
-</span></pre>
+</span></code></pre>
 <h3>Build options</h3>
 <table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>source</code></td><td>String</td><td>Directory, relative to <code>_cobalt.yml</code>, where content lives.</td></tr>
@@ -115,10 +115,10 @@
 </tbody></table>
 <p>For example to unignore the <code>.well-known/</code> folder used in LetsEncrypt, add this to your <code>_cobalt.yml</code>.</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#bf616a;">ignore</span><span style="color:#c0c5ce;">:
+<code><span style="color:#bf616a;">ignore</span><span style="color:#c0c5ce;">:
 </span><span style="color:#c0c5ce;">  - &quot;</span><span style="color:#a3be8c;">!.well-known</span><span style="color:#c0c5ce;">&quot;
 </span><span style="color:#c0c5ce;">  - &quot;</span><span style="color:#a3be8c;">!.well-known/**/*</span><span style="color:#c0c5ce;">&quot;
-</span></pre>
+</span></code></pre>
 <h3>Site options</h3>
 <p>These are all under <code>site:</code> in the yaml:</p>
 <table><thead><tr><th>Setting</th><th>Format</th><th>Description</th></tr></thead><tbody>

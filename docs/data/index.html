@@ -68,18 +68,19 @@ and making it available as <a href="/docs/variables"><code>site.data.&lt;DIR&gt;
 <h3>Example</h3>
 <p>In <code>_data/animals/dogs.yml</code>:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">- </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">Corgi
+<code><span style="color:#c0c5ce;">- </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">Corgi
 </span><span style="color:#c0c5ce;">- </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">Malamute
-</span></pre>
+</span></code></pre>
 <p>which can be accessed via <code>site.data.animals.dogs</code>.</p>
 <p>You can now render the list in a template:</p>
 <pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">ul</span><span style="color:#c0c5ce;">&gt;
+<code><span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">ul</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">{% for breed in site.data.animals.dogs %}
 </span><span style="color:#c0c5ce;">  &lt;</span><span style="color:#bf616a;">li</span><span style="color:#c0c5ce;">&gt;{{ breed.name }}&lt;/</span><span style="color:#bf616a;">li</span><span style="color:#c0c5ce;">&gt;
 </span><span style="color:#c0c5ce;">{% endfor %}
 </span><span style="color:#c0c5ce;">&lt;/</span><span style="color:#bf616a;">ul</span><span style="color:#c0c5ce;">&gt;
-</span></pre>
+</span></code></pre>
+
           </main>
         </div>
       </section>
