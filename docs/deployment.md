@@ -18,13 +18,13 @@ also very easy.
 ```yml
 sudo: false
 before_script:
-  - curl -LSfs https://japaric.github.io/trust/install.sh |
+  - curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh |
     sh -s --
     --git cobalt-org/cobalt.rs
     --crate cobalt
     --force
     --target x86_64-unknown-linux-gnu
-    --tag v0.15.0
+    --tag v0.19.0
   - export PATH="$PATH:~/.cargo/bin"
 script:
   - cobalt build
@@ -74,11 +74,11 @@ This example `.gitlab-ci.yml` installs and runs cobalt:
 image: debian:latest
 
 variables:
-  COBALT_VERSION: "v0.15.0"
+  COBALT_VERSION: "v0.19.0"
 pages:
   script:
   - apt-get update && apt-get -y install curl
-  - curl -LSfs https://japaric.github.io/trust/install.sh |
+  - curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh |
     sh -s --
     --git cobalt-org/cobalt.rs
     --crate cobalt
