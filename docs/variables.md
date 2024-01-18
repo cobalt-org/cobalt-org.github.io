@@ -8,7 +8,7 @@ data:
 
 Cobalt makes a variety of data available as Liquid variables.
 
-This is can be helpful for:
+This can be helpful for:
 - Theming
 - Easier maintenance for only having one place to update things
 
