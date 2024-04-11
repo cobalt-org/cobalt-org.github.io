@@ -74,7 +74,7 @@ Once the states of your documents are in a position to be put online − by usin
 $ cobalt build
 ```
 
-All the documents not in draft state will be build into a html file ready to be serve by
+All the documents not in draft state will be built into a html file ready to be serve by
 your web server.
 
 ### clean
