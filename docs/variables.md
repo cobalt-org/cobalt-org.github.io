@@ -58,6 +58,8 @@ Variable              | Format          | Description
 `page.file.permalink` | String          | Relative path to the source file.
 `page.collection`     | String          | The slug of the page's collection.  `"posts"` for posts.
 `page.data`           | Object          | User-defined data, see [frontmatter](/docs/front).
+`page.next`           | Object          | Page variables of the next page in the collection. Only available in posts
+`page.previous`       | Object          | Page variables of the previous page in the collection. Only available in posts
 
 Additionally, in the context of your [page layout](/docs/layouts):
 
