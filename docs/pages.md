@@ -27,7 +27,7 @@ Alternatively, if you are using Markdown, you can [annotate your code
 blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/#syntax-highlighting).
 
 To see what syntaxes are supported:
-```
+```console
 $ cobalt debug highlight syntaxes
 ```
 
@@ -35,6 +35,6 @@ To add support for additional syntaxes you can add a `_syntaxes/` directory to t
 [Sublime Text syntax definition](http://www.sublimetext.com/docs/syntax.html#include-syntax) file each syntax.
 
 The theme is taken from your [`_cobalt.yml`](/docs/config).  To see the list of supported themes:
-```
+```console
 $ cobalt debug highlight themes
 ```

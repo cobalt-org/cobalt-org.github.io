@@ -9,19 +9,19 @@ data:
 ### init
 
 Create a site with an example pages, posts, and layouts:
-```
-# Create site in current directory
+```console
+$ # Create site in current directory
 $ cobalt init
-# Create site in `myBlog` sub-directory
+$ # Create site in `myBlog` sub-directory
 $ cobalt init myBlog
 ```
 
 ### serve
 
 Serve your site at `127.0.0.1:3000`
-```
+```console
 $ cobalt serve
-# Include drafts
+$ # Include drafts
 $ cobalt serve --drafts
 ```
 This provides live reload; it will re-generate your site as you add or change content.
@@ -33,12 +33,12 @@ number (default: 3000).
 ### new
 
 Add a new page or post to your site:
-```
-# Creates page `cats-around-the-world.md` in the current directory
+```console
+$ # Creates page `cats-around-the-world.md` in the current directory
 $ cobalt new "Cats Around the World"
-# Creates post `cats-around-the-world.md` in the `posts` directory
+$ # Creates post `cats-around-the-world.md` in the `posts` directory
 $ cobalt new "Cats Around the World" --file posts
-# Creates post `cats.md` in the `posts` directory
+$ # Creates post `cats.md` in the `posts` directory
 $ cobalt new "Cats Around the World" --file posts/cats.md
 ```
 
@@ -47,14 +47,14 @@ You can modify the template used for `new` by editing the files in [`_defaults`]
 ### publish
 
 Once your post is ready, you can publish it:
-```
+```console
 $ cobalt publish posts/cats-around-the-world.md
 ```
 
 The page will no longer be a "draft" and the `published_date` will be set to today. 
 
 You can also publish from the `drafts` folder:
-```
+```console
 $ cobalt publish drafts/dogs-around-the-world.md
 ```
 
@@ -70,7 +70,7 @@ Once the states of your documents are in a position to be put online − by usin
 `publish` on the documents you want to make visible, or manually setting
 `is_draft: false` − it's time to build the website:
 
-```
+```console
 $ cobalt build
 ```
 
@@ -90,11 +90,11 @@ further details.
 ### More
 
 To see all the available commands, run
-```
+```console
 $ cobalt --help
 ```
 
 You can then get help with those commands by running
-```
+```console
 $ cobalt <command> --help
 ```
