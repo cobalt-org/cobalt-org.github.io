@@ -18,17 +18,19 @@ $ cobalt init myBlog
 
 ### serve
 
-Serve your site at `127.0.0.1:3000`
+To serve your site locally, run:
 ```console
 $ cobalt serve
-$ # Include drafts
-$ cobalt serve --drafts
+Building from `.` into `/tmp/.tmpgYpScM`
+Watching . for changes
+Serving /tmp/.tmpgYpScM through static file server
+Server Listening on http://localhost:1024
+Ctrl-c to stop the server
 ```
-This provides live reload; it will re-generate your site as you add or change content.
 
 Use the `--host` argument to listen on a different address (ex. 0.0.0.0/INADDR\_ANY);
-the default is `localhost`.  Use `--port` (or `-P`) to listen on a different TCP port
-number (default: 3000).
+the default is `localhost`.  Use `--port` (or `-P`) to listen on a specific TCP port
+number.
 
 ### new
 
