@@ -62,16 +62,17 @@
           </aside>
           <main>
           <h2>Data Files</h2>
-<p>Cobalt supports loading <a href="http://yaml.org">yaml</a>, <a href="http://json.org">json</a>, and
-<a href="https://github.com/toml-lang/toml.html">toml</a> from <a href="/docs/directory"><code>_data</code></a>
-and making it available as <a href="/docs/variables"><code>site.data.&lt;DIR&gt;.&lt;FILE&gt;</code></a>.</p>
+<p>Cobalt reads data from any <a href="http://yaml.org">yaml</a>, <a href="http://json.org">json</a>, and
+<a href="https://github.com/toml-lang/toml.html">toml</a> files in the <a href="/docs/directory"><code>_data</code> directory</a>
+and merges them into the <a href="/docs/variables"><code>site.data</code></a> variable, making
+them available as <code>site.data.&lt;DIR&gt;.&lt;FILE&gt;</code>.</p>
 <h3>Example</h3>
 <p>In <code>_data/animals/dogs.yml</code>:</p>
 <pre style="background-color:#2b303b;">
 <code><span style="color:#c0c5ce;">- </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">Corgi
 </span><span style="color:#c0c5ce;">- </span><span style="color:#bf616a;">name</span><span style="color:#c0c5ce;">: </span><span style="color:#a3be8c;">Malamute
 </span></code></pre>
-<p>which can be accessed via <code>site.data.animals.dogs</code>.</p>
+<p>which liquid templates can access via <code>site.data.animals.dogs</code>.</p>
 <p>You can now render the list in a template:</p>
 <pre style="background-color:#2b303b;">
 <code><span style="color:#c0c5ce;">&lt;</span><span style="color:#bf616a;">ul</span><span style="color:#c0c5ce;">&gt;
