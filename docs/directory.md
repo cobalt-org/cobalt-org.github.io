@@ -44,7 +44,7 @@ File / Directory | Description
 `_cobalt.yml`    | Site-wide [configuration](/docs/config) file
 `_layouts`       | [Templates](/docs/layouts) that wrap pages.  The layout is chosen in the [frontmatter](/docs/pages)
 `_includes`      | Liquid snippets of content to be shared among [layouts](/docs/layouts) or pages.
-`_data`          | Data files that will be loaded as part of the `{%raw%}{{ site.data }}{%endraw%}` variable.
+`_data`          | [Data files](/docs/data) in this directory are loaded as part of the `{%raw%}{{ site.data }}{%endraw%}` [variable](/docs/variables).
 `_sass`          | Sass snippets that can be imported into your `.scss` files.
 `_site`          | The output directory of cobalt.  Can be modified in [`_cobalt.yml`](/docs/config).
 `_defaults`      | `cobalt new` initializes files from here based on the collection name.

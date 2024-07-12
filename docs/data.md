@@ -6,9 +6,10 @@ data:
 ---
 ## Data Files
 
-Cobalt supports loading [yaml](http://yaml.org), [json](http://json.org), and
-[toml](https://github.com/toml-lang/toml.html) from [`_data`](/docs/directory)
-and making it available as [`site.data.<DIR>.<FILE>`](/docs/variables).
+Cobalt reads data from any [yaml](http://yaml.org), [json](http://json.org), and
+[toml](https://github.com/toml-lang/toml.html) files in the [`_data` directory](/docs/directory)
+and merges them into the [`site.data`](/docs/variables) variable, making
+them available as `site.data.<DIR>.<FILE>`.
 
 ### Example
 
@@ -17,7 +18,7 @@ In `_data/animals/dogs.yml`:
 - name: Corgi
 - name: Malamute
 ```
-which can be accessed via `site.data.animals.dogs`.
+which liquid templates can access via `site.data.animals.dogs`.
 
 You can now render the list in a template:
 ```html
