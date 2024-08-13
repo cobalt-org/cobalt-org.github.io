@@ -110,7 +110,7 @@ Setting       | Format          | Description
 `title`       | String        | Title for the posts collection.  Falls back to `site.title` if not present.
 `description` | String        | Description for the posts collection.  Falls back to `site.description` if not present.
 `dir`         | String        | Directory, relative to `source`, where posts lives.
-`drafts_dir`  | Boolean       | Directory, relative to `source`, where draft posts can live.
+`drafts_dir`  | String        | Directory, relative to `source`, where draft posts can live.
 `order`       | `Asc`, `Desc` | Sort order for `{%raw%}{{posts}}{%endraw%}` variable.
 `rss`         | String        | Path for a posts RSS file.
 `jsonfeed`    | String        | Path for a posts jsonfeed file.
