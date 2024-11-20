@@ -13,7 +13,7 @@ or
 $ curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | sh -s -- --git cobalt-org/cobalt.rs --crate cobalt
 ```
 
-### Usage
+### Basic usage
 
 #### Start
 
@@ -68,3 +68,6 @@ $ cobalt build
 ```
 
 The site is sitting in `_site` and ready to be uploaded!
+
+If you have an existing site, read [Site generation](/docs/site-gen) to better
+understand Cobalt's operation so you can run it in your site directory.
