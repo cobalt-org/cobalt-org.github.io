@@ -79,6 +79,6 @@ Metadata            | Format           | Description
 `slug`              | String           | The path-friendly name of the file for use in [permalinks](/docs/permalink)
 `excerpt_separator` | String           | A marker for what leading content should be extracted from the content as an excerpt.  `""` will cause no excerpt to be generated.
 `excerpt`           | String           | Manually override the extracted excerpt.  This will be processed like a [page](/docs/pages).
-`categories`        | List of Strings  | Hierarchical categories this page lives under.
+`categories`        | List of Strings  | Hierarchical category this page lives under.
 `tags`              | List of Strings  | Tags attached to the page.
 `data`              | Object           | User-defined data available at [`page.data`](/docs/variables).
