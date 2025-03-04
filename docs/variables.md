@@ -53,6 +53,7 @@ Variable              | Format          | Description
 `page.slug`           | String          | The identifier of the page, see [frontmatter](/docs/front).
 `page.description`    | String          | The description of the page, see [frontmatter](/docs/front).
 `page.categories`     | List of Strings | Hierarchical categories this page lives under, see [frontmatter](/docs/front).
+`page.tags`           | List of Strings | Each tag applied to this page, see [frontmatter](/docs/front).
 `page.published_date` | `YYYY-MM-DD HH:MM:SS TZ` | The date the page was initially published, see [frontmatter](/docs/front).
 `page.is_draft`       | Boolean         | See [frontmatter](/docs/front).
 `page.file.permalink` | String          | Relative path to the source file.
