@@ -96,7 +96,7 @@ header nav {
   justify-content: center;
 }
 
-@media (max-width: 51em) {
+@media (min-width: 29em) and (max-width: 51em) {
   header nav {
     max-width: 100%;
     overflow: hidden;
@@ -149,6 +149,17 @@ header nav .button > span {
     margin: 0.5em 0;
   }
 }
+
+@media (max-width: 29em){
+  header .inner .button {
+    min-width: 10em;
+    margin: auto;
+  }
+  header .inner nav {
+    flex-direction: column;  
+    }
+}
+
 
 .inner {
   padding: 0 1em 0 1em;
@@ -209,7 +220,7 @@ section.docs aside ul li a:focus {
   border-radius: 3px;
 }
 
-@media (min-width: 61em) {
+@media (min-width: 51em) {
 
   section.docs .inner {
     display: flex;
