@@ -209,7 +209,7 @@ section.docs aside ul li a:focus {
   border-radius: 3px;
 }
 
-@media (min-width: 61em) {
+@media (min-width: 51em) {
 
   section.docs .inner {
     display: flex;
