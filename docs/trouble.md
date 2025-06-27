@@ -8,10 +8,10 @@ data:
 
 Every command supports logging additional detail that can be useful when troubleshooting cobalt.  For example:
 ```console
-$ cobalt build --log-level=debug # Show some additional context
+$ cobalt build --verbose # Show some additional context
 
-$ cobalt build --trace # Show everything
-$ cobalt build --log-level=trace # Same as above
+$ cobalt build --verbose --verbose # Show everything
+$ cobalt build -vv # Same as above
 ```
 
 ### Useful commands
